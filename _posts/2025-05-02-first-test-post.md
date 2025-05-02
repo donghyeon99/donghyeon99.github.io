@@ -1,6 +1,6 @@
 ---
 title: 첫 번째 테스트 게시물
-date: 2023-12-15 14:30:00 +0900
+date: 2025-05-02 17:30:00 +0900
 categories: [블로그, 테스트]
 tags: [jekyll, github-pages, 테스트]
 ---
