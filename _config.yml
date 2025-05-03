@@ -16,10 +16,10 @@ timezone: Asia/Seoul
 
 title: Donghyeon's Blog # the main title
 
-tagline: 개발 공부 기록소 # it will display as the subtitle
+tagline: Robotics, Control, Autonomous Driving # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  프로그래밍과 개발 공부에 관한 기록을 남기는 블로그입니다.
+  Robotics, Control, Autonomous Driving
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -28,14 +28,14 @@ url: "https://donghyeon99.github.io"
 github:
   username: donghyeon99 # change to your GitHub username
 
-twitter:
-  username: # change to your Twitter username
+# twitter:
+#   username: # change to your Twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Donghyeon
-  email: donghyeon99@example.com # change to your email address
+  email: ehdgus2210@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://github.com/donghyeon99 # change to your GitHub homepage
