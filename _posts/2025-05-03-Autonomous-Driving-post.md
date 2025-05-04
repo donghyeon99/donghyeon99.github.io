@@ -1,11 +1,12 @@
 ---
-title: ROS 기반 자율주행 시스템 구조
-date: 2025-05-03 11:30:00 +0900
-categories: [자율주행, ROS]
+layout: post
+title:  "자율주행 시스템 개발(Test Version)"
+date:   2025-05-03 00:00:00 +0900
+categories: [test]
 tags: [자율주행, ros, 시스템구조, 실차적용]
 ---
 
-# ROS 기반 자율주행 시스템 구조
+# ROS 기반 자율주행 시스템 구조(Test version)
 
 자율주행 시스템은 ROS(Robot Operating System)를 기반으로 센서 데이터부터 주행 제어까지 전체 파이프라인을 효율적으로 관리합니다. 특히 실제 차량에 적용할 때는 **명령 변환 계층(Command Translation)**이 핵심 요소입니다.
 

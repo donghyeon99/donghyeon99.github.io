@@ -1,11 +1,11 @@
 ---
-title: 첫 번째 테스트 게시물
+title: 첫 번째 테스트 게시물(Test Version)
 date: 2025-05-02 17:30:00 +0900
-categories: [블로그, 테스트]
+categories: [test]
 tags: [jekyll, github-pages, 테스트]
 ---
 
-# 안녕하세요! 첫 번째 테스트 게시물입니다.
+# 안녕하세요! 첫 번째 테스트 게시물입니다.(Test Version)
 
 이 글은 Jekyll 블로그 설정 및 게시물 작성 테스트를 위해 작성되었습니다.
 
