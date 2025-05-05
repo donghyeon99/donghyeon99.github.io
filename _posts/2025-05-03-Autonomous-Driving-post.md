@@ -10,7 +10,7 @@ tags: [자율주행, ros, 시스템구조, 실차적용]
 
 자율주행 시스템은 ROS(Robot Operating System)를 기반으로 센서 데이터부터 주행 제어까지 전체 파이프라인을 효율적으로 관리합니다. 특히 실제 차량에 적용할 때는 **명령 변환 계층(Command Translation)**이 핵심 요소입니다.
 
-![ROS 자율주행 시스템 구조](/assets/img/posts/Autonomous_System_Architecture.png)
+![ROS 자율주행 시스템 구조](/assets/img/posts/Autonomous_System_Architecture2.png)
 
 ## 시스템 구성 개요
 
