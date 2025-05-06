@@ -144,31 +144,37 @@ permalink: /cv/
 <div class="cv-section" id="projects">
   <h2><i class="fas fa-code"></i> Projects <a href="/projects/" style="font-size:0.8rem;">[View All]</a></h2>
 
-<div class="cv-item">
-  <h3>Distributed Humanoid Localization</h3>
-  <p><strong>Period:</strong> Jul. 2022 – Feb. 2024</p>
-  <p><strong>Summary:</strong> Designed a robust localization algorithm for humanoid robots using finite-memory estimation and ANN-based odometry fusion.</p>
-  <p><strong>Keywords:</strong> Cooperative Localization, Humanoid Robot, Finite-Memory Estimation, Odometry, Neural Network</p>
-  <p><a href="https://www.youtube.com/watch?v=ueaxI5FNc_w" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a></p>
-</div>
-
-  <div class="cv-item">
-    <h3>UAV Formation Control</h3>
-    <p><strong>Period:</strong> Mar. 2022 – Feb. 2024</p>
-    <p><strong>Summary:</strong> Implemented leader–follower UAV formation using virtual leader and sliding mode control, deployed on 3 real UAVs with ROS, MAVROS, and Pixhawk.</p>
-    <p><strong>Keywords:</strong> UAV, Formation Control, Virtual Leader, Sliding Mode Control, ROS, MAVROS, Pixhawk</p>
-    <p><a href="https://www.youtube.com/watch?v=K2Jqm8zCsDo" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a></p>
+  <div class="accordion-item">
+    <button class="accordion-header">Distributed Humanoid Localization</button>
+    <div class="accordion-body">
+      <p><strong>Period:</strong> Jul. 2022 – Feb. 2024</p>
+      <p><strong>Summary:</strong> Designed a robust localization algorithm for humanoid robots using finite-memory estimation and ANN-based odometry fusion.</p>
+      <p><strong>Keywords:</strong> Cooperative Localization, Humanoid Robot, Finite-Memory Estimation, Odometry, Neural Network</p>
+      <p><a href="https://www.youtube.com/watch?v=ueaxI5FNc_w" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a></p>
+    </div>
   </div>
 
+  <div class="accordion-item">
+    <button class="accordion-header">UAV Formation Control</button>
+    <div class="accordion-body">
+      <p><strong>Period:</strong> Mar. 2022 – Feb. 2024</p>
+      <p><strong>Summary:</strong> Implemented leader–follower UAV formation using virtual leader and sliding mode control, deployed on 3 real UAVs with ROS, MAVROS, and Pixhawk.</p>
+      <p><strong>Keywords:</strong> UAV, Formation Control, Virtual Leader, Sliding Mode Control, ROS, MAVROS, Pixhawk</p>
+      <p><a href="https://www.youtube.com/watch?v=K2Jqm8zCsDo" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a></p>
+    </div>
+  </div>
 
-  <div class="cv-item">
-    <h3>Capstone: Smart Caddy Robot</h3>
-    <p><strong>Period:</strong> Jan. 2021 – Nov. 2021</p>
-    <p><strong>Summary:</strong> Developed an obstacle avoidance system for mapless navigation using deep reinforcement learning and active filtering. Integrated into a Caddy Robot with ROS to achieve collision-free autonomous driving.</p>
-    <p><strong>Keywords:</strong> Mapless Navigation, Obstacle Avoidance, Deep Reinforcement Learning, ROS, STM32</p>
-    <p><a href="https://youtu.be/uAqilEhrqzE" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a></p>
+  <div class="accordion-item">
+    <button class="accordion-header">Capstone: Smart Caddy Robot</button>
+    <div class="accordion-body">
+      <p><strong>Period:</strong> Jan. 2021 – Nov. 2021</p>
+      <p><strong>Summary:</strong> Developed an obstacle avoidance system for mapless navigation using deep reinforcement learning and active filtering. Integrated into a Caddy Robot with ROS to achieve collision-free autonomous driving.</p>
+      <p><strong>Keywords:</strong> Mapless Navigation, Obstacle Avoidance, Deep Reinforcement Learning, ROS, STM32</p>
+      <p><a href="https://youtu.be/uAqilEhrqzE" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a></p>
+    </div>
   </div>
 </div>
+
 
 
   <div class="cv-section" id="contact">
@@ -378,6 +384,84 @@ html {
   border-radius: 4px;
 }
 
+.accordion-item {
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #f8f9fa;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.accordion-header:hover {
+  background-color: #eaeaea;
+}
+
+.accordion-body {
+  padding: 1rem;
+  display: none;
+  background-color: white;
+}
+
+
+.accordion-item.active .accordion-body {
+  display: block;
+}
+
+.accordion-item {
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+  background-color: #fff;
+}
+
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  background-color: #f0f3f5;
+  color: #2c3e50;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.accordion-header:hover {
+  background-color: #e0e4e7;
+}
+
+.accordion-body {
+  padding: 1rem;
+  display: none;
+  background-color: #ffffff;
+  color: #2c3e50;
+  font-size: 0.96rem;
+}
+
+.accordion-body p {
+  margin: 0.4rem 0;
+  line-height: 1.6;
+}
+
+
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -403,4 +487,11 @@ html {
 
     window.addEventListener("scroll", activateNav);
   });
+
+document.querySelectorAll('.accordion-header').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    item.classList.toggle('active');
+  });
+});
 </script>
