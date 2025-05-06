@@ -117,13 +117,13 @@ permalink: /cv/
     <h2><i class="fas fa-award"></i> Awards</h2>
     <div class="awards">
       <div class="award-item">
-        <p><strong class="highlight">Grand Prize</strong>, Future Mobility Idea Competition, Korea Automotive Technology Institute, Korea (Sep. 2023)</p>
+        <p><strong>Grand Prize</strong>, Future Mobility Idea Competition, Korea Automotive Technology Institute, Korea (Sep. 2023)</p>
       </div>
       <div class="award-item">
-        <p><strong class="highlight">Grand Prize (Kwangwoon University President Award)</strong>, 17th ICT Exhibition (KWIX), Kwangwoon University, Korea (Sep. 2021)</p>
+        <p><strong>Grand Prize (Kwangwoon University President Award)</strong>, 17th ICT Exhibition (KWIX), Kwangwoon University, Korea (Sep. 2021)</p>
       </div>
       <div class="award-item">
-        <p><strong><span style="color: #ff0000;">Grand Prize (Presidential Prize)</span></strong>, International Robot Contest 2020 Humanoid Robot Sports, Ministry of Trade, Industry and Energy, Korea (Nov. 2020)</p>
+        <p><strong class="highlight">Grand Prize (Presidential Prize)</strong>, International Robot Contest 2020 Humanoid Robot Sports, Ministry of Trade, Industry and Energy, Korea (Nov. 2020)</p>
       </div>
       <div class="award-item">
         <p><strong class="highlight">First Place (KIRIA Award)</strong>, RoboCup 2020 KoreaOpen Humanoid S, Korea (Aug. 2020)</p>
@@ -132,7 +132,7 @@ permalink: /cv/
         <p><strong>Third Place</strong>, International Robot Contest 2020 Humanoid Robot Sports (1st competition), Korea (Nov. 2020)</p>
       </div>
       <div class="award-item">
-        <p><strong><span style="color: #ff0000;">Second Place</span></strong>, RoboCup 2019 Humanoid League TeenSize Drop-In Challenge, Australia (Jul. 2019)</p>
+        <p><strong>Second Place</strong>, RoboCup 2019 Humanoid League TeenSize Drop-In Challenge, Australia (Jul. 2019)</p>
       </div>
       <div class="award-item">
         <p><strong>Third Place</strong>, RoboCup 2019 Humanoid League TeenSize Technical Challenge, Australia (Jul. 2019)</p>
@@ -151,6 +151,26 @@ permalink: /cv/
       <p><i class="fab fa-github"></i> <a href="https://github.com/donghyeon99">github.com/donghyeon99</a></p>
     </div>
   </div>
+
+<div class="cv-section">
+  <h2><i class="fas fa-paperclip"></i> Additional Links</h2>
+  <div class="additional-links">
+    <div class="link-item">
+      <p><strong>🛩️ Project:</strong> Neural Network Formation Control of Multiple UAVs via Finite Memory Learning</p>
+      <p><a href="https://www.youtube.com/watch?v=K2Jqm8zCsDo&t=3s" target="_blank"><i class="fab fa-youtube"></i> Watch Video</a></p>
+    </div>
+    <div class="link-item">
+      <p><strong>📚 Thesis:</strong> Neural Network Fusion with Finite Memory Estimation for Distributed Localization of Multiple Humanoid Robots</p>
+      <p><a href="https://www.youtube.com/watch?v=ueaxI5FNc_w" target="_blank"><i class="fab fa-youtube"></i> Watch Video</a></p>
+    </div>
+    <div class="link-item">
+      <p><strong>🎓 Capstone Design:</strong> Graduation Project (Undergraduate)</p>
+      <p><a href="https://youtu.be/uAqilEhrqzE" target="_blank"><i class="fab fa-youtube"></i> Watch Video</a></p>
+    </div>
+  </div>
+</div>
+
+  
 </div>
 
 <style>
