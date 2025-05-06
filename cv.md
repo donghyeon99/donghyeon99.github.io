@@ -145,7 +145,10 @@ permalink: /cv/
   <h2><i class="fas fa-code"></i> Projects <a href="/projects/" style="font-size:0.8rem;">[View All]</a></h2>
 
   <div class="accordion-item">
-    <button class="accordion-header">Distributed Humanoid Localization</button>
+    <button class="accordion-header">
+      <span>Distributed Humanoid Localization</span>
+      <i class="fas fa-chevron-down toggle-icon"></i>
+    </button>
     <div class="accordion-body">
       <p><strong>Period:</strong> Jul. 2022 – Feb. 2024</p>
       <p><strong>Summary:</strong> Designed a robust localization algorithm for humanoid robots using finite-memory estimation and ANN-based odometry fusion.</p>
@@ -155,7 +158,10 @@ permalink: /cv/
   </div>
 
   <div class="accordion-item">
-    <button class="accordion-header">UAV Formation Control</button>
+    <button class="accordion-header">
+      <span>UAV Formation Control</span>
+      <i class="fas fa-chevron-down toggle-icon"></i>
+    </button>
     <div class="accordion-body">
       <p><strong>Period:</strong> Mar. 2022 – Feb. 2024</p>
       <p><strong>Summary:</strong> Implemented leader–follower UAV formation using virtual leader and sliding mode control, deployed on 3 real UAVs with ROS, MAVROS, and Pixhawk.</p>
@@ -165,7 +171,10 @@ permalink: /cv/
   </div>
 
   <div class="accordion-item">
-    <button class="accordion-header">Capstone: Smart Caddy Robot</button>
+    <button class="accordion-header">
+      <span>Capstone: Smart Caddy Robot</span>
+      <i class="fas fa-chevron-down toggle-icon"></i>
+    </button>
     <div class="accordion-body">
       <p><strong>Period:</strong> Jan. 2021 – Nov. 2021</p>
       <p><strong>Summary:</strong> Developed an obstacle avoidance system for mapless navigation using deep reinforcement learning and active filtering. Integrated into a Caddy Robot with ROS to achieve collision-free autonomous driving.</p>
@@ -184,24 +193,6 @@ permalink: /cv/
       <p><i class="fab fa-github"></i> <a href="https://github.com/donghyeon99">github.com/donghyeon99</a></p>
     </div>
   </div>
-<!-- 
-  <div class="cv-section" id="links">
-    <h2><i class="fas fa-paperclip"></i> Additional Links</h2>
-    <div class="additional-links">
-      <div class="link-item">
-        <p><strong>🛩️ Project:</strong> Neural Network Formation Control of Multiple UAVs via Finite Memory Learning</p>
-        <p><a href="https://www.youtube.com/watch?v=K2Jqm8zCsDo&t=3s" target="_blank"><i class="fab fa-youtube"></i> Watch Video</a></p>
-      </div>
-      <div class="link-item">
-        <p><strong>📚 Thesis:</strong> Neural Network Fusion with Finite Memory Estimation for Distributed Localization of Multiple Humanoid Robots</p>
-        <p><a href="https://www.youtube.com/watch?v=ueaxI5FNc_w" target="_blank"><i class="fab fa-youtube"></i> Watch Video</a></p>
-      </div>
-      <div class="link-item">
-        <p><strong>🎓 Capstone Design:</strong> Graduation Project (Undergraduate)</p>
-        <p><a href="https://youtu.be/uAqilEhrqzE" target="_blank"><i class="fab fa-youtube"></i> Watch Video</a></p>
-      </div>
-    </div>
-  </div> -->
 </div>
 
 <style>
@@ -338,29 +329,6 @@ html {
   text-decoration: underline;
 }
 
-.additional-links {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.link-item {
-  background-color: #f4f6f8;
-  padding: 1rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-.link-item a {
-  color: #e74c3c;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.link-item a:hover {
-  text-decoration: underline;
-}
-
 .highlight {
   background-color: #f1c40f;
   padding: 0.2rem 0.4rem;
@@ -368,76 +336,25 @@ html {
   color: #2c3e50;
 }
 
-@media (max-width: 600px) {
-  .skills-container {
-    flex-direction: column;
-  }
-  .skills-category {
-    min-width: 100%;
-  }
-}
-
-.cv-nav a.active {
-  color: #ffffff;
-  background-color: #3498db;
-  padding: 0.3rem 0.6rem;
+.accordion-item {
+  margin-bottom: 1rem;
+  border-left: 4px solid #3498db;
   border-radius: 4px;
-}
-
-.accordion-item {
-  margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .accordion-header {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-align: left;
-  padding: 1rem;
-  font-size: 1rem;
-  font-weight: bold;
-  background-color: #f8f9fa;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s;
-}
-
-.accordion-header:hover {
-  background-color: #eaeaea;
-}
-
-.accordion-body {
-  padding: 1rem;
-  display: none;
-  background-color: white;
-}
-
-
-.accordion-item.active .accordion-body {
-  display: block;
-}
-
-.accordion-item {
-  margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
-  background-color: #fff;
-}
-
-.accordion-header {
-  width: 100%;
-  text-align: left;
-  padding: 1rem;
+  padding: 1rem 1.2rem;
   font-size: 1.05rem;
   font-weight: 600;
-  letter-spacing: 0.3px;
-  background-color: #f0f3f5;
   color: #2c3e50;
+  background-color: #f0f3f5;
   border: none;
   cursor: pointer;
   outline: none;
@@ -449,20 +366,43 @@ html {
 }
 
 .accordion-body {
-  padding: 1rem;
+  padding: 1rem 1.2rem;
   display: none;
-  background-color: #ffffff;
   color: #2c3e50;
+  background-color: #ffffff;
   font-size: 0.96rem;
-}
-
-.accordion-body p {
-  margin: 0.4rem 0;
   line-height: 1.6;
 }
 
+.toggle-icon {
+  transition: transform 0.3s ease;
+}
 
+.accordion-item.active .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-item.active .accordion-body {
+  display: block;
+}
+
+.cv-nav a.active {
+  color: #ffffff;
+  background-color: #3498db;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .skills-container {
+    flex-direction: column;
+  }
+  .skills-category {
+    min-width: 100%;
+  }
+}
 </style>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll(".cv-section");
@@ -494,4 +434,6 @@ document.querySelectorAll('.accordion-header').forEach((btn) => {
     item.classList.toggle('active');
   });
 });
+
+
 </script>
