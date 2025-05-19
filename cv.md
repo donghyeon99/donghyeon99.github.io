@@ -130,14 +130,30 @@ permalink: /cv/
   <div class="cv-section" id="awards">
     <h2><i class="fas fa-award"></i> Awards</h2>
     <div class="awards">
-      <div class="award-item"><p><strong>Grand Prize</strong>, Future Mobility Idea Competition, KATECH (Sep. 2023)</p></div>
-      <div class="award-item"><p><strong>Grand Prize (Kwangwoon University President Award)</strong>, KWIX 2021, Kwangwoon University (Sep. 2021)</p></div>
-      <div class="award-item"><p><strong class="highlight">Grand Prize (Presidential Prize)</strong>, IRC 2020, Humanoid Robot Sports (Nov. 2020)</p></div>
-      <div class="award-item"><p><strong class="highlight">First Place (KIRIA Award)</strong>, RoboCup 2020 KoreaOpen (Aug. 2020)</p></div>
-      <div class="award-item"><p><strong>3rd Place</strong>, IRC 2020 Humanoid Sports (Nov. 2020)</p></div>
-      <div class="award-item"><p><strong>2nd Place</strong>, RoboCup 2019 TeenSize Drop-In (Jul. 2019)</p></div>
-      <div class="award-item"><p><strong>3rd Place</strong>, RoboCup 2019 Technical Challenge (Jul. 2019)</p></div>
-      <div class="award-item"><p><strong class="highlight">First Place (Gangwon-do Governor Award)</strong>, RoboCup 2019 KoreaOpen (Feb. 2019)</p></div>
+      <div class="award-item">
+        <p><strong class="highlight">Grand Prize</strong>, Future Mobility Idea Competition, Korea Automotive Technology Institute, Korea (Sep. 2023)</p>
+      </div>
+      <div class="award-item">
+        <p><strong class="highlight">Grand Prize (Kwangwoon University President Award)</strong>, 17th ICT Exhibition (KWIX), Kwangwoon University, Korea (Sep. 2021)</p>
+      </div>
+      <div class="award-item">
+        <p><strong>Grand Prize (Presidential Prize)</strong>, International Robot Contest 2020 Humanoid Robot Sports, Ministry of Trade, Industry and Energy, Korea (Nov. 2020)</p>
+      </div>
+      <div class="award-item">
+        <p><strong class="highlight">First Place (KIRIA Award)</strong>, RoboCup 2020 KoreaOpen Humanoid S, Korea (Aug. 2020)</p>
+      </div>
+      <div class="award-item">
+        <p><strong>Third Place</strong>, International Robot Contest 2020 Humanoid Robot Sports (1st competition), Korea (Nov. 2020)</p>
+      </div>
+      <div class="award-item">
+        <p><strong>Second Place</strong>, RoboCup 2019 Humanoid League TeenSize Drop-In Challenge, Australia (Jul. 2019)</p>
+      </div>
+      <div class="award-item">
+        <p><strong>Third Place</strong>, RoboCup 2019 Humanoid League TeenSize Technical Challenge, Australia (Jul. 2019)</p>
+      </div>
+      <div class="award-item">
+        <p><strong class="highlight">First Place (Gangwon-do Governor Award)</strong>, RoboCup 2019 KoreaOpen Humanoid S, Korea (Feb. 2019)</p>
+      </div>
     </div>
   </div>
 
@@ -182,6 +198,7 @@ permalink: /cv/
       <p><a href="https://youtu.be/uAqilEhrqzE" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a></p>
     </div>
   </div>
+
 </div>
 
 
@@ -224,12 +241,19 @@ html {
 .cv-nav a {
   text-decoration: none;
   font-weight: bold;
-  color: #2c3e50;
+  color: #2c3e50; 
   transition: color 0.3s;
 }
 
 .cv-nav a:hover {
   color: #3498db;
+}
+
+.cv-nav a.active {
+  color: #ffffff;
+  background-color: #3498db;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
 }
 
 .cv-container {
@@ -258,18 +282,6 @@ html {
   margin-bottom: 1.5rem;
   border-left: 4px solid #3498db;
   padding-left: 1rem;
-  position: relative;
-}
-
-.cv-item::before {
-  content: '';
-  position: absolute;
-  left: -10px;
-  top: 6px;
-  width: 12px;
-  height: 12px;
-  background-color: #3498db;
-  border-radius: 50%;
 }
 
 .cv-item h3 {
@@ -336,12 +348,13 @@ html {
   color: #2c3e50;
 }
 
+/* Accordion (Projects) */
 .accordion-item {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   border-left: 4px solid #3498db;
   border-radius: 4px;
   background-color: #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .accordion-header {
@@ -350,11 +363,10 @@ html {
   justify-content: space-between;
   align-items: center;
   text-align: left;
-  padding: 1rem 1.2rem;
-  font-size: 1.05rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #2c3e50;
-  background-color: #f0f3f5;
+  background-color: #f4f6f8;
   border: none;
   cursor: pointer;
   outline: none;
@@ -362,35 +374,29 @@ html {
 }
 
 .accordion-header:hover {
-  background-color: #e0e4e7;
+  background-color: #e9ecef;
 }
 
 .accordion-body {
-  padding: 1rem 1.2rem;
-  display: none;
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: #2c3e50;
   background-color: #ffffff;
-  font-size: 0.96rem;
-  line-height: 1.6;
-}
-
-.toggle-icon {
-  transition: transform 0.3s ease;
-}
-
-.accordion-item.active .toggle-icon {
-  transform: rotate(180deg);
+  display: none;
 }
 
 .accordion-item.active .accordion-body {
   display: block;
 }
 
-.cv-nav a.active {
-  color: #ffffff;
-  background-color: #3498db;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
+.toggle-icon {
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .toggle-icon {
+  transform: rotate(180deg);
 }
 
 @media (max-width: 600px) {
@@ -402,6 +408,7 @@ html {
   }
 }
 </style>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
