@@ -249,5 +249,6 @@ Vercel은 현대적인 웹 개발에 필요한 모든 기능을 제공하는 강
 - [Vercel 공식 문서](https://vercel.com/docs)
 - [Vercel GitHub](https://github.com/vercel/vercel)
 - [Next.js 공식 문서](https://nextjs.org/docs)
+- [예제 git repo](https://github.com/donghyeon99/my-vercel-app)
 
 🙂
