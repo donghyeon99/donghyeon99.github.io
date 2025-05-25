@@ -8,6 +8,15 @@ tags: [Vercel, Deployment, Frontend, Next.js]
 
 # 🌐 Vercel 소개 및 Next.js 앱 배포 가이드
 
+![Vercel Structure](/assets/img/posts/vercel-structure.png)
+
+> 💡 **Vercel의 핵심 구조**
+> 
+> - **GitHub 연동**: 코드 저장소와 직접 연결
+> - **자동 빌드**: 코드 변경 시 자동으로 빌드
+> - **Edge Network**: 전 세계 CDN을 통한 빠른 배포
+> - **서버리스**: API 서버 자동 관리
+
 ## 📖 Vercel이란?
 
 > 💡 **핵심 설명**
