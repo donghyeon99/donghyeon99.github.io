@@ -10,6 +10,7 @@ order: 4
 I am currently working on various robotics projects, focusing on autonomous systems, control theory, and multi-agent systems. My research interests include distributed estimation, neural networks, and their applications in robotics.
 
 [View my Curriculum Vitae](/cv/){: .btn .btn-info .btn-sm }
+[View my Curriculum Vitae2](/cv2/){: .btn .btn-info .btn-sm }
 
 # 👋
 

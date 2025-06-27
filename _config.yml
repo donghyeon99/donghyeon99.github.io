@@ -172,6 +172,8 @@ collections:
   projects:
     output: true
     permalink: /:collection/:name/
+  cv:
+    output: true
 
 defaults:
   - scope:
@@ -200,6 +202,11 @@ defaults:
     values:
       layout: page
       permalink: /projects/:name/
+  - scope:
+      path: ""
+      type: cv
+    values:
+      layout: page
 
 sass:
   style: compressed
