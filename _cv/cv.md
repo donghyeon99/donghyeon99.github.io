@@ -158,7 +158,8 @@ permalink: /cv/
   </div>
 
 <div class="cv-section" id="projects">
-  <h2><i class="fas fa-code"></i> Projects <a href="/projects/" style="font-size:0.8rem;">[View All]</a></h2>
+  <!-- <h2><i class="fas fa-code"></i> Projects <a href="/projects/" style="font-size:0.8rem;">[View All]</a></h2> -->
+  <h2><i class="fas fa-code"></i> Projects </h2>
 
   <div class="accordion-item">
     <button class="accordion-header">
