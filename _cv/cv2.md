@@ -1,924 +1,1526 @@
 ---
 layout: page
-title: Curriculum Vitae2
+title: Curriculum Vitae (Refactored)
 permalink: /cv2/
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dong Hyeon Kim - Robotics Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #0A84FF;
-            --primary-dark: #0066CC;
-            --secondary: #5E5CE6;
-            --accent: #FF9F0A;
-            --text-primary: #1D1D1F;
-            --text-secondary: #86868B;
-            --bg-primary: #FFFFFF;
-            --bg-secondary: #F5F5F7;
-            --border: #E5E5E7;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.12);
-            --gradient-primary: linear-gradient(135deg, #0A84FF 0%, #5E5CE6 100%);
-            --gradient-accent: linear-gradient(135deg, #FF9F0A 0%, #FF6B35 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--bg-secondary);
-            overflow-x: hidden;
-        }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: var(--gradient-primary);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        /* Main Container */
-        .main-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 100px 2rem 2rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 4rem;
-            align-items: center;
-            min-height: 80vh;
-            margin-bottom: 6rem;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            background: var(--gradient-primary);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-content .subtitle {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
-
-        .hero-content .description {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            line-height: 1.8;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: white;
-            box-shadow: var(--shadow);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .btn-secondary {
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            border: 2px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        .hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .avatar {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 8rem;
-            color: white;
-            position: relative;
-            box-shadow: var(--shadow-hover);
-        }
-
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .floating-element {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-element:nth-child(1) {
-            top: 10%;
-            left: 20%;
-            background: var(--gradient-accent);
-            animation-delay: 0s;
-        }
-
-        .floating-element:nth-child(2) {
-            top: 70%;
-            right: 10%;
-            background: var(--secondary);
-            animation-delay: 2s;
-        }
-
-        .floating-element:nth-child(3) {
-            bottom: 20%;
-            left: 10%;
-            background: var(--primary);
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Section Styles */
-        .section {
-            margin-bottom: 6rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Cards */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--bg-primary);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .card-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .card-subtitle {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .card-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--gradient-primary);
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .timeline-item:nth-child(odd) {
-            flex-direction: row;
-        }
-
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-content {
-            width: calc(50% - 2rem);
-            background: var(--bg-primary);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .timeline-dot {
-            width: 16px;
-            height: 16px;
-            background: var(--primary);
-            border-radius: 50%;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 4px solid var(--bg-secondary);
-        }
-
-        .timeline-date {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-company {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        /* Skills */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: var(--bg-primary);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-        }
-
-        .skill-category h3 {
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .skill-tag {
-            padding: 8px 16px;
-            background: var(--bg-secondary);
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: 1px solid var(--border);
-        }
-
-        .skill-tag:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Publications */
-        .publication-item {
-            background: var(--bg-primary);
-            padding: 2rem;
-            border-radius: 20px;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border-left: 4px solid var(--primary);
-        }
-
-        .publication-item:hover {
-            transform: translateX(10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .publication-number {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Awards */
-        .awards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .award-item {
-            background: var(--bg-primary);
-            padding: 1.5rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .award-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient-accent);
-        }
-
-        .award-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .award-rank {
-            background: var(--gradient-accent);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-
-        /* Contact */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .contact-item {
-            background: var(--bg-primary);
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            color: var(--primary);
-        }
-
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 auto 1rem;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .nav-container {
-                padding: 0 1rem;
-            }
-
-            .nav-menu {
-                gap: 1rem;
-            }
-
-            .main-container {
-                padding: 100px 1rem 2rem;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                text-align: center;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .timeline::before {
-                left: 2rem;
-            }
-
-            .timeline-item {
-                flex-direction: row !important;
-                padding-left: 4rem;
-            }
-
-            .timeline-content {
-                width: 100%;
-            }
-
-            .timeline-dot {
-                left: 2rem;
-            }
-
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-dark);
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="nav-container">
-            <div class="logo">DH Kim</div>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#experience" class="nav-link">Experience</a></li>
-                    <li><a href="#education" class="nav-link">Education</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#publications" class="nav-link">Publications</a></li>
-                    <li><a href="#awards" class="nav-link">Awards</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Hero Section -->
+<div class="hero-section">
+  <div class="hero-content">
+    <div class="profile-avatar">
+      <i class="fas fa-robot"></i>
+    </div>
+    <h1 class="hero-title">Dong Hyeon Kim</h1>
+    <p class="hero-subtitle">Robotics Engineer & AI Researcher</p>
+    <div class="hero-contact">
+      <a href="mailto:ehdgus2210@gmail.com" class="contact-btn">
+        <i class="fas fa-envelope"></i> ehdgus2210@gmail.com
+      </a>
+      <a href="https://github.com/donghyeon99" class="contact-btn">
+        <i class="fab fa-github"></i> donghyeon99
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<nav class="cv-nav">
+  <div class="nav-container">
+    <a href="#experience" class="nav-item">
+      <i class="fas fa-briefcase"></i>
+      <span>Experience</span>
+    </a>
+    <a href="#education" class="nav-item">
+      <i class="fas fa-graduation-cap"></i>
+      <span>Education</span>
+    </a>
+    <a href="#skills" class="nav-item">
+      <i class="fas fa-tools"></i>
+      <span>Skills</span>
+    </a>
+    <a href="#publications" class="nav-item">
+      <i class="fas fa-book-open"></i>
+      <span>Publications</span>
+    </a>
+    <a href="#awards" class="nav-item">
+      <i class="fas fa-award"></i>
+      <span>Awards</span>
+    </a>
+    <a href="#projects" class="nav-item">
+      <i class="fas fa-code"></i>
+      <span>Projects</span>
+    </a>
+  </div>
+</nav>
+
+<div class="cv-container">
+
+  <!-- Experience Section -->
+  <section id="experience" class="cv-section">
+    <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+    
+    <!-- Current Position -->
+    <div class="experience-group">
+      <div class="company-header">
+        <h3>Luxrobo</h3>
+        <a href="https://luxrobo.com/" class="company-link" target="_blank">
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <span class="position-title">Robotics Engineer</span>
+      </div>
+      
+      <!-- Current Project -->
+      <div class="project-card current">
+        <div class="project-header">
+          <h4>Autonomous Golf Cart Project</h4>
+          <span class="project-period">Mar. 2025 - Present</span>
         </div>
-    </header>
+        <div class="project-description">
+          <p>Developing RTK GPS Autonomous Driving System with advanced control algorithms</p>
+        </div>
+        <div class="project-focus">
+          <strong>Focus Areas:</strong>
+          <ul>
+            <li>Firmware development and system integration</li>
+            <li>Extended Kalman Filter implementation</li>
+            <li>PID control systems optimization</li>
+            <li>Bicycle model dynamics</li>
+          </ul>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-tag">C</span>
+          <span class="tech-tag">RTK GPS</span>
+          <span class="tech-tag">Extended Kalman Filter</span>
+          <span class="tech-tag">PID Control</span>
+          <span class="tech-tag">Bicycle Model</span>
+        </div>
+      </div>
+      
+      <!-- Previous Project -->
+      <div class="project-card">
+        <div class="project-header">
+          <h4>Smart Parking System Project</h4>
+          <span class="project-period">May. 2024 - Mar. 2025</span>
+        </div>
+        <div class="project-description">
+          <p>Developed comprehensive smart parking solution with computer vision and real-time processing</p>
+        </div>
+        <div class="project-focus">
+          <strong>Key Achievements:</strong>
+          <ul>
+            <li>Image Processing Server architecture design</li>
+            <li>Light control server implementation</li>
+            <li>Real-time data processing optimization</li>
+          </ul>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-tag">Redis</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">C++</span>
+          <span class="tech-tag">Go</span>
+          <span class="tech-tag">OpenCV</span>
+          <span class="tech-tag">CUDA</span>
+        </div>
+      </div>
+    </div>
 
-    <!-- Main Container -->
-    <div class="main-container">
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1>Dong Hyeon Kim</h1>
-                <p class="subtitle">Robotics Engineer & Researcher</p>
-                <p class="description">
-                    Passionate about advancing robotics through innovative control systems, multi-agent coordination, and neural network integration. Currently developing cutting-edge autonomous systems at Luxrobo.
-                </p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i>
-                        Get In Touch
-                    </a>
-                    <a href="#experience" class="btn btn-secondary">
-                        View My Work
-                    </a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="avatar">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <div class="floating-elements">
-                    <div class="floating-element">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <div class="floating-element">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="floating-element">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Research Position -->
+    <div class="experience-group">
+      <div class="company-header">
+        <h3>Advanced Control Systems Laboratory</h3>
+        <a href="https://control.korea.ac.kr/" class="company-link" target="_blank">
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <span class="position-title">Research Student</span>
+        <span class="company-name">Korea University</span>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-header">
+          <h4>Multi-Agent Systems Research</h4>
+          <span class="project-period">Feb. 2022 - Feb. 2024</span>
+        </div>
+        <div class="project-description">
+          <p>Advanced research in cooperative robotics and distributed systems</p>
+        </div>
+        <div class="project-focus">
+          <strong>Research Areas:</strong>
+          <ul>
+            <li>Multi-agent systems coordination</li>
+            <li>Control theory applications</li>
+            <li>State estimation algorithms</li>
+          </ul>
+        </div>
+        
+        <!-- Special Project Highlight -->
+        <div class="special-project">
+          <h5><i class="fas fa-star"></i> AI-based Cooperative Autonomous Swarm Anti-Drone System</h5>
+          <p>Development of AI-based cooperative autonomous swarm system for neutralizing illegal drones</p>
+        </div>
+      </div>
+    </div>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Professional Experience</h2>
-                <p class="section-subtitle">
-                    My journey through robotics engineering and research
-                </p>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Feb. 2024 - Present</div>
-                        <h3 class="timeline-title">Robotics Engineer</h3>
-                        <p class="timeline-company">Luxrobo</p>
-                        <p class="card-description">
-                            Developing autonomous systems and robotics solutions. Focus on advanced control algorithms and system integration for commercial robotics applications.
-                        </p>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
+    <!-- Other Positions -->
+    <div class="experience-grid">
+      <div class="experience-item">
+        <div class="experience-header">
+          <h4>Research Intern</h4>
+          <span class="experience-period">Jan. 2021 - Feb. 2021</span>
+        </div>
+        <div class="experience-company">
+          <strong>Robot Vision Lab, KIST</strong>
+          <a href="https://kistrobot.vision/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <p>Computer vision and robotics research experience at Korea Institute of Science and Technology</p>
+      </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Feb. 2022 - Feb. 2024</div>
-                        <h3 class="timeline-title">Research Student</h3>
-                        <p class="timeline-company">Advanced Control Systems Laboratory, Korea University</p>
-                        <p class="card-description">
-                            Conducted research on multi-agent systems, control theory, and estimation algorithms. Developed distributed localization systems for humanoid robots using neural networks.
-                        </p>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
+      <div class="experience-item">
+        <div class="experience-header">
+          <h4>Team Leader</h4>
+          <span class="experience-period">Jan. 2019 - Feb. 2022</span>
+        </div>
+        <div class="experience-company">
+          <strong>ROBIT - Robot Sports Game Team</strong>
+          <a href="https://robit.tistory.com" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <p>Led competitive robotics team specializing in humanoid robot development, achieving multiple international awards</p>
+        <div class="tech-stack">
+          <span class="tech-tag">Image Processing</span>
+          <span class="tech-tag">Localization</span>
+          <span class="tech-tag">Firmware</span>
+          <span class="tech-tag">Circuit Design</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Jan. 2021 - Feb. 2021</div>
-                        <h3 class="timeline-title">Research Intern</h3>
-                        <p class="timeline-company">Robot Vision Lab, KIST</p>
-                        <p class="card-description">
-                            Worked on computer vision and robotics projects. Gained hands-on experience with robot perception systems and vision-based control algorithms.
-                        </p>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
+  <!-- Education Section -->
+  <section id="education" class="cv-section">
+    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+    
+    <div class="education-grid">
+      <div class="education-card">
+        <div class="degree-icon masters">
+          <i class="fas fa-user-graduate"></i>
+        </div>
+        <div class="education-content">
+          <h3>Master of Science in Electrical Engineering</h3>
+          <div class="university">
+            <strong>Korea University</strong>
+            <a href="https://www.korea.edu/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+          <div class="education-period">Mar. 2022 - Feb. 2024</div>
+          <div class="thesis">
+            <strong>Thesis:</strong> "Fusion of Neural Networks and Finite Memory Estimation for Distributed Localization of Multiple Humanoid Robots"
+          </div>
+        </div>
+      </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Jan. 2019 - Feb. 2022</div>
-                        <h3 class="timeline-title">Team Member</h3>
-                        <p class="timeline-company">ROBIT - Robot Sports Game Team, Kwangwoon University</p>
-                        <p class="card-description">
-                            Specialized in image processing, localization, firmware development, and circuit design. Achieved multiple awards in RoboCup competitions and robot contests.
-                        </p>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
-            </div>
-        </section>
+      <div class="education-card">
+        <div class="degree-icon bachelors">
+          <i class="fas fa-robot"></i>
+        </div>
+        <div class="education-content">
+          <h3>Bachelor of Science in Robotics</h3>
+          <div class="university">
+            <strong>Kwangwoon University</strong>
+            <a href="https://www.kw.ac.kr/ko/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+          <div class="education-period">Mar. 2018 - Feb. 2022</div>
+          <div class="program">
+            <strong>Program:</strong> Division of Robotics
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Education Section -->
-        <section id="education" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Education</h2>
-                <p class="section-subtitle">
-                    Academic foundation in robotics and electrical engineering
-                </p>
-            </div>
-            
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3 class="card-title">Master of Science</h3>
-                    <p class="card-subtitle">Mar. 2022 - Feb. 2024</p>
-                    <h4 style="margin-bottom: 0.5rem;">Korea University</h4>
-                    <p style="margin-bottom: 1rem; color: var(--text-secondary);">Electrical Engineering</p>
-                    <p class="card-description">
-                        <strong>Thesis:</strong> "Fusion of Neural Networks and Finite Memory Estimation for Distributed Localization of Multiple Humanoid Robots"
-                    </p>
-                </div>
+  <!-- Skills Section -->
+  <section id="skills" class="cv-section">
+    <h2><i class="fas fa-tools"></i> Technical Expertise</h2>
+    
+    <div class="skills-grid">
+      <div class="skill-category">
+        <div class="skill-icon programming">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3>Programming Languages</h3>
+        <div class="skill-items">
+          <span class="skill-item expert">C++</span>
+          <span class="skill-item expert">Python</span>
+          <span class="skill-item advanced">C</span>
+          <span class="skill-item advanced">MATLAB</span>
+          <span class="skill-item intermediate">Go</span>
+        </div>
+      </div>
 
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="card-title">Bachelor of Science</h3>
-                    <p class="card-subtitle">Mar. 2018 - Feb. 2022</p>
-                    <h4 style="margin-bottom: 0.5rem;">Kwangwoon University</h4>
-                    <p style="margin-bottom: 1rem; color: var(--text-secondary);">Division of Robotics</p>
-                    <p class="card-description">
-                        Comprehensive education in robotics fundamentals, including mechanical design, control systems, programming, and artificial intelligence applications.
-                    </p>
-                </div>
-            </div>
-        </section>
+      <div class="skill-category">
+        <div class="skill-icon robotics">
+          <i class="fas fa-robot"></i>
+        </div>
+        <h3>Robotics & Control</h3>
+        <div class="skill-items">
+          <span class="skill-item expert">ROS/ROS2</span>
+          <span class="skill-item expert">MAVROS</span>
+          <span class="skill-item advanced">Kalman Filters</span>
+          <span class="skill-item advanced">PID Control</span>
+          <span class="skill-item intermediate">Gazebo</span>
+        </div>
+      </div>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Technical Skills</h2>
-                <p class="section-subtitle">
-                    Technologies and tools I work with
-                </p>
-            </div>
-            
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code" style="margin-right: 10px; color: var(--primary);"></i>Programming Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">MATLAB</span>
-                        <span class="skill-tag">Go</span>
-                    </div>
-                </div>
+      <div class="skill-category">
+        <div class="skill-icon ai">
+          <i class="fas fa-brain"></i>
+        </div>
+        <h3>AI & Computer Vision</h3>
+        <div class="skill-items">
+          <span class="skill-item expert">OpenCV</span>
+          <span class="skill-item advanced">Neural Networks</span>
+          <span class="skill-item advanced">CUDA</span>
+          <span class="skill-item intermediate">PyTorch</span>
+        </div>
+      </div>
 
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools" style="margin-right: 10px; color: var(--primary);"></i>Frameworks & Libraries</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">ROS</span>
-                        <span class="skill-tag">OpenCV</span>
-                        <span class="skill-tag">Qt</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">PyTorch</span>
-                    </div>
-                </div>
+      <div class="skill-category">
+        <div class="skill-icon database">
+          <i class="fas fa-database"></i>
+        </div>
+        <h3>Databases & Tools</h3>
+        <div class="skill-items">
+          <span class="skill-item advanced">MySQL</span>
+          <span class="skill-item advanced">Redis</span>
+          <span class="skill-item expert">Git</span>
+          <span class="skill-item advanced">Docker</span>
+          <span class="skill-item expert">Linux</span>
+        </div>
+      </div>
 
-                <div class="skill-category">
-                    <h3><i class="fas fa-cog" style="margin-right: 10px; color: var(--primary);"></i>Tools & Systems</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">MAVROS</span>
-                        <span class="skill-tag">Pixhawk</span>
-                    </div>
-                </div>
+      <div class="skill-category">
+        <div class="skill-icon hardware">
+          <i class="fas fa-microchip"></i>
+        </div>
+        <h3>Hardware & Embedded</h3>
+        <div class="skill-items">
+          <span class="skill-item advanced">RTK GPS</span>
+          <span class="skill-item advanced">STM32</span>
+          <span class="skill-item intermediate">Arduino</span>
+          <span class="skill-item intermediate">Pixhawk</span>
+        </div>
+      </div>
 
-                <div class="skill-category">
-                    <h3><i class="fas fa-brain" style="margin-right: 10px; color: var(--primary);"></i>Specializations</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Control Systems</span>
-                        <span class="skill-tag">Multi-Agent Systems</span>
-                        <span class="skill-tag">Neural Networks</span>
-                        <span class="skill-tag">Computer Vision</span>
-                        <span class="skill-tag">Localization</span>
-                        <span class="skill-tag">SLAM</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <div class="skill-category">
+        <div class="skill-icon specialized">
+          <i class="fas fa-satellite"></i>
+        </div>
+        <h3>Specialized Areas</h3>
+        <div class="skill-items">
+          <span class="skill-item expert">Multi-Agent Systems</span>
+          <span class="skill-item advanced">SLAM</span>
+          <span class="skill-item advanced">UAV Control</span>
+          <span class="skill-item intermediate">Swarm Robotics</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Publications Section -->
-        <section id="publications" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Publications</h2>
-                <p class="section-subtitle">
-                    Research contributions to the robotics community
-                </p>
-            </div>
-            
-            <div class="publication-item">
-                <div class="publication-number">Publication #1</div>
-                <p>D. H. Kim, J. M. Pak*, P. Shi, and C. K. Ahn*, "Finite-Memory Cooperative Localization Based on Multi-Sensor Information Fusion Using Neural Networks for Multiple Humanoid Robots," <em>IEEE Transactions on Industrial Electronics</em> (Under revision)</p>
-            </div>
+  <!-- Publications Section -->
+  <section id="publications" class="cv-section">
+    <h2><i class="fas fa-book-open"></i> Publications</h2>
+    
+    <div class="publications-list">
+      <div class="publication-item">
+        <div class="publication-journal">IEEE Transactions on Industrial Electronics</div>
+        <h4>Finite-Memory Cooperative Localization Based on Multi-Sensor Information Fusion Using Neural Networks for Multiple Humanoid Robots</h4>
+        <div class="publication-authors">
+          <strong>D. H. Kim</strong>, J. M. Pak*, P. Shi, and C. K. Ahn*
+        </div>
+        <div class="publication-details">
+          <span class="publication-status">In press</span>
+          <span class="publication-doi">DOI: 10.1109/TIE.2025.3600539</span>
+        </div>
+      </div>
 
-            <div class="publication-item">
-                <div class="publication-number">Publication #2</div>
-                <p>J. Y. Ko, J. M. Pak*, D. H. Kim, and C. K. Ahn*, "Secure Event-Triggered Distributed Finite-Memory Localization for Multiple Mobile Robots Under Cyberattacks," <em>IEEE Transactions on Industrial Electronics</em>, Vol. 71, No. 10, Oct. 2024, pp. 12931–12941.</p>
-            </div>
-        </section>
+      <div class="publication-item">
+        <div class="publication-journal">IEEE Transactions on Industrial Electronics</div>
+        <h4>Secure Event-Triggered Distributed Finite-Memory Localization for Multiple Mobile Robots Under Cyberattacks</h4>
+        <div class="publication-authors">
+          J. Y. Ko, J. M. Pak*, <strong>D. H. Kim</strong>, and C. K. Ahn*
+        </div>
+        <div class="publication-details">
+          <span class="publication-volume">Vol. 71, No. 10, Oct. 2024, pp. 12931–12941</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Awards Section -->
-        <section id="awards" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Awards & Achievements</h2>
-                <p class="section-subtitle">
-                    Recognition for excellence in robotics and innovation
-                </p>
-            </div>
-            
-            <div class="awards-grid">
-                <div class="award-item">
-                    <div class="award-rank">Grand Prize</div>
-                    <h4>Future Mobility Idea Competition</h4>
-                    <p>Korea Automotive Technology Institute (Sep. 2023)</p>
-                </div>
+  <!-- Awards Section -->
+  <section id="awards" class="cv-section">
+    <h2><i class="fas fa-award"></i> Awards & Achievements</h2>
+    
+    <div class="awards-timeline">
+      <div class="award-item grand-prize">
+        <div class="award-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">Grand Prize</div>
+          <h4>Future Mobility Idea Competition</h4>
+          <div class="award-organization">Korea Automotive Technology Institute</div>
+          <div class="award-date">September 2023</div>
+        </div>
+      </div>
 
-                <div class="award-item">
-                    <div class="award-rank">Grand Prize</div>
-                    <h4>17th ICT Exhibition (KWIX)</h4>
-                    <p>Kwangwoon University President Award (Sep. 2021)</p>
-                </div>
+      <div class="award-item grand-prize">
+        <div class="award-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">Grand Prize</div>
+          <h4>17th ICT Exhibition (KWIX)</h4>
+          <div class="award-organization">Kwangwoon University President Award</div>
+          <div class="award-date">September 2021</div>
+        </div>
+      </div>
 
-                <div class="award-item">
-                    <div class="award-rank">Grand Prize</div>
-                    <h4>International Robot Contest 2020</h4>
-                    <p>Presidential Prize - Humanoid Robot Sports (Nov. 2020)</p>
-                </div>
+      <div class="award-item grand-prize">
+        <div class="award-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">Grand Prize (Presidential Prize)</div>
+          <h4>International Robot Contest 2020</h4>
+          <div class="award-organization">Ministry of Trade, Industry and Energy</div>
+          <div class="award-date">November 2020</div>
+        </div>
+      </div>
 
-                <div class="award-item">
-                    <div class="award-rank">1st Place</div>
-                    <h4>RoboCup 2020 KoreaOpen</h4>
-                    <p>KIRIA Award - Humanoid S (Aug. 2020)</p>
-                </div>
+      <div class="award-item first-place">
+        <div class="award-icon">
+          <i class="fas fa-medal"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">First Place</div>
+          <h4>RoboCup 2020 KoreaOpen Humanoid S</h4>
+          <div class="award-organization">KIRIA Award</div>
+          <div class="award-date">August 2020</div>
+        </div>
+      </div>
 
-                <div class="award-item">
-                    <div class="award-rank">2nd Place</div>
-                    <h4>RoboCup 2019 Australia</h4>
-                    <p>Humanoid League TeenSize Drop-In Challenge (Jul. 2019)</p>
-                </div>
+      <div class="award-item second-place">
+        <div class="award-icon">
+          <i class="fas fa-medal"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">Second Place</div>
+          <h4>RoboCup 2019 Humanoid League TeenSize Drop-In Challenge</h4>
+          <div class="award-organization">Australia</div>
+          <div class="award-date">July 2019</div>
+        </div>
+      </div>
 
-                <div class="award-item">
-                    <div class="award-rank">1st Place</div>
-                    <h4>RoboCup 2019 KoreaOpen</h4>
-                    <p>Gangwon-do Governor Award - Humanoid S (Feb. 2019)</p>
-                </div>
-            </div>
-        </section>
+      <div class="award-item third-place">
+        <div class="award-icon">
+          <i class="fas fa-medal"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">Third Place</div>
+          <h4>RoboCup 2019 Humanoid League TeenSize Technical Challenge</h4>
+          <div class="award-organization">Australia</div>
+          <div class="award-date">July 2019</div>
+        </div>
+      </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Contact</h2>
-                <p class="section-subtitle">Get in touch with me</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <i class="contact-icon fas fa-envelope"></i>
-                    <h4>Email</h4>
-                    <p>ehdgus2210@gmail.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="contact-icon fab fa-github"></i>
-                    <h4>GitHub</h4>
-                    <p>github.com/donghyeon99</p>
-                </div>
-            </div>
-        </section>
+      <div class="award-item first-place">
+        <div class="award-icon">
+          <i class="fas fa-medal"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">First Place</div>
+          <h4>RoboCup 2019 KoreaOpen Humanoid S</h4>
+          <div class="award-organization">Gangwon-do Governor Award</div>
+          <div class="award-date">February 2019</div>
+        </div>
+      </div>
+
+      <div class="award-item third-place">
+        <div class="award-icon">
+          <i class="fas fa-medal"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">Third Place</div>
+          <h4>International Robot Contest 2020 Humanoid Robot Sports</h4>
+          <div class="award-organization">1st competition</div>
+          <div class="award-date">November 2020</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="cv-section">
+    <h2><i class="fas fa-code"></i> Key Projects</h2>
+    
+    <div class="projects-grid">
+      <div class="project-showcase">
+        <div class="project-image">
+          <i class="fas fa-robot"></i>
+        </div>
+        <div class="project-content">
+          <h4>Distributed Humanoid Localization</h4>
+          <div class="project-timeline">Jul. 2022 – Feb. 2024</div>
+          <p>Designed a robust localization algorithm for humanoid robots using finite-memory estimation and ANN-based odometry fusion.</p>
+          <div class="project-keywords">
+            <span class="keyword">Cooperative Localization</span>
+            <span class="keyword">Humanoid Robot</span>
+            <span class="keyword">Neural Network</span>
+            <span class="keyword">Finite-Memory Estimation</span>
+          </div>
+          <div class="project-links">
+            <a href="https://www.youtube.com/watch?v=ueaxI5FNc_w" target="_blank" class="demo-link">
+              <i class="fab fa-youtube"></i> Watch Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-showcase">
+        <div class="project-image">
+          <i class="fas fa-drone"></i>
+        </div>
+        <div class="project-content">
+          <h4>UAV Formation Control</h4>
+          <div class="project-timeline">Mar. 2022 – Feb. 2024</div>
+          <p>Implemented leader–follower UAV formation using virtual leader and sliding mode control, deployed on 3 real UAVs.</p>
+          <div class="project-keywords">
+            <span class="keyword">UAV</span>
+            <span class="keyword">Formation Control</span>
+            <span class="keyword">Sliding Mode Control</span>
+            <span class="keyword">ROS</span>
+            <span class="keyword">MAVROS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://www.youtube.com/watch?v=K2Jqm8zCsDo" target="_blank" class="demo-link">
+              <i class="fab fa-youtube"></i> Watch Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-showcase">
+        <div class="project-image">
+          <i class="fas fa-golf-ball"></i>
+        </div>
+        <div class="project-content">
+          <h4>Smart Caddy Robot</h4>
+          <div class="project-timeline">Jan. 2021 – Nov. 2021</div>
+          <p>Developed obstacle avoidance system for mapless navigation using deep reinforcement learning and active filtering.</p>
+          <div class="project-keywords">
+            <span class="keyword">Mapless Navigation</span>
+            <span class="keyword">Deep RL</span>
+            <span class="keyword">Obstacle Avoidance</span>
+            <span class="keyword">STM32</span>
+          </div>
+          <div class="project-links">
+            <a href="https://youtu.be/uAqilEhrqzE" target="_blank" class="demo-link">
+              <i class="fab fa-youtube"></i> Watch Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<style>
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-blue: #2c3e50;
+  --secondary-blue: #3498db;
+  --accent-blue: #5dade2;
+  --light-blue: #ebf3fd;
+  --success-green: #27ae60;
+  --warning-orange: #f39c12;
+  --error-red: #e74c3c;
+  --dark-text: #2c3e50;
+  --medium-text: #5d6d7e;
+  --light-text: #85929e;
+  --border-light: #ecf0f1;
+  --background: #ffffff;
+  --section-bg: #fafbfc;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-text);
+  background-color: var(--section-bg);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.profile-avatar i {
+  font-size: 3rem;
+  color: white;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.hero-contact {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.contact-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  color: white;
+}
+
+/* Navigation */
+.cv-nav {
+  position: sticky;
+  top: 0;
+  background: var(--background);
+  border-bottom: 1px solid var(--border-light);
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: var(--medium-text);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: var(--secondary-blue);
+  background: var(--light-blue);
+}
+
+/* Container */
+.cv-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Styles */
+.cv-section {
+  background: var(--background);
+  padding: 3rem;
+  margin-bottom: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.cv-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-light);
+}
+
+.cv-section h2 i {
+  color: var(--secondary-blue);
+}
+
+/* Experience Styles */
+.experience-group {
+  margin-bottom: 3rem;
+}
+
+.company-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--light-blue);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--secondary-blue);
+}
+
+.company-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: 0;
+}
+
+.company-link {
+  color: var(--secondary-blue);
+  font-size: 1rem;
+}
+
+.position-title {
+  background: var(--secondary-blue);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.company-name {
+  color: var(--medium-text);
+  font-style: italic;
+  margin-left: auto;
+}
+
+.project-card {
+  background: var(--background);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.project-card.current {
+  border-left: 4px solid var(--success-green);
+  background: linear-gradient(135deg, rgba(39, 174, 96, 0.05) 0%, rgba(39, 174, 96, 0.02) 100%);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.project-header h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin: 0;
+}
+
+.project-period {
+  background: var(--border-light);
+  color: var(--medium-text);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.project-description {
+  margin-bottom: 1.5rem;
+}
+
+.project-description p {
+  color: var(--medium-text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.project-focus ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-focus li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--medium-text);
+}
+
+.project-focus li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--secondary-blue);
+  font-weight: bold;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.tech-tag {
+  background: linear-gradient(135deg, var(--secondary-blue), var(--accent-blue));
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.special-project {
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.05) 0%, rgba(231, 76, 60, 0.02) 100%);
+  border: 1px solid rgba(231, 76, 60, 0.2);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.special-project h5 {
+  color: var(--error-red);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.special-project h5 i {
+  margin-right: 0.5rem;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.experience-item {
+  background: var(--background);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.experience-item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.experience-header h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin: 0;
+}
+
+.experience-period {
+  background: var(--border-light);
+  color: var(--medium-text);
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.experience-company {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.experience-company a {
+  color: var(--secondary-blue);
+}
+
+/* Education Styles */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.education-card {
+  display: flex;
+  gap: 1.5rem;
+  background: var(--background);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.education-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.degree-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.degree-icon.masters {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+}
+
+.degree-icon.bachelors {
+  background: linear-gradient(135deg, var(--warning-orange), #f8c471);
+}
+
+.degree-icon i {
+  font-size: 2rem;
+  color: white;
+}
+
+.education-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.university {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.university a {
+  color: var(--secondary-blue);
+}
+
+.education-period {
+  color: var(--medium-text);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.thesis, .program {
+  color: var(--medium-text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Skills Styles */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category {
+  background: var(--background);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.skill-category:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-5px);
+}
+
+.skill-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.skill-icon.programming {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.skill-icon.robotics {
+  background: linear-gradient(135deg, var(--secondary-blue), var(--accent-blue));
+}
+
+.skill-icon.ai {
+  background: linear-gradient(135deg, #ff6b6b, #feca57);
+}
+
+.skill-icon.database {
+  background: linear-gradient(135deg, var(--success-green), #58d68d);
+}
+
+.skill-icon.hardware {
+  background: linear-gradient(135deg, var(--warning-orange), #f8c471);
+}
+
+.skill-icon.specialized {
+  background: linear-gradient(135deg, #9b59b6, #bb6bd9);
+}
+
+.skill-icon i {
+  font-size: 2rem;
+  color: white;
+}
+
+.skill-category h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem;
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.skill-item {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--border-light);
+  background: var(--background);
+  transition: var(--transition);
+}
+
+.skill-item.expert {
+  background: linear-gradient(135deg, var(--success-green), #58d68d);
+  color: white;
+  border-color: var(--success-green);
+}
+
+.skill-item.advanced {
+  background: linear-gradient(135deg, var(--secondary-blue), var(--accent-blue));
+  color: white;
+  border-color: var(--secondary-blue);
+}
+
+.skill-item.intermediate {
+  background: var(--border-light);
+  color: var(--medium-text);
+}
+
+/* Publications Styles */
+.publications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.publication-item {
+  background: var(--background);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--secondary-blue);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.publication-item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.publication-journal {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.publication-item h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.publication-authors {
+  color: var(--medium-text);
+  margin-bottom: 1rem;
+}
+
+.publication-authors strong {
+  color: var(--primary-blue);
+}
+
+.publication-details {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.publication-status,
+.publication-doi,
+.publication-volume {
+  background: var(--border-light);
+  color: var(--medium-text);
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Awards Styles */
+.awards-timeline {
+  position: relative;
+}
+
+.awards-timeline::before {
+  content: '';
+  position: absolute;
+  left: 2rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--secondary-blue), var(--accent-blue));
+}
+
+.award-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.award-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.award-item.grand-prize .award-icon {
+  background: linear-gradient(135deg, var(--warning-orange), #f8c471);
+}
+
+.award-item.first-place .award-icon {
+  background: linear-gradient(135deg, #f1c40f, #f39c12);
+}
+
+.award-item.second-place .award-icon {
+  background: linear-gradient(135deg, #bdc3c7, #95a5a6);
+}
+
+.award-item.third-place .award-icon {
+  background: linear-gradient(135deg, #cd853f, #d2b48c);
+}
+
+.award-icon i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.award-content {
+  background: var(--background);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  flex: 1;
+  transition: var(--transition);
+}
+
+.award-content:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.award-rank {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.award-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.award-organization {
+  color: var(--medium-text);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.award-date {
+  color: var(--light-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Projects Styles */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.project-showcase {
+  background: var(--background);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.project-showcase:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+}
+
+.project-image {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-image i {
+  font-size: 3rem;
+  color: white;
+}
+
+.project-content {
+  padding: 2rem;
+}
+
+.project-content h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.project-timeline {
+  color: var(--medium-text);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.project-content p {
+  color: var(--medium-text);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.project-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.keyword {
+  background: var(--light-blue);
+  color: var(--secondary-blue);
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.project-links {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.demo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--error-red);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.demo-link:hover {
+  color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .cv-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .cv-container {
+    padding: 0 1rem;
+  }
+  
+  .nav-container {
+    padding: 0 1rem;
+  }
+  
+  .company-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .award-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .awards-timeline::before {
+    display: none;
+  }
+  
+  .education-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 0 1rem;
+  }
+  
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .profile-avatar i {
+    font-size: 2.5rem;
+  }
+  
+  .hero-contact {
+    flex-direction: column;
+  }
+  
+  .nav-container {
+    gap: 0.25rem;
+  }
+  
+  .nav-item {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .nav-item span {
+    display: none;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Smooth scrolling navigation
+  const navLinks = document.querySelectorAll('.nav-item');
+  const sections = document.querySelectorAll('.cv-section');
+
+  // Navigation click handlers
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      
+      if (targetSection) {
+        const offsetTop = targetSection.offsetTop - 100;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Active navigation highlighting
+  function updateActiveNav() {
+    const scrollPosition = window.scrollY + 150;
+    
+    sections.forEach((section, index) => {
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      const sectionId = section.getAttribute('id');
+      const correspondingNavLink = document.querySelector(`a[href="#${sectionId}"]`);
+      
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        if (correspondingNavLink) {
+          correspondingNavLink.classList.add('active');
+        }
+      }
+    });
+  }
+
+  // Scroll event listener for active nav
+  window.addEventListener('scroll', updateActiveNav);
+  
+  // Initial call
+  updateActiveNav();
+
+  // Intersection Observer for animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // Observe all animated elements
+  const animatedElements = document.querySelectorAll('.project-card, .education-card, .skill-category, .publication-item, .award-item, .project-showcase');
+  animatedElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+});
+</script>

@@ -6,6 +6,29 @@ permalink: /cv/
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<!-- Hero Section -->
+<div class="hero-header">
+  <div class="hero-content">
+    <div class="profile-section">
+      <div class="profile-avatar">
+        <i class="fas fa-robot"></i>
+      </div>
+      <div class="profile-info">
+        <h1 class="profile-name">Dong Hyeon Kim</h1>
+        <p class="profile-title">Robotics & Control Engineer</p>
+        <div class="profile-contact">
+          <a href="mailto:ehdgus2210@gmail.com" class="contact-link">
+            <i class="fas fa-envelope"></i> ehdgus2210@gmail.com
+          </a>
+          <a href="https://github.com/donghyeon99" class="contact-link" target="_blank">
+            <i class="fab fa-github"></i> github.com/donghyeon99
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Navigation Bar -->
 <nav class="cv-nav">
   <ul>
@@ -47,8 +70,20 @@ permalink: /cv/
       <h3>Luxrobo <a href="https://luxrobo.com/">[site]</a></h3>
       <div class="cv-details">
         <p><strong>Position:</strong> Robotics Engineer</p>
-        <p><strong>Period:</strong> Feb. 2024 - Present</p>
-        <p><strong>Focus:</strong> Robotics, Autonomous Systems</p>
+        
+        <div style="margin-top: 1rem; padding-left: 1rem; border-left: 2px solid #3498db;">
+          <p><strong>Period:</strong> Mar. 2025 - Present</p>
+          <p><strong>Project:</strong> Autonomous Golf Cart</p>
+          <p><strong>Focus:</strong> RTK GPS Autonomous Driving System, firmware development, Extended Kalman Filter, PID control, bicycle model</p>
+          <p><strong>Technologies:</strong> <code>C</code>, <code>RTK GPS</code>, <code>Extended Kalman Filter</code>, <code>PID Control</code>, <code>Bicycle Model</code></p>
+        </div>
+        
+        <div style="margin-top: 1rem; padding-left: 1rem; border-left: 2px solid #95a5a6;">
+          <p><strong>Period:</strong> May 2024 - Mar. 2025</p>
+          <p><strong>Project:</strong> Smart Parking System</p>
+          <p><strong>Focus:</strong> Image Processing Server, light control server</p>
+          <p><strong>Technologies:</strong> <code>Redis</code>, <code>MySQL</code>, <code>C++</code>, <code>Go</code>, <code>OpenCV</code>, <code>CUDA</code></p>
+        </div>
       </div>
     </div>
 
@@ -58,6 +93,10 @@ permalink: /cv/
         <p><strong>Institution:</strong> Korea University</p>
         <p><strong>Period:</strong> Feb. 2022 - Feb. 2024</p>
         <p><strong>Research Areas:</strong> Multi-agent systems, Control theory, Estimation</p>
+        <div style="margin-top: 1rem; padding-left: 1rem; border-left: 2px solid #95a5a6;">
+          <p><strong>Key Project:</strong> AI-based Cooperative Autonomous Swarm Anti-Drone System</p>
+          <p><strong>Description:</strong> Development of AI-based cooperative autonomous swarm system for neutralizing illegal drones</p>
+        </div>
       </div>
     </div>
 
@@ -71,7 +110,7 @@ permalink: /cv/
     </div>
 
     <div class="cv-item">
-      <h3>Robot Sports Game Team: ROBIT</h3>
+      <h3>Robot Sports Game Team: ROBIT <a href="https://robit.tistory.com">[site]</a></h3>
       <div class="cv-details">
         <p><strong>Institution:</strong> Kwangwoon University</p>
         <p><strong>Period:</strong> Jan. 2019 - Feb. 2022</p>
@@ -129,30 +168,101 @@ permalink: /cv/
 
   <div class="cv-section" id="awards">
     <h2><i class="fas fa-award"></i> Awards</h2>
-    <div class="awards">
-      <div class="award-item">
-        <p><strong class="highlight">Grand Prize</strong>, Future Mobility Idea Competition, Korea Automotive Technology Institute, Korea (Sep. 2023)</p>
+    <div class="awards-timeline">
+      <div class="award-timeline-item grand-prize">
+        <div class="award-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">Grand Prize</div>
+          <h4>Future Mobility Idea Competition</h4>
+          <div class="award-organization">Korea Automotive Technology Institute, Korea</div>
+          <div class="award-date">September 2023</div>
+        </div>
       </div>
-      <div class="award-item">
-        <p><strong class="highlight">Grand Prize (Kwangwoon University President Award)</strong>, 17th ICT Exhibition (KWIX), Kwangwoon University, Korea (Sep. 2021)</p>
+
+      <div class="award-timeline-item grand-prize">
+        <div class="award-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">Grand Prize</div>
+          <h4>17th ICT Exhibition (KWIX)</h4>
+          <div class="award-organization">Kwangwoon University President Award, Korea</div>
+          <div class="award-date">September 2021</div>
+        </div>
       </div>
-      <div class="award-item">
-        <p><strong>Grand Prize (Presidential Prize)</strong>, International Robot Contest 2020 Humanoid Robot Sports, Ministry of Trade, Industry and Energy, Korea (Nov. 2020)</p>
+
+      <div class="award-timeline-item grand-prize">
+        <div class="award-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">Grand Prize (Presidential Prize)</div>
+          <h4>International Robot Contest 2020 Humanoid Robot Sports</h4>
+          <div class="award-organization">Ministry of Trade, Industry and Energy, Korea</div>
+          <div class="award-date">November 2020</div>
+        </div>
       </div>
-      <div class="award-item">
-        <p><strong class="highlight">First Place (KIRIA Award)</strong>, RoboCup 2020 KoreaOpen Humanoid S, Korea (Aug. 2020)</p>
+
+      <div class="award-timeline-item first-place">
+        <div class="award-icon">
+          <i class="fas fa-medal"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">First Place</div>
+          <h4>RoboCup 2020 KoreaOpen Humanoid S</h4>
+          <div class="award-organization">KIRIA Award, Korea</div>
+          <div class="award-date">August 2020</div>
+        </div>
       </div>
-      <div class="award-item">
-        <p><strong>Third Place</strong>, International Robot Contest 2020 Humanoid Robot Sports (1st competition), Korea (Nov. 2020)</p>
+
+      <div class="award-timeline-item third-place">
+        <div class="award-icon">
+          <i class="fas fa-medal"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">Third Place</div>
+          <h4>International Robot Contest 2020 Humanoid Robot Sports</h4>
+          <div class="award-organization">1st competition, Korea</div>
+          <div class="award-date">November 2020</div>
+        </div>
       </div>
-      <div class="award-item">
-        <p><strong>Second Place</strong>, RoboCup 2019 Humanoid League TeenSize Drop-In Challenge, Australia (Jul. 2019)</p>
+
+      <div class="award-timeline-item second-place">
+        <div class="award-icon">
+          <i class="fas fa-medal"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">Second Place</div>
+          <h4>RoboCup 2019 Humanoid League TeenSize Drop-In Challenge</h4>
+          <div class="award-organization">Australia</div>
+          <div class="award-date">July 2019</div>
+        </div>
       </div>
-      <div class="award-item">
-        <p><strong>Third Place</strong>, RoboCup 2019 Humanoid League TeenSize Technical Challenge, Australia (Jul. 2019)</p>
+
+      <div class="award-timeline-item third-place">
+        <div class="award-icon">
+          <i class="fas fa-medal"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">Third Place</div>
+          <h4>RoboCup 2019 Humanoid League TeenSize Technical Challenge</h4>
+          <div class="award-organization">Australia</div>
+          <div class="award-date">July 2019</div>
+        </div>
       </div>
-      <div class="award-item">
-        <p><strong class="highlight">First Place (Gangwon-do Governor Award)</strong>, RoboCup 2019 KoreaOpen Humanoid S, Korea (Feb. 2019)</p>
+
+      <div class="award-timeline-item first-place">
+        <div class="award-icon">
+          <i class="fas fa-medal"></i>
+        </div>
+        <div class="award-content">
+          <div class="award-rank">First Place</div>
+          <h4>RoboCup 2019 KoreaOpen Humanoid S</h4>
+          <div class="award-organization">Gangwon-do Governor Award, Korea</div>
+          <div class="award-date">February 2019</div>
+        </div>
       </div>
     </div>
   </div>
@@ -181,7 +291,7 @@ permalink: /cv/
     </button>
     <div class="accordion-body">
       <p><strong>Period:</strong> Mar. 2022 – Feb. 2024</p>
-      <p><strong>Summary:</strong> Implemented leader–follower UAV formation using virtual leader and sliding mode control, deployed on 3 real UAVs with ROS, MAVROS, and Pixhawk.</p>
+      <p><strong>Summary:</strong> Implemented leader-follower UAV formation using virtual leader and sliding mode control, deployed on 3 real UAVs with ROS, MAVROS, and Pixhawk.</p>
       <p><strong>Keywords:</strong> UAV, Formation Control, Virtual Leader, Sliding Mode Control, ROS, MAVROS, Pixhawk</p>
       <p><a href="https://www.youtube.com/watch?v=K2Jqm8zCsDo" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a></p>
     </div>
@@ -216,6 +326,94 @@ permalink: /cv/
 <style>
 html {
   scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero-header {
+  background: #4a5568;
+  color: white;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: left;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.profile-avatar i {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.profile-name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  color: #ffffffd0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.profile-title {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.profile-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.contact-link:hover {
+  color: #ecf0f1;
+  transform: translateX(5px);
+}
+
+.contact-link i {
+  font-size: 1.1rem;
 }
 
 .cv-nav {
@@ -349,6 +547,108 @@ html {
   color: #2c3e50;
 }
 
+/* Awards Timeline Styles */
+.awards-timeline {
+  position: relative;
+}
+
+.awards-timeline::before {
+  content: '';
+  position: absolute;
+  left: 1.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #3498db, #5dade2);
+}
+
+.award-timeline-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.award-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.award-timeline-item.grand-prize .award-icon {
+  background: linear-gradient(135deg, #f39c12, #f8c471);
+}
+
+.award-timeline-item.first-place .award-icon {
+  background: linear-gradient(135deg, #f1c40f, #f39c12);
+}
+
+.award-timeline-item.second-place .award-icon {
+  background: linear-gradient(135deg, #bdc3c7, #95a5a6);
+}
+
+.award-timeline-item.third-place .award-icon {
+  background: linear-gradient(135deg, #cd853f, #d2b48c);
+}
+
+.award-icon i {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.award-content {
+  background: #ffffff;
+  border: 1px solid #ecf0f1;
+  border-radius: 6px;
+  padding: 1rem;
+  flex: 1;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.award-content:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.award-rank {
+  background: linear-gradient(135deg, #2a77aaff, #2a77aaff);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+
+.award-content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.4rem;
+  margin-top: 0;
+}
+
+.award-organization {
+  color: #5d6d7e;
+  font-size: 0.9rem;
+  margin-bottom: 0.1rem;
+}
+
+.award-date {
+  color: #85929e;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
 /* Accordion (Projects) */
 .accordion-item {
   margin-bottom: 0.75rem;
@@ -398,6 +698,58 @@ html {
 
 .accordion-item.active .toggle-icon {
   transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .hero-header {
+    padding: 2rem 0;
+  }
+  
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .profile-name {
+    font-size: 2rem;
+  }
+  
+  .profile-title {
+    font-size: 1.1rem;
+  }
+  
+  .award-timeline-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .awards-timeline::before {
+    display: none;
+  }
+  
+  .award-content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 0 1rem;
+  }
+  
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .profile-avatar i {
+    font-size: 2rem;
+  }
+  
+  .profile-name {
+    font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 600px) {
