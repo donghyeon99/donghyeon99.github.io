@@ -902,3 +902,23 @@ permalink: /cv2/
                 </div>
             </div>
         </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Contact</h2>
+                <p class="section-subtitle">Get in touch with me</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="contact-icon fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p>ehdgus2210@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="contact-icon fab fa-github"></i>
+                    <h4>GitHub</h4>
+                    <p>github.com/donghyeon99</p>
+                </div>
+            </div>
+        </section>

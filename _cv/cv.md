@@ -118,7 +118,7 @@ permalink: /cv/
     <h2><i class="fas fa-book-open"></i> Publications</h2>
     <div class="publications">
       <div class="publication-item">
-        <p>1. D. H. Kim, J. M. Pak*, P. Shi, and C. K. Ahn*, "Finite-Memory Cooperative Localization Based on Multi-Sensor Information Fusion Using Neural Networks for Multiple Humanoid Robots," <em>IEEE Transactions on Industrial Electronics</em> (Under revision)</p>
+        <p>1. D. H. Kim, J. M. Pak*, P. Shi, and C. K. Ahn*, "Finite-Memory Cooperative Localization Based on Multi-Sensor Information Fusion Using Neural Networks for Multiple Humanoid Robots," <em>IEEE Transactions on Industrial Electronics</em> (In press, DOI:10.1109/TIE.2025.3600539)</p>
       </div>
       <div class="publication-item">
         <p>2. J. Y. Ko, J. M. Pak*, D. H. Kim, and C. K. Ahn*, "Secure Event-Triggered Distributed Finite-Memory Localization for Multiple Mobile Robots Under Cyberattacks," <em>IEEE Transactions on Industrial Electronics</em>, Vol. 71, No. 10, Oct. 2024, pp. 12931–12941.</p>
