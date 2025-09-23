@@ -6,6 +6,13 @@ permalink: /cv/
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<!-- Language Toggle -->
+<div class="language-toggle">
+  <button class="lang-btn active" data-lang="en">ENG</button>
+  <span class="lang-separator">|</span>
+  <button class="lang-btn" data-lang="ko">KOR</button>
+</div>
+
 <!-- Hero Section -->
 <div class="hero-header">
   <div class="hero-content">
@@ -14,8 +21,8 @@ permalink: /cv/
         <i class="fas fa-robot"></i>
       </div>
       <div class="profile-info">
-        <h1 class="profile-name">Dong Hyeon Kim</h1>
-        <p class="profile-title">Robotics & Control Engineer</p>
+        <h1 class="profile-name" data-i18n="profile.name">Dong Hyeon Kim</h1>
+        <p class="profile-title" data-i18n="profile.title">Robotics & Control Engineer</p>
         <div class="profile-contact">
           <a href="mailto:ehdgus2210@gmail.com" class="contact-link">
             <i class="fas fa-envelope"></i> ehdgus2210@gmail.com
@@ -32,99 +39,99 @@ permalink: /cv/
 <!-- Navigation Bar -->
 <nav class="cv-nav">
   <ul>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#awards">Awards</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#education" data-i18n="nav.education">Education</a></li>
+    <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+    <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+    <li><a href="#publications" data-i18n="nav.publications">Publications</a></li>
+    <li><a href="#awards" data-i18n="nav.awards">Awards</a></li>
+    <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
   </ul>
 </nav>
 
 <div class="cv-container">
   <div class="cv-section" id="education">
-    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+    <h2><i class="fas fa-graduation-cap"></i> <span data-i18n="sections.education">Education</span></h2>
     <div class="cv-item">
-      <h3>Korea University <a href="https://www.korea.edu/">[site]</a></h3>
+      <h3><span data-i18n="education.korea.name">Korea University</span> <a href="https://www.korea.edu/">[site]</a></h3>
       <div class="cv-details">
-        <p><strong>Major:</strong> Electrical Engineering (M.S.)</p>
-        <p><strong>Period:</strong> Mar. 2022 - Feb. 2024</p>
-        <p><strong>Thesis:</strong> "Fusion of Neural Networks and Finite Memory Estimation for Distributed Localization of Multiple Humanoid Robots"</p>
+        <p><strong data-i18n="education.labels.major">Major:</strong> <span data-i18n="education.korea.major">Electrical Engineering (M.S.)</span></p>
+        <p><strong data-i18n="education.labels.period">Period:</strong> <span data-i18n="education.korea.period">Mar. 2022 - Feb. 2024</span></p>
+        <p><strong data-i18n="education.labels.thesis">Thesis:</strong> <span data-i18n="education.korea.thesis">"Fusion of Neural Networks and Finite Memory Estimation for Distributed Localization of Multiple Humanoid Robots"</span></p>
       </div>
     </div>
 
     <div class="cv-item">
-      <h3>Kwangwoon University <a href="https://www.kw.ac.kr/ko/">[site]</a></h3>
+      <h3><span data-i18n="education.kwangwoon.name">Kwangwoon University</span> <a href="https://www.kw.ac.kr/ko/">[site]</a></h3>
       <div class="cv-details">
-        <p><strong>Major:</strong> Division of Robotics</p>
-        <p><strong>Period:</strong> Mar. 2018 - Feb. 2022</p>
-        <p><strong>Degree:</strong> B.S. in Robotics</p>
+        <p><strong data-i18n="education.labels.major">Major:</strong> <span data-i18n="education.kwangwoon.major">Division of Robotics</span></p>
+        <p><strong data-i18n="education.labels.period">Period:</strong> <span data-i18n="education.kwangwoon.period">Mar. 2018 - Feb. 2022</span></p>
+        <p><strong data-i18n="education.labels.degree">Degree:</strong> <span data-i18n="education.kwangwoon.degree">B.S. in Robotics</span></p>
       </div>
     </div>
   </div>
 
   <div class="cv-section" id="experience">
-    <h2><i class="fas fa-briefcase"></i> Experience</h2>
+    <h2><i class="fas fa-briefcase"></i> <span data-i18n="sections.experience">Experience</span></h2>
     <div class="cv-item">
       <h3>Luxrobo <a href="https://luxrobo.com/">[site]</a></h3>
       <div class="cv-details">
-        <p><strong>Position:</strong> Robotics Engineer</p>
+        <p><strong data-i18n="experience.labels.position">Position:</strong> <span data-i18n="experience.luxrobo.position">Robotics Engineer</span></p>
         
         <div style="margin-top: 1rem; padding-left: 1rem; border-left: 2px solid #3498db;">
-          <p><strong>Period:</strong> Mar. 2025 - Present</p>
-          <p><strong>Project:</strong> Autonomous Golf Cart</p>
-          <p><strong>Focus:</strong> RTK GPS Autonomous Driving System, firmware development, Extended Kalman Filter, PID control, bicycle model</p>
+          <p><strong data-i18n="experience.labels.period">Period:</strong> <span data-i18n="experience.luxrobo.period1">Mar. 2025 - Present</span></p>
+          <p><strong data-i18n="experience.labels.project">Project:</strong> <span data-i18n="experience.luxrobo.project1">Autonomous Golf Cart</span></p>
+          <p><strong data-i18n="experience.labels.focus">Focus:</strong> <span data-i18n="experience.luxrobo.focus1">RTK GPS Autonomous Driving System, firmware development, Extended Kalman Filter, PID control, bicycle model</span></p>
           <p><strong>Technologies:</strong> <code>C</code>, <code>RTK GPS</code>, <code>Extended Kalman Filter</code>, <code>PID Control</code>, <code>Bicycle Model</code></p>
         </div>
         
         <div style="margin-top: 1rem; padding-left: 1rem; border-left: 2px solid #95a5a6;">
-          <p><strong>Period:</strong> May 2024 - Mar. 2025</p>
-          <p><strong>Project:</strong> Smart Parking System</p>
-          <p><strong>Focus:</strong> Image Processing Server, light control server</p>
+          <p><strong data-i18n="experience.labels.period">Period:</strong> <span data-i18n="experience.luxrobo.period2">May 2024 - Mar. 2025</span></p>
+          <p><strong data-i18n="experience.labels.project">Project:</strong> <span data-i18n="experience.luxrobo.project2">Smart Parking System</span></p>
+          <p><strong data-i18n="experience.labels.focus">Focus:</strong> <span data-i18n="experience.luxrobo.focus2">Image Processing Server, light control server</span></p>
           <p><strong>Technologies:</strong> <code>Redis</code>, <code>MySQL</code>, <code>C++</code>, <code>Go</code>, <code>OpenCV</code>, <code>CUDA</code></p>
         </div>
       </div>
     </div>
 
     <div class="cv-item">
-      <h3>Research Student at Advanced Control Systems Laboratory <a href="https://control.korea.ac.kr/">[site]</a></h3>
+      <h3><span data-i18n="experience.research.title">Research Student at Advanced Control Systems Laboratory</span> <a href="https://control.korea.ac.kr/">[site]</a></h3>
       <div class="cv-details">
-        <p><strong>Institution:</strong> Korea University</p>
-        <p><strong>Period:</strong> Feb. 2022 - Feb. 2024</p>
-        <p><strong>Research Areas:</strong> Multi-agent systems, Control theory, Estimation</p>
+        <p><strong data-i18n="experience.labels.institution">Institution:</strong> <span data-i18n="experience.research.institution">Korea University</span></p>
+        <p><strong data-i18n="experience.labels.period">Period:</strong> <span data-i18n="experience.research.period">Feb. 2022 - Feb. 2024</span></p>
+        <p><strong data-i18n="experience.labels.research">Research Areas:</strong> <span data-i18n="experience.research.areas">Multi-agent systems, Control theory, Estimation</span></p>
         <div style="margin-top: 1rem; padding-left: 1rem; border-left: 2px solid #95a5a6;">
-          <p><strong>Key Project:</strong> AI-based Cooperative Autonomous Swarm Anti-Drone System</p>
-          <p><strong>Description:</strong> Development of AI-based cooperative autonomous swarm system for neutralizing illegal drones</p>
+          <p><strong data-i18n="experience.labels.keyproject">Key Project:</strong> <span data-i18n="experience.research.project">AI-based Cooperative Autonomous Swarm Anti-Drone System</span></p>
+          <p><strong data-i18n="experience.labels.description">Description:</strong> <span data-i18n="experience.research.description">Development of AI-based cooperative autonomous swarm system for neutralizing illegal drones</span></p>
         </div>
       </div>
     </div>
 
     <div class="cv-item">
-      <h3>Internship at Robot Vision Lab <a href="https://kistrobot.vision/">[site]</a></h3>
+      <h3><span data-i18n="experience.kist.title">Internship at Robot Vision Lab</span> <a href="https://kistrobot.vision/">[site]</a></h3>
       <div class="cv-details">
-        <p><strong>Institution:</strong> Korea Institute of Science and Technology (KIST)</p>
-        <p><strong>Period:</strong> Jan. 2021 - Feb. 2021</p>
-        <p><strong>Focus:</strong> Computer vision, Robotics</p>
+        <p><strong data-i18n="experience.labels.institution">Institution:</strong> <span data-i18n="experience.kist.institution">Korea Institute of Science and Technology (KIST)</span></p>
+        <p><strong data-i18n="experience.labels.period">Period:</strong> <span data-i18n="experience.kist.period">Jan. 2021 - Feb. 2021</span></p>
+        <p><strong data-i18n="experience.labels.focus">Focus:</strong> <span data-i18n="experience.kist.focus">Computer vision, Robotics</span></p>
       </div>
     </div>
 
     <div class="cv-item">
-      <h3>Robot Sports Game Team: ROBIT <a href="https://robit.tistory.com">[site]</a></h3>
+      <h3><span data-i18n="experience.robit.title">Robot Sports Game Team: ROBIT</span> <a href="https://robit.tistory.com">[site]</a></h3>
       <div class="cv-details">
-        <p><strong>Institution:</strong> Kwangwoon University</p>
-        <p><strong>Period:</strong> Jan. 2019 - Feb. 2022</p>
-        <p><strong>Responsibilities:</strong> Image processing, Localization, Firmware, Circuit design</p>
-        <p><strong>Achievements:</strong> Multiple RoboCup and Robot Contest awards</p>
+        <p><strong data-i18n="experience.labels.institution">Institution:</strong> <span data-i18n="experience.robit.institution">Kwangwoon University</span></p>
+        <p><strong data-i18n="experience.labels.period">Period:</strong> <span data-i18n="experience.robit.period">Jan. 2019 - Feb. 2022</span></p>
+        <p><strong data-i18n="experience.labels.responsibilities">Responsibilities:</strong> <span data-i18n="experience.robit.responsibilities">Image processing, Localization, Firmware, Circuit design</span></p>
+        <p><strong data-i18n="experience.labels.achievements">Achievements:</strong> <span data-i18n="experience.robit.achievements">Multiple RoboCup and Robot Contest awards</span></p>
       </div>
     </div>
   </div>
 
   <div class="cv-section" id="skills">
-    <h2><i class="fas fa-tools"></i> Technical Skills</h2>
+    <h2><i class="fas fa-tools"></i> <span data-i18n="sections.skills">Technical Skills</span></h2>
     <div class="skills-container">
       <div class="skills-category">
-        <h3>Programming Languages</h3>
+        <h3 data-i18n="skills.programming">Programming Languages</h3>
         <div class="badges">
           <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++">
           <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
@@ -134,7 +141,7 @@ permalink: /cv/
       </div>
 
       <div class="skills-category">
-        <h3>Frameworks & Libraries</h3>
+        <h3 data-i18n="skills.frameworks">Frameworks & Libraries</h3>
         <div class="badges">
           <img src="https://img.shields.io/badge/ROS-22314E?style=for-the-badge&logo=ros&logoColor=white" alt="ROS">
           <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV">
@@ -143,7 +150,7 @@ permalink: /cv/
       </div>
 
       <div class="skills-category">
-        <h3>Tools & Environments</h3>
+        <h3 data-i18n="skills.tools">Tools & Environments</h3>
         <div class="badges">
           <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
           <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
@@ -154,7 +161,7 @@ permalink: /cv/
   </div>
 
   <div class="cv-section" id="publications">
-    <h2><i class="fas fa-book-open"></i> Publications</h2>
+    <h2><i class="fas fa-book-open"></i> <span data-i18n="sections.publications">Publications</span></h2>
     <div class="publications">
       <div class="publication-item">
         <p>1. D. H. Kim, J. M. Pak*, P. Shi, and C. K. Ahn*, "Finite-Memory Cooperative Localization Based on Multi-Sensor Information Fusion Using Neural Networks for Multiple Humanoid Robots," <em>IEEE Transactions on Industrial Electronics</em> (Early Access, DOI:10.1109/TIE.2025.3600539)</p>
@@ -167,17 +174,17 @@ permalink: /cv/
 
 
   <div class="cv-section" id="awards">
-    <h2><i class="fas fa-award"></i> Awards</h2>
+    <h2><i class="fas fa-award"></i> <span data-i18n="sections.awards">Awards</span></h2>
     <div class="awards-timeline">
       <div class="award-timeline-item grand-prize">
         <div class="award-icon">
           <i class="fas fa-trophy"></i>
         </div>
         <div class="award-content">
-          <div class="award-rank">Grand Prize</div>
-          <h4>Future Mobility Idea Competition</h4>
-          <div class="award-organization">Korea Automotive Technology Institute, Korea</div>
-          <div class="award-date">September 2023</div>
+          <div class="award-rank" data-i18n="awards.grand">Grand Prize</div>
+          <h4 data-i18n="awards.mobility">Future Mobility Idea Competition</h4>
+          <div class="award-organization" data-i18n="awards.mobility.org">Korea Automotive Technology Institute, Korea</div>
+          <div class="award-date" data-i18n="awards.mobility.date">September 2023</div>
         </div>
       </div>
 
@@ -186,10 +193,10 @@ permalink: /cv/
           <i class="fas fa-trophy"></i>
         </div>
         <div class="award-content">
-          <div class="award-rank">Grand Prize</div>
-          <h4>17th ICT Exhibition (KWIX)</h4>
-          <div class="award-organization">Kwangwoon University President Award, Korea</div>
-          <div class="award-date">September 2021</div>
+          <div class="award-rank" data-i18n="awards.grand">Grand Prize</div>
+          <h4 data-i18n="awards.kwix">17th ICT Exhibition (KWIX)</h4>
+          <div class="award-organization" data-i18n="awards.kwix.org">Kwangwoon University President Award, Korea</div>
+          <div class="award-date" data-i18n="awards.kwix.date">September 2021</div>
         </div>
       </div>
 
@@ -198,10 +205,10 @@ permalink: /cv/
           <i class="fas fa-trophy"></i>
         </div>
         <div class="award-content">
-          <div class="award-rank">Grand Prize (Presidential Prize)</div>
-          <h4>International Robot Contest 2020 Humanoid Robot Sports</h4>
-          <div class="award-organization">Ministry of Trade, Industry and Energy, Korea</div>
-          <div class="award-date">November 2020</div>
+          <div class="award-rank" data-i18n="awards.presidential">Grand Prize (Presidential Prize)</div>
+          <h4 data-i18n="awards.irc2020.humanoid">International Robot Contest 2020 Humanoid Robot Sports</h4>
+          <div class="award-organization" data-i18n="awards.irc2020.org">Ministry of Trade, Industry and Energy, Korea</div>
+          <div class="award-date" data-i18n="awards.irc2020.date">November 2020</div>
         </div>
       </div>
 
@@ -210,10 +217,10 @@ permalink: /cv/
           <i class="fas fa-medal"></i>
         </div>
         <div class="award-content">
-          <div class="award-rank">First Place</div>
-          <h4>RoboCup 2020 KoreaOpen Humanoid S</h4>
-          <div class="award-organization">KIRIA Award, Korea</div>
-          <div class="award-date">August 2020</div>
+          <div class="award-rank" data-i18n="awards.first">First Place</div>
+          <h4 data-i18n="awards.robocup2020">RoboCup 2020 KoreaOpen Humanoid S</h4>
+          <div class="award-organization" data-i18n="awards.robocup2020.org">KIRIA Award, Korea</div>
+          <div class="award-date" data-i18n="awards.robocup2020.date">August 2020</div>
         </div>
       </div>
 
@@ -222,10 +229,10 @@ permalink: /cv/
           <i class="fas fa-medal"></i>
         </div>
         <div class="award-content">
-          <div class="award-rank">Third Place</div>
-          <h4>International Robot Contest 2020 Humanoid Robot Sports</h4>
-          <div class="award-organization">1st competition, Korea</div>
-          <div class="award-date">November 2020</div>
+          <div class="award-rank" data-i18n="awards.third">Third Place</div>
+          <h4 data-i18n="awards.irc2020.humanoid">International Robot Contest 2020 Humanoid Robot Sports</h4>
+          <div class="award-organization" data-i18n="awards.irc2020.1st">1st competition, Korea</div>
+          <div class="award-date" data-i18n="awards.irc2020.date">November 2020</div>
         </div>
       </div>
 
@@ -234,10 +241,10 @@ permalink: /cv/
           <i class="fas fa-medal"></i>
         </div>
         <div class="award-content">
-          <div class="award-rank">Second Place</div>
-          <h4>RoboCup 2019 Humanoid League TeenSize Drop-In Challenge</h4>
-          <div class="award-organization">Australia</div>
-          <div class="award-date">July 2019</div>
+          <div class="award-rank" data-i18n="awards.second">Second Place</div>
+          <h4 data-i18n="awards.robocup2019.dropin">RoboCup 2019 Humanoid League TeenSize Drop-In Challenge</h4>
+          <div class="award-organization" data-i18n="awards.robocup2019.org">Australia</div>
+          <div class="award-date" data-i18n="awards.robocup2019.date1">July 2019</div>
         </div>
       </div>
 
@@ -246,10 +253,10 @@ permalink: /cv/
           <i class="fas fa-medal"></i>
         </div>
         <div class="award-content">
-          <div class="award-rank">Third Place</div>
-          <h4>RoboCup 2019 Humanoid League TeenSize Technical Challenge</h4>
-          <div class="award-organization">Australia</div>
-          <div class="award-date">July 2019</div>
+          <div class="award-rank" data-i18n="awards.third">Third Place</div>
+          <h4 data-i18n="awards.robocup2019.technical">RoboCup 2019 Humanoid League TeenSize Technical Challenge</h4>
+          <div class="award-organization" data-i18n="awards.robocup2019.org">Australia</div>
+          <div class="award-date" data-i18n="awards.robocup2019.date1">July 2019</div>
         </div>
       </div>
 
@@ -258,10 +265,10 @@ permalink: /cv/
           <i class="fas fa-medal"></i>
         </div>
         <div class="award-content">
-          <div class="award-rank">First Place</div>
-          <h4>RoboCup 2019 KoreaOpen Humanoid S</h4>
-          <div class="award-organization">Gangwon-do Governor Award, Korea</div>
-          <div class="award-date">February 2019</div>
+          <div class="award-rank" data-i18n="awards.first">First Place</div>
+          <h4 data-i18n="awards.robocup2019.korea">RoboCup 2019 KoreaOpen Humanoid S</h4>
+          <div class="award-organization" data-i18n="awards.robocup2019.korea.org">Gangwon-do Governor Award, Korea</div>
+          <div class="award-date" data-i18n="awards.robocup2019.korea.date">February 2019</div>
         </div>
       </div>
     </div>
@@ -269,44 +276,44 @@ permalink: /cv/
 
 <div class="cv-section" id="projects">
   <!-- <h2><i class="fas fa-code"></i> Projects <a href="/projects/" style="font-size:0.8rem;">[View All]</a></h2> -->
-  <h2><i class="fas fa-code"></i> Projects </h2>
+  <h2><i class="fas fa-code"></i> <span data-i18n="sections.projects">Projects</span></h2>
 
   <div class="accordion-item">
     <button class="accordion-header">
-      <span>Distributed Humanoid Localization</span>
+      <span data-i18n="projects.humanoid.title">Distributed Humanoid Localization</span>
       <i class="fas fa-chevron-down toggle-icon"></i>
     </button>
     <div class="accordion-body">
-      <p><strong>Period:</strong> Jul. 2022 – Feb. 2024</p>
-      <p><strong>Summary:</strong> Designed a robust localization algorithm for humanoid robots using finite-memory estimation and ANN-based odometry fusion.</p>
-      <p><strong>Keywords:</strong> Cooperative Localization, Humanoid Robot, Finite-Memory Estimation, Odometry, Neural Network</p>
-      <p><a href="https://www.youtube.com/watch?v=ueaxI5FNc_w" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a></p>
+      <p><strong data-i18n="projects.period">Period:</strong> <span data-i18n="projects.humanoid.period">Jul. 2022 – Feb. 2024</span></p>
+      <p><strong data-i18n="projects.summary">Summary:</strong> <span data-i18n="projects.humanoid.summary">Designed a robust localization algorithm for humanoid robots using finite-memory estimation and ANN-based odometry fusion.</span></p>
+      <p><strong data-i18n="projects.keywords">Keywords:</strong> <span data-i18n="projects.humanoid.keywords">Cooperative Localization, Humanoid Robot, Finite-Memory Estimation, Odometry, Neural Network</span></p>
+      <p><a href="https://www.youtube.com/watch?v=ueaxI5FNc_w" target="_blank"><i class="fab fa-youtube"></i> <span data-i18n="projects.demo">Watch Demo</span></a></p>
     </div>
   </div>
 
   <div class="accordion-item">
     <button class="accordion-header">
-      <span>UAV Formation Control</span>
+      <span data-i18n="projects.uav.title">UAV Formation Control</span>
       <i class="fas fa-chevron-down toggle-icon"></i>
     </button>
     <div class="accordion-body">
-      <p><strong>Period:</strong> Mar. 2022 – Feb. 2024</p>
-      <p><strong>Summary:</strong> Implemented leader-follower UAV formation using virtual leader and sliding mode control, deployed on 3 real UAVs with ROS, MAVROS, and Pixhawk.</p>
-      <p><strong>Keywords:</strong> UAV, Formation Control, Virtual Leader, Sliding Mode Control, ROS, MAVROS, Pixhawk</p>
-      <p><a href="https://www.youtube.com/watch?v=K2Jqm8zCsDo" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a></p>
+      <p><strong data-i18n="projects.period">Period:</strong> <span data-i18n="projects.uav.period">Mar. 2022 – Feb. 2024</span></p>
+      <p><strong data-i18n="projects.summary">Summary:</strong> <span data-i18n="projects.uav.summary">Implemented leader-follower UAV formation using virtual leader and sliding mode control, deployed on 3 real UAVs with ROS, MAVROS, and Pixhawk.</span></p>
+      <p><strong data-i18n="projects.keywords">Keywords:</strong> <span data-i18n="projects.uav.keywords">UAV, Formation Control, Virtual Leader, Sliding Mode Control, ROS, MAVROS, Pixhawk</span></p>
+      <p><a href="https://www.youtube.com/watch?v=K2Jqm8zCsDo" target="_blank"><i class="fab fa-youtube"></i> <span data-i18n="projects.demo">Watch Demo</span></a></p>
     </div>
   </div>
 
   <div class="accordion-item">
     <button class="accordion-header">
-      <span>Capstone: Smart Caddy Robot</span>
+      <span data-i18n="projects.caddy.title">Capstone: Smart Caddy Robot</span>
       <i class="fas fa-chevron-down toggle-icon"></i>
     </button>
     <div class="accordion-body">
-      <p><strong>Period:</strong> Jan. 2021 – Nov. 2021</p>
-      <p><strong>Summary:</strong> Developed an obstacle avoidance system for mapless navigation using deep reinforcement learning and active filtering. Integrated into a Caddy Robot with ROS to achieve collision-free autonomous driving.</p>
-      <p><strong>Keywords:</strong> Mapless Navigation, Obstacle Avoidance, Deep Reinforcement Learning, ROS, STM32</p>
-      <p><a href="https://youtu.be/uAqilEhrqzE" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a></p>
+      <p><strong data-i18n="projects.period">Period:</strong> <span data-i18n="projects.caddy.period">Jan. 2021 – Nov. 2021</span></p>
+      <p><strong data-i18n="projects.summary">Summary:</strong> <span data-i18n="projects.caddy.summary">Developed an obstacle avoidance system for mapless navigation using deep reinforcement learning and active filtering. Integrated into a Caddy Robot with ROS to achieve collision-free autonomous driving.</span></p>
+      <p><strong data-i18n="projects.keywords">Keywords:</strong> <span data-i18n="projects.caddy.keywords">Mapless Navigation, Obstacle Avoidance, Deep Reinforcement Learning, ROS, STM32</span></p>
+      <p><a href="https://youtu.be/uAqilEhrqzE" target="_blank"><i class="fab fa-youtube"></i> <span data-i18n="projects.demo">Watch Demo</span></a></p>
     </div>
   </div>
 
@@ -315,7 +322,7 @@ permalink: /cv/
 
 
   <div class="cv-section" id="contact">
-    <h2><i class="fas fa-envelope"></i> Contact</h2>
+    <h2><i class="fas fa-envelope"></i> <span data-i18n="sections.contact">Contact</span></h2>
     <div class="contact-info">
       <p><i class="fas fa-envelope"></i> <a href="mailto:ehdgus2210@gmail.com">ehdgus2210@gmail.com</a></p>
       <p><i class="fab fa-github"></i> <a href="https://github.com/donghyeon99">github.com/donghyeon99</a></p>
@@ -326,6 +333,46 @@ permalink: /cv/
 <style>
 html {
   scroll-behavior: smooth;
+}
+
+/* Language Toggle */
+.language-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px 12px;
+  border-radius: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+  color: #3498db;
+}
+
+.lang-btn.active {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.lang-separator {
+  color: #bdc3c7;
+  margin: 0 4px;
+  font-size: 0.9rem;
 }
 
 /* Hero Section */
@@ -764,7 +811,254 @@ html {
 
 
 <script>
+  // Translation data
+  const translations = {
+    en: {
+      "profile.name": "Dong Hyeon Kim",
+      "profile.title": "Robotics & Control Engineer",
+      "nav.education": "Education",
+      "nav.experience": "Experience",
+      "nav.skills": "Skills",
+      "nav.publications": "Publications",
+      "nav.awards": "Awards",
+      "nav.projects": "Projects",
+      "nav.contact": "Contact",
+      "sections.education": "Education",
+      "sections.experience": "Experience",
+      "sections.skills": "Technical Skills",
+      "sections.publications": "Publications",
+      "sections.awards": "Awards",
+      "sections.projects": "Projects",
+      "sections.contact": "Contact",
+      "education.labels.major": "Major:",
+      "education.labels.period": "Period:",
+      "education.labels.thesis": "Thesis:",
+      "education.labels.degree": "Degree:",
+      "education.korea.name": "Korea University",
+      "education.korea.major": "Electrical Engineering (M.S.)",
+      "education.korea.period": "Mar. 2022 - Feb. 2024",
+      "education.korea.thesis": "\"Fusion of Neural Networks and Finite Memory Estimation for Distributed Localization of Multiple Humanoid Robots\"",
+      "education.kwangwoon.name": "Kwangwoon University",
+      "education.kwangwoon.major": "Division of Robotics",
+      "education.kwangwoon.period": "Mar. 2018 - Feb. 2022",
+      "education.kwangwoon.degree": "B.S. in Robotics",
+      "experience.labels.position": "Position:",
+      "experience.labels.period": "Period:",
+      "experience.labels.project": "Project:",
+      "experience.labels.focus": "Focus:",
+      "experience.labels.institution": "Institution:",
+      "experience.labels.research": "Research Areas:",
+      "experience.labels.keyproject": "Key Project:",
+      "experience.labels.description": "Description:",
+      "experience.luxrobo.position": "Robotics Engineer",
+      "experience.luxrobo.period1": "Mar. 2025 - Present",
+      "experience.luxrobo.project1": "Autonomous Golf Cart",
+      "experience.luxrobo.focus1": "RTK GPS Autonomous Driving System, firmware development, Extended Kalman Filter, PID control, bicycle model",
+      "experience.luxrobo.period2": "May 2024 - Mar. 2025",
+      "experience.luxrobo.project2": "Smart Parking System",
+      "experience.luxrobo.focus2": "Image Processing Server, light control server",
+      "experience.research.title": "Research Student at Advanced Control Systems Laboratory",
+      "experience.research.institution": "Korea University",
+      "experience.research.period": "Feb. 2022 - Feb. 2024",
+      "experience.research.areas": "Multi-agent systems, Control theory, Estimation",
+      "experience.research.project": "AI-based Cooperative Autonomous Swarm Anti-Drone System",
+      "experience.research.description": "Development of AI-based cooperative autonomous swarm system for neutralizing illegal drones",
+      "experience.kist.title": "Internship at Robot Vision Lab",
+      "experience.kist.institution": "Korea Institute of Science and Technology (KIST)",
+      "experience.kist.period": "Jan. 2021 - Feb. 2021",
+      "experience.kist.focus": "Computer vision, Robotics",
+      "experience.robit.title": "Robot Sports Game Team: ROBIT",
+      "experience.robit.institution": "Kwangwoon University",
+      "experience.robit.period": "Jan. 2019 - Feb. 2022",
+      "experience.robit.responsibilities": "Image processing, Localization, Firmware, Circuit design",
+      "experience.robit.achievements": "Multiple RoboCup and Robot Contest awards",
+      "experience.labels.responsibilities": "Responsibilities:",
+      "experience.labels.achievements": "Achievements:",
+      "skills.programming": "Programming Languages",
+      "skills.frameworks": "Frameworks & Libraries",
+      "skills.tools": "Tools & Environments",
+      "awards.grand": "Grand Prize",
+      "awards.first": "First Place",
+      "awards.second": "Second Place",
+      "awards.third": "Third Place",
+      "awards.presidential": "Grand Prize (Presidential Prize)",
+      "awards.mobility": "Future Mobility Idea Competition",
+      "awards.mobility.org": "Korea Automotive Technology Institute, Korea",
+      "awards.mobility.date": "September 2023",
+      "awards.kwix": "17th ICT Exhibition (KWIX)",
+      "awards.kwix.org": "Kwangwoon University President Award, Korea",
+      "awards.kwix.date": "September 2021",
+      "awards.irc2020.humanoid": "International Robot Contest 2020 Humanoid Robot Sports",
+      "awards.irc2020.org": "Ministry of Trade, Industry and Energy, Korea",
+      "awards.irc2020.date": "November 2020",
+      "awards.irc2020.1st": "1st competition, Korea",
+      "awards.robocup2020": "RoboCup 2020 KoreaOpen Humanoid S",
+      "awards.robocup2020.org": "KIRIA Award, Korea",
+      "awards.robocup2020.date": "August 2020",
+      "awards.robocup2019.dropin": "RoboCup 2019 Humanoid League TeenSize Drop-In Challenge",
+      "awards.robocup2019.technical": "RoboCup 2019 Humanoid League TeenSize Technical Challenge",
+      "awards.robocup2019.org": "Australia",
+      "awards.robocup2019.date1": "July 2019",
+      "awards.robocup2019.korea": "RoboCup 2019 KoreaOpen Humanoid S",
+      "awards.robocup2019.korea.org": "Gangwon-do Governor Award, Korea",
+      "awards.robocup2019.korea.date": "February 2019",
+      "projects.period": "Period:",
+      "projects.summary": "Summary:",
+      "projects.keywords": "Keywords:",
+      "projects.humanoid.title": "Distributed Humanoid Localization",
+      "projects.humanoid.period": "Jul. 2022 – Feb. 2024",
+      "projects.humanoid.summary": "Designed a robust localization algorithm for humanoid robots using finite-memory estimation and ANN-based odometry fusion.",
+      "projects.humanoid.keywords": "Cooperative Localization, Humanoid Robot, Finite-Memory Estimation, Odometry, Neural Network",
+      "projects.uav.title": "UAV Formation Control",
+      "projects.uav.period": "Mar. 2022 – Feb. 2024",
+      "projects.uav.summary": "Implemented leader-follower UAV formation using virtual leader and sliding mode control, deployed on 3 real UAVs with ROS, MAVROS, and Pixhawk.",
+      "projects.uav.keywords": "UAV, Formation Control, Virtual Leader, Sliding Mode Control, ROS, MAVROS, Pixhawk",
+      "projects.caddy.title": "Capstone: Smart Caddy Robot",
+      "projects.caddy.period": "Jan. 2021 – Nov. 2021",
+      "projects.caddy.summary": "Developed an obstacle avoidance system for mapless navigation using deep reinforcement learning and active filtering. Integrated into a Caddy Robot with ROS to achieve collision-free autonomous driving.",
+      "projects.caddy.keywords": "Mapless Navigation, Obstacle Avoidance, Deep Reinforcement Learning, ROS, STM32",
+      "projects.demo": "Watch Demo"
+    },
+    ko: {
+      "profile.name": "김동현",
+      "profile.title": "로보틱스 및 제어 엔지니어",
+      "nav.education": "학력",
+      "nav.experience": "경력",
+      "nav.skills": "기술",
+      "nav.publications": "논문",
+      "nav.awards": "수상",
+      "nav.projects": "프로젝트",
+      "nav.contact": "연락처",
+      "sections.education": "학력",
+      "sections.experience": "경력",
+      "sections.skills": "기술 역량",
+      "sections.publications": "논문",
+      "sections.awards": "수상 경력",
+      "sections.projects": "프로젝트",
+      "sections.contact": "연락처",
+      "education.labels.major": "전공:",
+      "education.labels.period": "기간:",
+      "education.labels.thesis": "학위논문:",
+      "education.labels.degree": "학위:",
+      "education.korea.name": "고려대학교",
+      "education.korea.major": "전기전자공학 (공학석사)",
+      "education.korea.period": "2022년 3월 - 2024년 2월",
+      "education.korea.thesis": "\"다중 휴머노이드 로봇의 분산 위치추정을 위한 신경망과 유한메모리 추정의 융합\"",
+      "education.kwangwoon.name": "광운대학교",
+      "education.kwangwoon.major": "로봇학부",
+      "education.kwangwoon.period": "2018년 3월 - 2022년 2월",
+      "education.kwangwoon.degree": "공학사 (로봇학)",
+      "experience.labels.position": "직책:",
+      "experience.labels.period": "기간:",
+      "experience.labels.project": "프로젝트:",
+      "experience.labels.focus": "주요 업무:",
+      "experience.labels.institution": "기관:",
+      "experience.labels.research": "연구 분야:",
+      "experience.labels.keyproject": "주요 프로젝트:",
+      "experience.labels.description": "설명:",
+      "experience.luxrobo.position": "로보틱스 엔지니어",
+      "experience.luxrobo.period1": "2025년 3월 - 현재",
+      "experience.luxrobo.project1": "자율주행 골프카트",
+      "experience.luxrobo.focus1": "RTK GPS 자율주행 시스템, 펌웨어 개발, 확장 칼만 필터, PID 제어, 자전거 모델",
+      "experience.luxrobo.period2": "2024년 5월 - 2025년 3월",
+      "experience.luxrobo.project2": "스마트 주차 시스템",
+      "experience.luxrobo.focus2": "영상처리 서버, 조명 제어 서버",
+      "experience.research.title": "고급제어시스템 연구실 연구생",
+      "experience.research.institution": "고려대학교",
+      "experience.research.period": "2022년 2월 - 2024년 2월",
+      "experience.research.areas": "다중 에이전트 시스템, 제어 이론, 추정",
+      "experience.research.project": "AI 기반 협업 자율 군집 안티드론 시스템",
+      "experience.research.description": "불법 드론 중화를 위한 AI 기반 협업 자율 군집 시스템 개발",
+      "experience.kist.title": "로봇 비전 연구실 인턴십",
+      "experience.kist.institution": "한국과학기술연구원 (KIST)",
+      "experience.kist.period": "2021년 1월 - 2021년 2월",
+      "experience.kist.focus": "컴퓨터 비전, 로보틱스",
+      "experience.robit.title": "로봇 스포츠 게임 팀: ROBIT",
+      "experience.robit.institution": "광운대학교",
+      "experience.robit.period": "2019년 1월 - 2022년 2월",
+      "experience.robit.responsibilities": "영상처리, 위치추정, 펌웨어, 회로 설계",
+      "experience.robit.achievements": "다수의 로보컵 및 로봇 경진대회 수상",
+      "experience.labels.responsibilities": "담당 업무:",
+      "experience.labels.achievements": "성과:",
+      "skills.programming": "프로그래밍 언어",
+      "skills.frameworks": "프레임워크 및 라이브러리",
+      "skills.tools": "도구 및 환경",
+      "awards.grand": "대상",
+      "awards.first": "1등",
+      "awards.second": "2등",
+      "awards.third": "3등",
+      "awards.presidential": "대상 (대통령상)",
+      "awards.mobility": "미래 모빌리티 아이디어 경진대회",
+      "awards.mobility.org": "한국자동차기술연구원",
+      "awards.mobility.date": "2023년 9월",
+      "awards.kwix": "제17회 ICT 전시회 (KWIX)",
+      "awards.kwix.org": "광운대학교 총장상",
+      "awards.kwix.date": "2021년 9월",
+      "awards.irc2020.humanoid": "2020 국제로봇콘테스트 휴머노이드 로봇 스포츠",
+      "awards.irc2020.org": "산업통상자원부",
+      "awards.irc2020.date": "2020년 11월",
+      "awards.irc2020.1st": "1차 대회",
+      "awards.robocup2020": "로보컵 2020 코리아오픈 휴머노이드 S",
+      "awards.robocup2020.org": "한국로봇산업진흥원상",
+      "awards.robocup2020.date": "2020년 8월",
+      "awards.robocup2019.dropin": "로보컵 2019 휴머노이드 리그 틴사이즈 드롭인 챌린지",
+      "awards.robocup2019.technical": "로보컵 2019 휴머노이드 리그 틴사이즈 테크니컬 챌린지",
+      "awards.robocup2019.org": "호주",
+      "awards.robocup2019.date1": "2019년 7월",
+      "awards.robocup2019.korea": "로보컵 2019 코리아오픈 휴머노이드 S",
+      "awards.robocup2019.korea.org": "강원도지사상",
+      "awards.robocup2019.korea.date": "2019년 2월",
+      "projects.period": "기간:",
+      "projects.summary": "요약:",
+      "projects.keywords": "키워드:",
+      "projects.humanoid.title": "분산 휴머노이드 위치추정",
+      "projects.humanoid.period": "2022년 7월 – 2024년 2월",
+      "projects.humanoid.summary": "유한메모리 추정과 ANN 기반 오도메트리 융합을 사용한 휴머노이드 로봇의 강인한 위치추정 알고리즘 설계",
+      "projects.humanoid.keywords": "협업 위치추정, 휴머노이드 로봇, 유한메모리 추정, 오도메트리, 신경망",
+      "projects.uav.title": "UAV 편대 제어",
+      "projects.uav.period": "2022년 3월 – 2024년 2월",
+      "projects.uav.summary": "가상 리더와 슬라이딩 모드 제어를 사용한 리더-팔로워 UAV 편대 구현, ROS, MAVROS, Pixhawk를 사용하여 실제 UAV 3대에 배포",
+      "projects.uav.keywords": "UAV, 편대 제어, 가상 리더, 슬라이딩 모드 제어, ROS, MAVROS, Pixhawk",
+      "projects.caddy.title": "캡스톤: 스마트 캐디 로봇",
+      "projects.caddy.period": "2021년 1월 – 2021년 11월",
+      "projects.caddy.summary": "심층 강화학습과 능동 필터링을 사용한 맵 없는 내비게이션을 위한 장애물 회피 시스템 개발. ROS와 함께 캐디 로봇에 통합하여 충돌 없는 자율주행 달성",
+      "projects.caddy.keywords": "맵 없는 내비게이션, 장애물 회피, 심층 강화학습, ROS, STM32",
+      "projects.demo": "데모 보기"
+    }
+  };
+
+  // Language switching functionality
+  let currentLang = localStorage.getItem('cv-language') || 'en';
+
+  function updateLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('cv-language', lang);
+
+    // Update language toggle buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      if (translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    // Initialize language
+    updateLanguage(currentLang);
+
+    // Language toggle event listeners
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        updateLanguage(btn.dataset.lang);
+      });
+    });
+
     const sections = document.querySelectorAll(".cv-section");
     const navLinks = document.querySelectorAll(".cv-nav a");
 
