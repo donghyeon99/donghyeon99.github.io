@@ -1,0 +1,139 @@
+<div id="cv-page" class="cv-page" data-cv-lang="{{ site.lang | default: 'ko' }}">
+  <div class="cv-lang-toggle" role="group" aria-label="CV language toggle">
+    <button type="button" class="cv-lang-btn" data-cv-set-lang="ko" aria-pressed="{% if site.lang == 'en' %}false{% else %}true{% endif %}">KOR</button>
+    <button type="button" class="cv-lang-btn" data-cv-set-lang="en" aria-pressed="{% if site.lang == 'en' %}true{% else %}false{% endif %}">ENG</button>
+  </div>
+
+  {% for entry in site.data.cv %}
+    {% assign lang_code = entry[0] %}
+    {% assign cv = entry[1] %}
+    <div class="cv-lang-block" data-lang="{{ lang_code }}">
+
+      <header class="cv-profile">
+        <h2 class="cv-name">{{ cv.profile.name }}</h2>
+        <p class="cv-role">{{ cv.profile.title }} <span class="cv-period">({{ cv.profile.period }})</span></p>
+        <ul class="cv-interests">
+          {% for interest in cv.profile.interests %}
+            <li>{{ interest }}</li>
+          {% endfor %}
+        </ul>
+        <ul class="cv-contact">
+          <li><i class="fas fa-envelope fa-fw"></i> <a href="mailto:{{ cv.profile.contact.email }}">{{ cv.profile.contact.email }}</a></li>
+          <li><i class="fas fa-envelope fa-fw"></i> <a href="mailto:{{ cv.profile.contact.email2 }}">{{ cv.profile.contact.email2 }}</a></li>
+          <li><i class="fab fa-github fa-fw"></i> <a href="https://{{ cv.profile.contact.github }}" target="_blank" rel="noopener noreferrer">{{ cv.profile.contact.github }}</a></li>
+          <li><i class="fas fa-location-dot fa-fw"></i> {{ cv.profile.contact.location }}</li>
+        </ul>
+      </header>
+
+      <section class="cv-section">
+        <h3 class="cv-section-title">Education</h3>
+        {% for edu in cv.education %}
+        <div class="cv-entry">
+          <div class="cv-entry-head">
+            <span class="cv-entry-title">{{ edu.school }}</span>
+            <span class="cv-entry-period">{{ edu.period }}</span>
+          </div>
+          <p class="cv-entry-sub">{{ edu.degree }}</p>
+          {% if edu.lab %}<p class="cv-entry-sub">{{ edu.lab }}</p>{% endif %}
+          {% if edu.thesis %}<p class="cv-entry-sub cv-thesis">{{ edu.thesis }}</p>{% endif %}
+        </div>
+        {% endfor %}
+      </section>
+
+      <section class="cv-section">
+        <h3 class="cv-section-title">Work Experience</h3>
+        {% for job in cv.work %}
+        <div class="cv-entry">
+          <div class="cv-entry-head">
+            <span class="cv-entry-title">{{ job.company }} — {{ job.role }}</span>
+            <span class="cv-entry-period">{{ job.period }}</span>
+          </div>
+          {% for proj in job.projects %}
+          <div class="cv-subentry">
+            <div class="cv-entry-head">
+              <span class="cv-subentry-title">{{ proj.name }}</span>
+              <span class="cv-entry-period">{{ proj.period }}</span>
+            </div>
+            <p class="cv-entry-sub">{{ proj.role }}</p>
+            <ul class="cv-bullets">
+              {% for b in proj.bullets %}<li>{{ b }}</li>{% endfor %}
+            </ul>
+            {% if proj.details %}
+            <details class="cv-details">
+              <summary>Details</summary>
+              <ul class="cv-bullets cv-bullets-muted">
+                {% for d in proj.details %}<li>{{ d }}</li>{% endfor %}
+              </ul>
+            </details>
+            {% endif %}
+            {% if proj.tech %}
+            <p class="cv-tags">
+              {% for t in proj.tech %}<span class="cv-tag">{{ t }}</span>{% endfor %}
+            </p>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </section>
+
+      <section class="cv-section">
+        <h3 class="cv-section-title">Research Experience</h3>
+        {% for r in cv.research %}
+        <div class="cv-entry">
+          <div class="cv-entry-head">
+            <span class="cv-entry-title">{{ r.org }}{% if r.role %} — {{ r.role }}{% endif %}</span>
+            <span class="cv-entry-period">{{ r.period }}</span>
+          </div>
+          {% if r.topic %}<p class="cv-entry-sub cv-topic">{{ r.topic }}</p>{% endif %}
+          <ul class="cv-bullets">
+            {% for b in r.bullets %}<li>{{ b }}</li>{% endfor %}
+          </ul>
+          {% if r.keywords %}
+          <p class="cv-tags">
+            {% for k in r.keywords %}<span class="cv-tag">{{ k }}</span>{% endfor %}
+          </p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </section>
+
+      <section class="cv-section">
+        <h3 class="cv-section-title">Publications</h3>
+        <ol class="cv-publications">
+          {% for pub in cv.publications %}
+          <li id="{{ pub.id }}">{{ pub.citation | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+          {% endfor %}
+        </ol>
+      </section>
+
+      <section class="cv-section">
+        <h3 class="cv-section-title">Honors &amp; Awards</h3>
+        <ul class="cv-awards">
+          {% for a in cv.awards %}
+          <li>
+            <span class="cv-award-title">{{ a.title }}</span>
+            <span class="cv-award-detail">— {{ a.detail }}</span>
+            <span class="cv-award-date">{{ a.date }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section class="cv-section">
+        <h3 class="cv-section-title">Skills</h3>
+        <div class="cv-skills">
+          {% for s in cv.skills %}
+          <div class="cv-skill-row">
+            <span class="cv-skill-category">{{ s.category }}</span>
+            <span class="cv-skill-items">{{ s.items | join: ", " }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+    </div>
+  {% endfor %}
+</div>
+
+<script src="{{ '/assets/js/cv-lang.js' | relative_url }}" defer></script>

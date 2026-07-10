@@ -1,0 +1,278 @@
+/* CV tab (_tabs/cv.md, _includes/cv.html) */
+
+.cv-page {
+  position: relative;
+}
+
+.cv-lang-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.cv-lang-btn {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text-muted-color);
+  background: var(--button-bg);
+  border: 1px solid var(--btn-border-color);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--link-color);
+  }
+
+  &[aria-pressed='true'] {
+    color: var(--main-bg);
+    background: var(--link-color);
+    border-color: var(--link-color);
+  }
+}
+
+#cv-page {
+  &[data-cv-lang='ko'] .cv-lang-block[data-lang='en'] {
+    display: none;
+  }
+
+  &[data-cv-lang='en'] .cv-lang-block[data-lang='ko'] {
+    display: none;
+  }
+}
+
+.cv-profile {
+  margin-top: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--main-border-color);
+}
+
+.cv-name {
+  margin-bottom: 0.25rem;
+  font-size: 1.5rem;
+}
+
+.cv-role {
+  margin-bottom: 0.75rem;
+  color: var(--text-muted-color);
+
+  .cv-period {
+    font-size: 0.9rem;
+  }
+}
+
+.cv-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding-left: 0;
+  margin-bottom: 0.75rem;
+  list-style: none;
+
+  li {
+    padding: 0.15rem 0.6rem;
+    font-size: 0.78rem;
+    color: var(--text-muted-color);
+    background: var(--btn-border-color);
+    border-radius: 999px;
+  }
+}
+
+.cv-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  padding-left: 0;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  list-style: none;
+
+  li {
+    color: var(--text-color);
+  }
+
+  i {
+    width: 1.1rem;
+    color: var(--text-muted-color);
+  }
+
+  a {
+    color: var(--text-color);
+
+    &:hover {
+      color: var(--link-color);
+    }
+  }
+}
+
+.cv-section {
+  margin-top: 2rem;
+}
+
+.cv-section-title {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--label-color);
+  text-transform: uppercase;
+}
+
+.cv-entry {
+  margin-bottom: 1.25rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.cv-subentry {
+  padding-left: 1rem;
+  margin-top: 0.75rem;
+  border-left: 2px solid var(--main-border-color);
+}
+
+.cv-entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+
+.cv-entry-title,
+.cv-subentry-title {
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.cv-entry-period {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted-color);
+  white-space: nowrap;
+}
+
+.cv-entry-sub {
+  margin: 0.25rem 0;
+  color: var(--text-muted-color);
+}
+
+.cv-thesis,
+.cv-topic {
+  font-style: italic;
+}
+
+.cv-bullets {
+  padding-left: 1.1rem;
+  margin: 0.4rem 0;
+
+  li {
+    margin-bottom: 0.25rem;
+  }
+}
+
+.cv-bullets-muted {
+  font-size: 0.9rem;
+  color: var(--text-muted-color);
+}
+
+.cv-details {
+  margin: 0.4rem 0;
+
+  summary {
+    font-size: 0.85rem;
+    color: var(--link-color);
+    cursor: pointer;
+  }
+}
+
+.cv-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.5rem 0 0;
+}
+
+.cv-tag {
+  padding: 0.1rem 0.55rem;
+  font-size: 0.75rem;
+  color: var(--text-muted-color);
+  background: var(--card-bg);
+  border: 1px solid var(--btn-border-color);
+  border-radius: 4px;
+}
+
+.cv-publications {
+  padding-left: 1.3rem;
+
+  li {
+    margin-bottom: 0.6rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.cv-awards {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.5rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px dashed var(--main-border-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.cv-award-title {
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.cv-award-detail {
+  color: var(--text-muted-color);
+}
+
+.cv-award-date {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--text-muted-color);
+  white-space: nowrap;
+}
+
+.cv-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cv-skill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.75rem;
+}
+
+.cv-skill-category {
+  flex-shrink: 0;
+  width: 9rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.cv-skill-items {
+  color: var(--text-muted-color);
+}

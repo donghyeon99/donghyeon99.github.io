@@ -1,0 +1,146 @@
+// Projects — card grid (list page) + compact meta header (detail page)
+//
+// Self-contained partial: no @use dependency on the theme's abstracts,
+// only Chirpy's runtime CSS custom properties are used for color, so this
+// file is safe regardless of whether it is pulled in via @import or @use.
+// Colors are taken exclusively from Chirpy's existing theme variables
+// (see gem `_sass/themes/_light.scss` / `_dark.scss`), so both color
+// schemes are supported automatically — nothing is hardcoded here.
+
+$project-radius: 10px;
+$project-gap: 1.25rem;
+
+// ---------------------------------------------------------------------
+// List page — /projects/
+// ---------------------------------------------------------------------
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: $project-gap;
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.25rem;
+  border-radius: $project-radius;
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  color: var(--text-color);
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    color: var(--text-color);
+    text-decoration: none;
+    transform: translateY(-3px);
+    background-color: var(--card-hovor-bg);
+
+    .project-tag {
+      background-color: var(--tag-hover);
+    }
+  }
+}
+
+.project-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.project-card__period {
+  font-size: 0.8rem;
+  color: var(--text-muted-color);
+  white-space: nowrap;
+}
+
+.project-card__title {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--heading-color);
+}
+
+.project-card__desc {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-muted-color);
+}
+
+// ---------------------------------------------------------------------
+// Shared bits — badge (category) + tag (tech stack)
+// ---------------------------------------------------------------------
+
+.project-badge {
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  &--research {
+    background-color: var(--prompt-info-bg);
+    color: var(--prompt-info-icon-color);
+  }
+
+  &--industry {
+    background-color: var(--prompt-warning-bg);
+    color: var(--prompt-warning-icon-color);
+  }
+
+  &--team {
+    background-color: var(--prompt-tip-bg);
+    color: var(--prompt-tip-icon-color);
+  }
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project-tag {
+  padding: 0.15rem 0.55rem;
+  border-radius: 0.7em;
+  border: 1px solid var(--tag-border);
+  box-shadow: 0 0 3px 0 var(--tag-shadow);
+  background-color: var(--card-bg);
+  color: var(--text-muted-color);
+  font-size: 0.74rem;
+  line-height: 1.6;
+  transition: background-color 0.2s ease;
+}
+
+// ---------------------------------------------------------------------
+// Detail page header — period / category / tech stack, right under H1
+// ---------------------------------------------------------------------
+
+.project-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.75rem;
+  margin: 0.25rem 0 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--main-border-color);
+}
+
+.project-header__period {
+  font-size: 0.9rem;
+  color: var(--text-muted-color);
+}
+
+.project-header__tags {
+  flex-basis: 100%;
+}

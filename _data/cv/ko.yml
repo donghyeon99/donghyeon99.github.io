@@ -1,0 +1,148 @@
+# CV 데이터 (한국어)
+# 단일 진실 원천: content-brief.md — 여기 없는 사실을 지어내지 말 것.
+
+profile:
+  name: "김동현 (Dong Hyeon Kim)"
+  title: "Robotics Engineer @ LUXROBO"
+  period: "2024.05 ~ 현재"
+  interests:
+    - "Robotics (Autonomous Driving, Humanoid)"
+    - "Control Theory (PID, SMC, MPC)"
+    - "State Estimation (Kalman Filter, FIR)"
+    - "Multi-Agent Systems (Swarm Control, Cooperative Localization)"
+    - "Sensor Fusion (LiDAR/UWB/Vision/IMU)"
+    - "Perception (Object Detection, Tracking)"
+  contact:
+    email: "ehdgus2210@gmail.com"
+    email2: "cowgol99@korea.ac.kr"
+    github: "github.com/donghyeon99"
+    location: "Seoul, Republic of Korea"
+
+education:
+  - school: "고려대학교 (Korea University)"
+    period: "2022.03 ~ 2024.02"
+    degree: "전기전자공학부 석사 (M.S. in Electrical Engineering), GPA 4.06/4.5"
+    lab: "Advanced Control System Lab (지도교수: Choon Ki Ahn)"
+    thesis: "다수 휴머노이드 로봇의 분산 위치 추정을 위한 신경망과 유한 기억 추정의 융합"
+  - school: "광운대학교 (Kwangwoon University)"
+    period: "2018.03 ~ 2022.02"
+    degree: "로봇학부 지능시스템전공 학사 (B.S. in Robotics), GPA 3.53/4.5"
+
+work:
+  - company: "LUXROBO"
+    role: "Robotics Engineer"
+    period: "2024.05 ~ 현재"
+    projects:
+      - name: "골프 카트 자율 주행 모듈 개발"
+        period: "2025.04 ~ 진행중"
+        role: "차량 위치 추정 및 주행 제어 모듈 개발"
+        bullets:
+          - "RTK-GPS 기반 고정밀 위치 추정 알고리즘 구현 및 검증"
+          - "주행 경로 계획 및 조향 제어 알고리즘(Pure Pursuit 등) 개발"
+          - "MATLAB 기반 시뮬레이션 환경 구축 및 실차 테스트 수행"
+        details:
+          - "실차 주행 로그(.bin) 기반 MATLAB 오프라인 시뮬레이션 선행 구축"
+          - "자전거 모델(Bicycle Model) 기반 EKF 예측·보정 구조 단계적 검증"
+          - "상태 벡터 v, SlipAngle, YawRate, Yaw, x, y"
+          - "Chi-square Gate 기반 GPS 측정값 유효성 판별"
+          - "GPS 품질에 따른 R 행렬 동적 조정 및 INS/GPS 모드 전환 로직"
+          - "시뮬레이션-펌웨어 간 위치 추정 결과 비교 및 실시간 주행 로그 재생 환경"
+          - "펌웨어 TASK 우선순위·실행 성능 기반 병목 분석"
+        tech: ["GNSS", "RTK-GPS", "LiDAR", "C", "MATLAB"]
+        keywords: ["AutonomousDriving", "Localization", "SensorFusion", "EKF", "BicycleModel", "KalmanFilter", "VehicleDynamics", "EmbeddedC"]
+      - name: "스마트 주차 시스템 개발"
+        period: "2024.05 ~ 2025.05 (납품 완료)"
+        role: "영상 처리 서버 및 조명 제어 서버 개발"
+        bullets:
+          - "단일 서버에서 약 30대 CCTV 카메라 동시 제어 및 분석 (RTSP 스트림 처리), 어안(Fisheye)/단방향(One-way) 카메라 파이프라인 분리로 확장성 확보"
+          - "Optical Flow 및 YOLOv7(ONNX) 기반 객체(차량/보행자) 탐지 및 속도 분석 (CUDA 가속)"
+          - "Redis 기반 이벤트 처리 구조 설계, RSSI 신호 비교 기반 근접 카메라 자동 식별"
+          - "gRPC 통신 기반 실시간 조명 장치 동적 제어 (CCTV·BLE·비상벨 이벤트 통합 처리)"
+        tech: ["C++", "Go", "Redis", "gRPC", "OpenCV", "YOLOv7", "RTSP"]
+        keywords: ["SmartParking", "ComputerVision", "OpticalFlow", "MultiCameraProcessing"]
+
+research:
+  - org: "Advanced Control System Lab (Korea Univ.)"
+    role: "석사 연구"
+    period: "2022.03 ~ 2024.02"
+    topic: "OAFMCL (Odometry Aided Finite-Memory Cooperative Localization) 알고리즘 개발"
+    bullets:
+      - "유한 메모리(FIR) 기반 협력 위치 추정 알고리즘 설계로 재귀 추정(IIR)의 오차 누적 문제 해결"
+      - "외부 센서 기반 FMCL과 내부 센서 기반 Odometry-NN을 신경망으로 융합, 로봇 보행 진동에 강인성 확보 (관절 움직임 데이터를 입력으로 사용)"
+      - "Robot Kidnapping 상황에서 기존 알고리즘(MFDKF, NLSPGO 등) 대비 약 80% 오차 감소, 평균 오차 0.07m"
+      - "다중 휴머노이드 로봇 환경(RTLS Leader + LiDAR Followers)에서 실증 실험"
+      - "실험 수치 (RTAMSE, meter): Normal condition — OAFMCL 0.0474 vs MFDKF 0.1527 / NLSPGO 0.1012 / LHOL 0.0857; Robot Kidnapping — OAFMCL 0.0687 vs MFDKF 0.1103 / NLSPGO 0.0881 / LHOL 0.3791"
+      - "구조: Leader는 RTLS 태그(고정 앵커 절대 위치), Follower는 저가형 LiDAR(상대 거리·방향); FMCL + Odometry-NN → Fusion NN → 최종 위치 추정"
+  - org: "한국연구재단(NRF) 프로젝트"
+    period: "2022.03 ~ 2024.02"
+    topic: "불법드론 무력화를 위한 AI 기반 협력적 자율주행 스웜 안티드론 시스템 (Multi-UAV Formation Control)"
+    bullets:
+      - "Multi-UAV Formation Control을 위한 Finite-Memory 분산 제어기 및 충돌 회피 알고리즘 개발"
+      - "그래프 기반 상호위상 모델과 Virtual Leader 구조로 중앙 통신 없는 분산 협력 제어 실현"
+      - "MATLAB 시뮬레이션 및 Pixhawk 하드웨어(1 Leader + 4 Followers) 실험, 포메이션 오차 ±0.2m 이내 검증"
+    keywords: ["Pixhawk", "DistributedControl", "FormationControl", "MultiUAV", "VirtualLeader", "GraphModel", "ROS"]
+  - org: "한국과학기술연구원(KIST) Robot Vision Lab"
+    role: "인턴"
+    period: "2021.01 ~ 2021.02"
+    bullets:
+      - "ROS 기반 영상처리 알고리즘 연구 및 모바일 로봇 주행 적용 테스트"
+  - org: "광운대학교 로봇게임단 ROBIT"
+    role: "Humanoid Team Leader"
+    period: "2019.01 ~ 2022.02 (동아리 활동 18.07 ~ 21.12)"
+    bullets:
+      - "RoboCup 휴머노이드 리그 참가용 로봇 전체 시스템(회로, 펌웨어, 비전, 제어) 개발 주도"
+      - "OpenCV 기반 대회용 영상 처리(조명 변화에 강인한 색상 기반 기법), 실내·실외 인식 안정성 향상"
+      - "Particle Filter 기반 영상 위치 추정(Visual Localization): 축구장 라인 추출 → Likelihood 모델 변환 → Particle Filter 가중치 활용"
+      - "휴머노이드 제어 회로 설계·제작, STM 기반 펌웨어 개발 (모터·센서 제어)"
+    keywords: ["HumanoidRobot", "ComputerVision", "VisualLocalization", "ParticleFilter", "STM32", "EmbeddedSystem"]
+  - org: "Capstone Design — 비대면 캐디 서비스 로봇"
+    role: "팀 리더"
+    period: "2021.01 ~ 2021.12"
+    bullets:
+      - "ROS 기반 자율주행 캐디 로봇: 2D LiDAR 장애물 회피 + GPS 사용자 추종, 실외 환경 프로토타입"
+      - "사용자 리모컨 GPS 위치로 목표점 생성, Potential Field 주행 알고리즘으로 동적·정적 장애물 회피 및 사용자 추종"
+      - "사용자 방향 인력 + 장애물 척력 결합 Potential Field 구조 설계"
+      - "GPS·IMU·2D LiDAR 인지 파이프라인, IMU 기반 heading 추정과 북쪽 기준 좌표계 정규화"
+      - "ODE 시뮬레이션 선행 검증 후 실차 주행 단계적 적용; 전원·제어 회로 직접 설계·통합"
+    keywords: ["AutonomousRobot", "PotentialField", "UserFollowing", "ObstacleAvoidance", "MobileRobot"]
+
+publications:
+  - id: "J1"
+    citation: '**D. H. Kim**, et al., "Finite-Memory Cooperative Localization via Multisensor Fusion using Neural Networks for Multiple Humanoid Robots," *IEEE Transactions on Industrial Electronics*, vol. 73, no. 1, pp. 1384–1393, Jan. 2026.'
+  - id: "J2"
+    citation: 'J. Y. Ko, J. M. Pak, **D. H. Kim**, and C. K. Ahn, "Secure Event-Triggered Distributed Finite-Memory Localization for Multiple Mobile Robots Under Cyberattacks," *IEEE Transactions on Industrial Electronics*, vol. 71, no. 10, pp. 12931–12941, Oct. 2024.'
+
+awards:
+  - title: "대상"
+    detail: "한국자동차연구원 아이디어 경진대회"
+    date: "2023.09"
+  - title: "최우수상(총장상)"
+    detail: "제17회 광운 ICT 작품 전시회(KWIX)"
+    date: "2021.09"
+  - title: "대상(Presidential Award, 대통령상)"
+    detail: "국제로봇콘테스트 2020 Humanoid Robot Sports 우승 (산업통상자원부 & 서울과학기술대학교 주최)"
+    date: "2020.11"
+  - title: "3위"
+    detail: "국제로봇콘테스트 2020 Humanoid Robot Sports"
+    date: "2020.11"
+  - title: "우승"
+    detail: "RoboCup 2020 Korea Open Humanoid S"
+    date: "2020.08"
+  - title: "2위/3위"
+    detail: "RoboCup 2019 Sydney Open Humanoid League (TeenSize)"
+    date: "2019.07"
+  - title: "우승"
+    detail: "RoboCup 2019 Korea Open Humanoid S"
+    date: "2019.02"
+
+skills:
+  - category: "Languages"
+    items: ["C++", "Python", "MATLAB", "Go (Golang)", "C"]
+  - category: "Frameworks & Tools"
+    items: ["ROS/ROS2", "OpenCV", "CUDA", "Docker", "Git", "Redis", "MySQL", "gRPC"]
+  - category: "Hardware & Sensors"
+    items: ["Pixhawk", "STM32", "RTK-GPS/GNSS", "LiDAR", "Camera", "IMU", "UWB"]
+  - category: "Control & Planning"
+    items: ["PID", "SMC", "MPC", "Pure Pursuit", "A*", "Dijkstra", "RRT", "Potential Field"]
+  - category: "Estimation & Filter"
+    items: ["Kalman Filter (KF/EKF)", "Particle Filter", "Finite-Memory Filter (FIR)", "Sensor Fusion"]

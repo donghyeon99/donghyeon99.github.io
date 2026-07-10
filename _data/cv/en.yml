@@ -1,0 +1,149 @@
+# CV data (English)
+# Single source of truth: content-brief.md — do not invent facts not present there.
+# Translated per brief §9: figures, proper nouns, and technical terms kept as-is.
+
+profile:
+  name: "Dong Hyeon Kim"
+  title: "Robotics Engineer @ LUXROBO"
+  period: "2024.05 ~ Present"
+  interests:
+    - "Robotics (Autonomous Driving, Humanoid)"
+    - "Control Theory (PID, SMC, MPC)"
+    - "State Estimation (Kalman Filter, FIR)"
+    - "Multi-Agent Systems (Swarm Control, Cooperative Localization)"
+    - "Sensor Fusion (LiDAR/UWB/Vision/IMU)"
+    - "Perception (Object Detection, Tracking)"
+  contact:
+    email: "ehdgus2210@gmail.com"
+    email2: "cowgol99@korea.ac.kr"
+    github: "github.com/donghyeon99"
+    location: "Seoul, Republic of Korea"
+
+education:
+  - school: "Korea University"
+    period: "2022.03 ~ 2024.02"
+    degree: "M.S. in Electrical Engineering, GPA 4.06/4.5"
+    lab: "Advanced Control System Lab (Advisor: Prof. Choon Ki Ahn)"
+    thesis: "Fusion of Neural Networks and Finite-Memory Estimation for Distributed Localization of Multiple Humanoid Robots"
+  - school: "Kwangwoon University"
+    period: "2018.03 ~ 2022.02"
+    degree: "B.S. in Robotics (Intelligent Systems Major), GPA 3.53/4.5"
+
+work:
+  - company: "LUXROBO"
+    role: "Robotics Engineer"
+    period: "2024.05 ~ Present"
+    projects:
+      - name: "Autonomous Driving Module for Golf Carts"
+        period: "2025.04 ~ Present"
+        role: "Development of vehicle localization and driving control modules"
+        bullets:
+          - "Implemented and validated a high-precision localization algorithm based on RTK-GPS"
+          - "Developed path planning and steering control algorithms (e.g., Pure Pursuit)"
+          - "Built a MATLAB-based simulation environment and conducted real-vehicle testing"
+        details:
+          - "Built an offline MATLAB simulation environment ahead of real-vehicle testing, based on real driving logs (.bin)"
+          - "Progressively validated an EKF prediction/correction structure based on the Bicycle Model"
+          - "State vector: v, SlipAngle, YawRate, Yaw, x, y"
+          - "Determined GPS measurement validity using a Chi-square Gate"
+          - "Dynamically adjusted the R matrix based on GPS quality, with INS/GPS mode-switching logic"
+          - "Compared localization results between simulation and firmware, with a real-time driving-log replay environment"
+          - "Analyzed bottlenecks based on firmware TASK priority and execution performance"
+        tech: ["GNSS", "RTK-GPS", "LiDAR", "C", "MATLAB"]
+        keywords: ["AutonomousDriving", "Localization", "SensorFusion", "EKF", "BicycleModel", "KalmanFilter", "VehicleDynamics", "EmbeddedC"]
+      - name: "Smart Parking System"
+        period: "2024.05 ~ 2025.05 (Delivered)"
+        role: "Development of video processing server and lighting control server"
+        bullets:
+          - "Simultaneously controlled and analyzed about 30 CCTV cameras on a single server (RTSP stream processing); separated fisheye/one-way camera pipelines for scalability"
+          - "Detected objects (vehicles/pedestrians) and analyzed speed using Optical Flow and YOLOv7 (ONNX), CUDA-accelerated"
+          - "Designed a Redis-based event processing structure; automatic identification of nearby cameras via RSSI signal comparison"
+          - "Real-time dynamic control of lighting devices over gRPC (integrated handling of CCTV, BLE, and emergency-bell events)"
+        tech: ["C++", "Go", "Redis", "gRPC", "OpenCV", "YOLOv7", "RTSP"]
+        keywords: ["SmartParking", "ComputerVision", "OpticalFlow", "MultiCameraProcessing"]
+
+research:
+  - org: "Advanced Control System Lab (Korea Univ.)"
+    role: "M.S. Research"
+    period: "2022.03 ~ 2024.02"
+    topic: "Development of OAFMCL (Odometry Aided Finite-Memory Cooperative Localization) algorithm"
+    bullets:
+      - "Designed a Finite-Memory (FIR)-based cooperative localization algorithm, resolving the error-accumulation problem of recursive (IIR) estimation"
+      - "Fused an external-sensor-based FMCL with an internal-sensor-based Odometry-NN via a neural network, achieving robustness to walking vibration in humanoid robots (using joint-motion data as input)"
+      - "Reduced error by about 80% compared to existing algorithms (MFDKF, NLSPGO, etc.) in Robot Kidnapping scenarios, with an average error of 0.07 m"
+      - "Verified through demonstration experiments in a multi-humanoid-robot environment (RTLS Leader + LiDAR Followers)"
+      - "Experimental results (RTAMSE, meter): Normal condition — OAFMCL 0.0474 vs MFDKF 0.1527 / NLSPGO 0.1012 / LHOL 0.0857; Robot Kidnapping — OAFMCL 0.0687 vs MFDKF 0.1103 / NLSPGO 0.0881 / LHOL 0.3791"
+      - "Structure: the Leader carries an RTLS tag (absolute position from fixed anchors), Followers use low-cost LiDAR (relative distance/direction); FMCL + Odometry-NN → Fusion NN → final position estimate"
+  - org: "National Research Foundation of Korea (NRF) Project"
+    period: "2022.03 ~ 2024.02"
+    topic: "AI-based Cooperative Autonomous Swarm Anti-Drone System for Neutralizing Illegal Drones (Multi-UAV Formation Control)"
+    bullets:
+      - "Developed a Finite-Memory distributed controller and collision-avoidance algorithm for Multi-UAV Formation Control"
+      - "Realized decentralized cooperative control without central communication using a graph-based interaction topology model and a Virtual Leader structure"
+      - "Validated via MATLAB simulation and Pixhawk hardware experiments (1 Leader + 4 Followers), with formation error within ±0.2 m"
+    keywords: ["Pixhawk", "DistributedControl", "FormationControl", "MultiUAV", "VirtualLeader", "GraphModel", "ROS"]
+  - org: "Korea Institute of Science and Technology (KIST), Robot Vision Lab"
+    role: "Intern"
+    period: "2021.01 ~ 2021.02"
+    bullets:
+      - "Researched ROS-based image processing algorithms and tested their application to mobile robot navigation"
+  - org: "ROBIT (Robot Game Team, Kwangwoon Univ.)"
+    role: "Humanoid Team Leader"
+    period: "2019.01 ~ 2022.02 (Club activity: 2018.07 ~ 2021.12)"
+    bullets:
+      - "Led development of the full robot system (circuits, firmware, vision, control) for the RoboCup Humanoid League"
+      - "Developed competition vision processing based on OpenCV (color-based techniques robust to lighting changes), improving indoor/outdoor recognition stability"
+      - "Particle Filter-based visual localization: extracted soccer-field lines → converted to a likelihood model → applied Particle Filter weighting"
+      - "Designed and built humanoid control circuits; developed STM-based firmware (motor/sensor control)"
+    keywords: ["HumanoidRobot", "ComputerVision", "VisualLocalization", "ParticleFilter", "STM32", "EmbeddedSystem"]
+  - org: "Capstone Design — Contactless Caddy Service Robot"
+    role: "Team Leader"
+    period: "2021.01 ~ 2021.12"
+    bullets:
+      - "ROS-based autonomous caddy robot: 2D LiDAR obstacle avoidance + GPS user-following, outdoor prototype"
+      - "Generated target points from the user's remote-control GPS position; avoided dynamic/static obstacles and followed the user via a Potential Field driving algorithm"
+      - "Designed a Potential Field structure combining an attractive force toward the user and a repulsive force from obstacles"
+      - "GPS/IMU/2D LiDAR perception pipeline; IMU-based heading estimation with north-referenced coordinate normalization"
+      - "Validated in ODE simulation first, then applied stepwise to real-vehicle driving; directly designed and integrated the power/control circuits"
+    keywords: ["AutonomousRobot", "PotentialField", "UserFollowing", "ObstacleAvoidance", "MobileRobot"]
+
+publications:
+  - id: "J1"
+    citation: '**D. H. Kim**, et al., "Finite-Memory Cooperative Localization via Multisensor Fusion using Neural Networks for Multiple Humanoid Robots," *IEEE Transactions on Industrial Electronics*, vol. 73, no. 1, pp. 1384–1393, Jan. 2026.'
+  - id: "J2"
+    citation: 'J. Y. Ko, J. M. Pak, **D. H. Kim**, and C. K. Ahn, "Secure Event-Triggered Distributed Finite-Memory Localization for Multiple Mobile Robots Under Cyberattacks," *IEEE Transactions on Industrial Electronics*, vol. 71, no. 10, pp. 12931–12941, Oct. 2024.'
+
+awards:
+  - title: "Grand Prize"
+    detail: "Korea Automotive Technology Institute (KATECH) Idea Competition"
+    date: "2023.09"
+  - title: "Excellence Award (President's Award)"
+    detail: "17th Kwangwoon ICT Exhibition (KWIX)"
+    date: "2021.09"
+  - title: "Grand Prize (Presidential Award)"
+    detail: "International Robot Contest 2020, Humanoid Robot Sports Champion (hosted by the Ministry of Trade, Industry and Energy & Seoul National University of Science and Technology)"
+    date: "2020.11"
+  - title: "3rd Place"
+    detail: "International Robot Contest 2020, Humanoid Robot Sports"
+    date: "2020.11"
+  - title: "Champion"
+    detail: "RoboCup 2020 Korea Open Humanoid S"
+    date: "2020.08"
+  - title: "2nd/3rd Place"
+    detail: "RoboCup 2019 Sydney Open Humanoid League (TeenSize)"
+    date: "2019.07"
+  - title: "Champion"
+    detail: "RoboCup 2019 Korea Open Humanoid S"
+    date: "2019.02"
+
+skills:
+  - category: "Languages"
+    items: ["C++", "Python", "MATLAB", "Go (Golang)", "C"]
+  - category: "Frameworks & Tools"
+    items: ["ROS/ROS2", "OpenCV", "CUDA", "Docker", "Git", "Redis", "MySQL", "gRPC"]
+  - category: "Hardware & Sensors"
+    items: ["Pixhawk", "STM32", "RTK-GPS/GNSS", "LiDAR", "Camera", "IMU", "UWB"]
+  - category: "Control & Planning"
+    items: ["PID", "SMC", "MPC", "Pure Pursuit", "A*", "Dijkstra", "RRT", "Potential Field"]
+  - category: "Estimation & Filter"
+    items: ["Kalman Filter (KF/EKF)", "Particle Filter", "Finite-Memory Filter (FIR)", "Sensor Fusion"]
