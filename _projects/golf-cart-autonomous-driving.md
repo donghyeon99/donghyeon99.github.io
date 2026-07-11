@@ -1,8 +1,8 @@
 ---
 title: "골프카트 자율주행 위치추정·제어 모듈"
 description: "RTK-GPS 기반 고정밀 위치 추정과 Pure Pursuit 조향 제어로 골프카트 자율주행 모듈을 개발하는 LUXROBO 프로젝트."
-date: 2026-07-10
-period: "2025.04 ~ 진행중"
+date: 2026-02-28
+period: "2025.06 ~ 2026.02"
 category_label: Industry
 tech: [RTK-GPS, GNSS, LiDAR, Pure Pursuit, EKF, MATLAB, C]
 layout: page
@@ -18,7 +18,7 @@ layout: page
 
 ## 개요
 
-LUXROBO에서 진행 중인 골프 카트 자율 주행 모듈 개발 프로젝트로, 차량 위치 추정 및 주행 제어 모듈 개발을 담당하고 있다. RTK-GPS 기반 고정밀 위치 추정 알고리즘과 Pure Pursuit 기반 조향 제어 알고리즘을 MATLAB 시뮬레이션으로 검증한 뒤 실차 테스트를 수행 중이다.
+LUXROBO에서 진행 중인 골프카트 자율주행 모듈 개발 프로젝트로, 차량 위치 추정 및 주행 제어 모듈 개발을 담당하고 있다. RTK-GPS 기반 고정밀 위치 추정 알고리즘과 Pure Pursuit 기반 조향 제어 알고리즘을 MATLAB 시뮬레이션으로 검증한 뒤 실차 테스트를 수행 중이다.
 
 ## 핵심 기여
 

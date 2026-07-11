@@ -112,16 +112,29 @@
 }
 
 .cv-section {
-  margin-top: 2rem;
+  margin-top: 2.25rem;
 }
 
 .cv-section-title {
-  margin-bottom: 1rem;
+  position: relative;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--btn-border-color);
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--label-color);
   text-transform: uppercase;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 2.5rem;
+    height: 2px;
+    background: var(--link-color);
+  }
 }
 
 .cv-entry {
@@ -252,6 +265,46 @@
   font-size: 0.85rem;
   color: var(--text-muted-color);
   white-space: nowrap;
+}
+
+.cv-cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cv-cert-item {
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  color: var(--text-muted-color);
+  background: var(--card-bg);
+  border: 1px solid var(--btn-border-color);
+  border-radius: 6px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--text-muted-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--btn-border-color);
+  }
+}
+
+.cv-cert-caption {
+  display: block;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.78rem;
+  line-height: 1.4;
 }
 
 .cv-skills {

@@ -5,6 +5,7 @@ date: 2024-02-29
 period: "2022.03 ~ 2024.02"
 category_label: Research
 tech: [MATLAB, Pixhawk, ROS, Distributed Control, Formation Control, Virtual Leader, Graph Model]
+video: https://www.youtube.com/watch?v=K2Jqm8zCsDo
 layout: page
 ---
 
@@ -20,11 +21,16 @@ layout: page
 
 한국연구재단(NRF) 프로젝트로, 불법드론을 무력화하기 위한 AI 기반 협력적 자율주행 스웜 안티드론 시스템을 개발했다. 다수의 UAV(Unmanned Aerial Vehicle)가 중앙 통신 없이 스스로 대형(Formation)을 유지하며 충돌을 회피하는 Multi-UAV Formation Control이 핵심 과제였다.
 
+> 🎬 **시연 영상**: [YouTube에서 보기](https://www.youtube.com/watch?v=K2Jqm8zCsDo)
+
 ## 핵심 기여
 
 - Multi-UAV Formation Control을 위한 Finite-Memory 분산 제어기 및 충돌 회피 알고리즘 개발
 - 그래프 기반 상호위상 모델(Graph Model)과 Virtual Leader 구조를 활용해 중앙 통신 없는 분산 협력 제어 실현
 - MATLAB 시뮬레이션으로 알고리즘을 선행 검증한 뒤, Pixhawk 하드웨어(1 Leader + 4 Followers) 실험으로 확장
+
+![Pixhawk 기반 UAV 포메이션 비행 실험](/assets/img/projects/multi-uav-formation-control-1.jpg)
+_Pixhawk 기반 UAV 포메이션 비행 실험_
 
 ## 결과 / 수치
 

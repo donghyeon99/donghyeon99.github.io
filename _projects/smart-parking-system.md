@@ -2,7 +2,7 @@
 title: "스마트 주차 시스템 (영상처리·조명제어 서버)"
 description: "약 30대 CCTV 동시 처리와 YOLOv7 기반 객체 탐지로 구현한 스마트 주차 영상처리·조명제어 시스템 (납품 완료)."
 date: 2025-05-31
-period: "2024.05 ~ 2025.05 (납품 완료)"
+period: "2024.05 ~ 2025.05"
 category_label: Industry
 tech: [C++, Go, Redis, gRPC, OpenCV, YOLOv7, RTSP]
 layout: page

@@ -7,7 +7,7 @@ order: 4
 > Hi! 로보틱스 엔지니어 김동현입니다.
 {: .prompt-tip }
 
-LUXROBO에서 Robotics Engineer로 근무하며 자율주행 및 제어 시스템을 개발하고 있습니다. Autonomous Driving과 Humanoid Robot을 중심으로 Control Theory(PID, SMC, MPC), State Estimation(Kalman Filter, FIR), Multi-Agent Systems, Sensor Fusion(LiDAR/UWB/Vision/IMU), Perception 분야에 관심을 두고 있습니다.
+LUXROBO에서 엔지니어로 근무하고 있으며, 현재는 AI팀에서 회로 모델링·시뮬레이션 소프트웨어를 개발하고 있습니다. 이전에는 자율주행 골프카트의 위치 추정·제어 모듈과 스마트 주차 시스템을 개발했습니다. Autonomous Driving과 Humanoid Robot을 중심으로 Control Theory(PID, SMC, MPC), State Estimation(Kalman Filter, FIR), Multi-Agent Systems, Sensor Fusion(LiDAR/UWB/Vision/IMU), Perception 분야에 관심을 두고 있습니다.
 
 고려대학교 전기전자공학부 석사 과정에서는 Advanced Control System Lab 소속으로 다수 휴머노이드 로봇의 분산 위치 추정을 연구했으며, 관련 연구 성과를 IEEE Transactions on Industrial Electronics에 게재했습니다.
 

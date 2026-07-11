@@ -5,6 +5,7 @@ date: 2021-12-31
 period: "2021.01 ~ 2021.12"
 category_label: Research
 tech: [ROS, GPS, IMU, 2D LiDAR, Potential Field, ODE Simulation]
+video: https://youtu.be/uAqilEhrqzE
 layout: page
 ---
 
@@ -18,7 +19,9 @@ layout: page
 
 ## 개요
 
-골프장에서 사람 캐디 없이 자율 라운딩을 지원하는 비대면 캐디 서비스 로봇을 개발한 팀 리더 캡스톤 디자인 프로젝트다. ROS 기반으로 2D LiDAR 장애물 회피와 GPS 기반 사용자 추종을 결합해 실외 환경에서 동작하는 프로토타입을 제작했다.
+골프장에서 사람 캐디 없이 자율 라운딩을 지원하는 비대면 캐디 서비스 로봇을 개발한 팀 리더 캡스톤 디자인 프로젝트다. ROS 기반으로 2D LiDAR 장애물 회피와 GPS 기반 사용자 추종을 결합해 실외 환경에서 동작하는 프로토타입을 제작했다. 이 작품으로 **제17회 광운 ICT 작품 전시회(KWIX)에서 최우수상(총장상)** 을 수상했다.
+
+> 🎬 **시연 영상**: [Final Demo](https://youtu.be/uAqilEhrqzE) · [장애물 회피](https://youtu.be/JxvJmeS787U) · [ODE 시뮬레이션](https://youtu.be/_OWhjs1FOTs)
 
 ## 핵심 기여
 
@@ -40,6 +43,9 @@ _로봇 하드웨어 플랫폼_
 
 ![ODE-based Simulation](/assets/projects/caddy_ODE_sim_result.png)
 _ODE 기반 시뮬레이션 결과_
+
+![KWIX 최우수상 상장](/assets/img/awards/kwix2021-best-award.jpg)
+_제17회 광운 ICT 작품 전시회(KWIX) 최우수상 — 작품명 "비대면 캐디 서비스 로봇"_
 
 ## 기술 스택
 

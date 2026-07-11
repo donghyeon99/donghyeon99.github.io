@@ -17,25 +17,36 @@ profile:
     email: "ehdgus2210@gmail.com"
     email2: "cowgol99@korea.ac.kr"
     github: "github.com/donghyeon99"
+    scholar: "https://scholar.google.com/citations?user=6sTgTj0AAAAJ"
+    linkedin: "https://www.linkedin.com/in/donghyeon-kim-895640204/"
     location: "Seoul, Republic of Korea"
 
 education:
   - school: "Korea University"
     period: "2022.03 ~ 2024.02"
-    degree: "M.S. in Electrical Engineering, GPA 4.06/4.5"
+    degree: "M.S. in Electrical Engineering"
     lab: "Advanced Control System Lab (Advisor: Prof. Choon Ki Ahn)"
     thesis: "Fusion of Neural Networks and Finite-Memory Estimation for Distributed Localization of Multiple Humanoid Robots"
   - school: "Kwangwoon University"
     period: "2018.03 ~ 2022.02"
-    degree: "B.S. in Robotics (Intelligent Systems Major), GPA 3.53/4.5"
+    degree: "B.S. in Robotics (Intelligent Systems Major)"
+    note: "Full-tuition scholarship for ROBIT (robot game team) activities (2019 ~ 2021)"
 
 work:
   - company: "LUXROBO"
-    role: "Robotics Engineer"
+    role: "Engineer"
     period: "2024.05 ~ Present"
     projects:
+      - name: "Circuit Modeling & Simulation"
+        period: "2026.03 ~ Present"
+        role: "Circuit Modeling & Simulation Engineer (AI Team)"
+        bullets:
+          - "Developing a PCB physics simulation backend platform — a board-level thermal analysis engine driven by ECAD geometry and netlist data"
+          - "Steady-state thermal analysis based on a 3D finite-volume method (FVM), modeling circuit physics such as component power estimation, current distribution, and IR drop"
+          - "Building the Python/Rust engine and FastAPI backend API, validated against a commercial thermal solver (ANSYS Icepak)"
+        tech: ["Python", "Rust", "FastAPI", "FVM", "Thermal Analysis"]
       - name: "Autonomous Driving Module for Golf Carts"
-        period: "2025.04 ~ Present"
+        period: "2025.06 ~ 2026.02"
         role: "Development of vehicle localization and driving control modules"
         bullets:
           - "Implemented and validated a high-precision localization algorithm based on RTK-GPS"
@@ -95,6 +106,8 @@ research:
       - "Developed competition vision processing based on OpenCV (color-based techniques robust to lighting changes), improving indoor/outdoor recognition stability"
       - "Particle Filter-based visual localization: extracted soccer-field lines → converted to a likelihood model → applied Particle Filter weighting"
       - "Designed and built humanoid control circuits; developed STM-based firmware (motor/sensor control)"
+      - "Participated in domestic and international competitions, including a team trip to RoboCup 2019 Sydney, earning multiple awards"
+      - "Engaged in outreach activities such as operating robot demonstration booths at science festivals and exhibitions"
     keywords: ["HumanoidRobot", "ComputerVision", "VisualLocalization", "ParticleFilter", "STM32", "EmbeddedSystem"]
   - org: "Capstone Design — Contactless Caddy Service Robot"
     role: "Team Leader"
@@ -112,10 +125,12 @@ publications:
     citation: '**D. H. Kim**, et al., "Finite-Memory Cooperative Localization via Multisensor Fusion using Neural Networks for Multiple Humanoid Robots," *IEEE Transactions on Industrial Electronics*, vol. 73, no. 1, pp. 1384–1393, Jan. 2026.'
   - id: "J2"
     citation: 'J. Y. Ko, J. M. Pak, **D. H. Kim**, and C. K. Ahn, "Secure Event-Triggered Distributed Finite-Memory Localization for Multiple Mobile Robots Under Cyberattacks," *IEEE Transactions on Industrial Electronics*, vol. 71, no. 10, pp. 12931–12941, Oct. 2024.'
+  - id: "C1"
+    citation: '**D. H. Kim**, H. H. Kang, K. S. Kim, and C. K. Ahn, "3D Localization and Cyber-Attack Estimation of a Drone using RBFNN-based Finite Memory State Estimator," *Proceedings of the KSAE Fall Conference*, 2023.'
 
 awards:
   - title: "Grand Prize"
-    detail: "Korea Automotive Technology Institute (KATECH) Idea Competition"
+    detail: "KATECH Future Mobility Idea Competition (Korea Automotive Technology Institute)"
     date: "2023.09"
   - title: "Excellence Award (President's Award)"
     detail: "17th Kwangwoon ICT Exhibition (KWIX)"
@@ -129,12 +144,33 @@ awards:
   - title: "Champion"
     detail: "RoboCup 2020 Korea Open Humanoid S"
     date: "2020.08"
-  - title: "2nd/3rd Place"
-    detail: "RoboCup 2019 Sydney Open Humanoid League (TeenSize)"
+  - title: "2nd Place"
+    detail: "RoboCup 2019 Sydney, Humanoid League TeenSize Drop-In Challenge"
+    date: "2019.07"
+  - title: "3rd Place"
+    detail: "RoboCup 2019 Sydney, Humanoid League TeenSize Technical Challenge"
     date: "2019.07"
   - title: "Champion"
     detail: "RoboCup 2019 Korea Open Humanoid S"
     date: "2019.02"
+
+award_certs:
+  - img: "/assets/img/awards/katech2023-grand.jpg"
+    caption: "Grand Prize, KATECH Future Mobility Idea Competition (2023)"
+  - img: "/assets/img/awards/kwix2021-best-award.jpg"
+    caption: "Excellence Award (President's Award), 17th Kwangwoon ICT Exhibition (KWIX) (2021)"
+  - img: "/assets/img/awards/irc2020-presidential.jpg"
+    caption: "Grand Prize (Presidential Award), International Robot Contest 2020, Humanoid Robot Sports (2020)"
+  - img: "/assets/img/awards/irc2020-hightech-3rd.jpg"
+    caption: "3rd Place, International Robot Contest 2020, Humanoid Robot Sports (2020)"
+  - img: "/assets/img/awards/krc-open-2020-1st.jpg"
+    caption: "Champion, RoboCup 2020 Korea Open Humanoid S (2020)"
+  - img: "/assets/img/awards/robocup2019-sydney-dropin-2nd.jpg"
+    caption: "2nd Place, RoboCup 2019 Sydney, Humanoid League TeenSize Drop-In Challenge (2019)"
+  - img: "/assets/img/awards/robocup2019-sydney-technical-3rd.jpg"
+    caption: "3rd Place, RoboCup 2019 Sydney, Humanoid League TeenSize Technical Challenge (2019)"
+  - img: "/assets/img/awards/krc-open-2019-1st.jpg"
+    caption: "Champion, RoboCup 2019 Korea Open Humanoid S (2019)"
 
 skills:
   - category: "Languages"

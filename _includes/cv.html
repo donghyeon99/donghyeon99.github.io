@@ -21,6 +21,8 @@
           <li><i class="fas fa-envelope fa-fw"></i> <a href="mailto:{{ cv.profile.contact.email }}">{{ cv.profile.contact.email }}</a></li>
           <li><i class="fas fa-envelope fa-fw"></i> <a href="mailto:{{ cv.profile.contact.email2 }}">{{ cv.profile.contact.email2 }}</a></li>
           <li><i class="fab fa-github fa-fw"></i> <a href="https://{{ cv.profile.contact.github }}" target="_blank" rel="noopener noreferrer">{{ cv.profile.contact.github }}</a></li>
+          {% if cv.profile.contact.scholar %}<li><i class="fas fa-graduation-cap fa-fw"></i> <a href="{{ cv.profile.contact.scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>{% endif %}
+          {% if cv.profile.contact.linkedin %}<li><i class="fab fa-linkedin fa-fw"></i> <a href="{{ cv.profile.contact.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>{% endif %}
           <li><i class="fas fa-location-dot fa-fw"></i> {{ cv.profile.contact.location }}</li>
         </ul>
       </header>
@@ -36,6 +38,7 @@
           <p class="cv-entry-sub">{{ edu.degree }}</p>
           {% if edu.lab %}<p class="cv-entry-sub">{{ edu.lab }}</p>{% endif %}
           {% if edu.thesis %}<p class="cv-entry-sub cv-thesis">{{ edu.thesis }}</p>{% endif %}
+          {% if edu.note %}<p class="cv-entry-sub">{{ edu.note }}</p>{% endif %}
         </div>
         {% endfor %}
       </section>
@@ -54,7 +57,7 @@
               <span class="cv-subentry-title">{{ proj.name }}</span>
               <span class="cv-entry-period">{{ proj.period }}</span>
             </div>
-            <p class="cv-entry-sub">{{ proj.role }}</p>
+            {% if proj.role %}<p class="cv-entry-sub">{{ proj.role }}</p>{% endif %}
             <ul class="cv-bullets">
               {% for b in proj.bullets %}<li>{{ b }}</li>{% endfor %}
             </ul>
@@ -66,9 +69,10 @@
               </ul>
             </details>
             {% endif %}
-            {% if proj.tech %}
+            {% if proj.tech or proj.keywords %}
             <p class="cv-tags">
               {% for t in proj.tech %}<span class="cv-tag">{{ t }}</span>{% endfor %}
+              {% for k in proj.keywords %}<span class="cv-tag">{{ k }}</span>{% endfor %}
             </p>
             {% endif %}
           </div>
@@ -102,7 +106,7 @@
         <h3 class="cv-section-title">Publications</h3>
         <ol class="cv-publications">
           {% for pub in cv.publications %}
-          <li id="{{ pub.id }}">{{ pub.citation | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+          <li id="{{ pub.id }}-{{ lang_code }}">{{ pub.citation | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
           {% endfor %}
         </ol>
       </section>
@@ -118,6 +122,11 @@
           </li>
           {% endfor %}
         </ul>
+        {% if cv.award_certs %}
+        <div class="cv-cert-grid">
+          {% for cert in cv.award_certs %}<figure class="cv-cert-item"><img src="{{ cert.img | relative_url }}" alt="{{ cert.caption }}"><figcaption class="cv-cert-caption">{{ cert.caption }}</figcaption></figure>{% endfor %}
+        </div>
+        {% endif %}
       </section>
 
       <section class="cv-section">
