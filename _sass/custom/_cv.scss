@@ -191,6 +191,7 @@
   background: var(--card-bg);
   border: 1px solid var(--btn-border-color);
   border-left: 3px solid var(--link-color);
+  border-left-color: color-mix(in srgb, var(--link-color) 40%, transparent);
   border-radius: 6px;
 
   &:last-child {
