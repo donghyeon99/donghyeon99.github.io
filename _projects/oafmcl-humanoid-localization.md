@@ -23,7 +23,7 @@ layout: page
 
 > 🎬 **시연 영상**: [YouTube에서 보기](https://www.youtube.com/watch?v=ueaxI5FNc_w)
 
-> [J1] D. H. Kim, et al., "Finite-Memory Cooperative Localization via Multisensor Fusion using Neural Networks for Multiple Humanoid Robots," *IEEE Transactions on Industrial Electronics*, vol. 73, no. 1, pp. 1384–1393, Jan. 2026.
+> [J1] D. H. Kim, J. M. Pak, P. Shi, and C. K. Ahn, "Finite-Memory CL Based on Multisensor Information Fusion Using Neural Networks for Multiple Humanoid Robots," *IEEE Transactions on Industrial Electronics*, vol. 73, no. 1, pp. 1384–1393, Jan. 2026. [DOI: 10.1109/TIE.2025.3600539](https://doi.org/10.1109/TIE.2025.3600539)
 
 ## 핵심 기여
 
@@ -38,7 +38,7 @@ _다중 휴머노이드 로봇 실증 실험 (RTLS Leader + LiDAR Followers)_
 
 ## 결과 / 수치
 
-RTAMSE(Root Time-Averaged Mean Square Error, meter) 기준으로 기존 알고리즘(MFDKF, NLSPGO, LHOL) 대비 성능을 비교했다. Robot Kidnapping 상황에서는 기존 알고리즘 대비 약 80% 오차 감소, 평균 오차 0.07m를 달성했다.
+RTAMSE(Root Time-Averaged Mean Square Error, meter) 기준으로 기존 알고리즘(MFDKF, NLSPGO, LHOL) 대비 성능을 비교했다. Robot Kidnapping 상황에서는 기존 알고리즘 대비 약 80% 오차 감소, 평균 오차 0.07m를 달성했다. 같은 상황에서 odometry 보조가 없는 FMCL 단독(평균 0.174m) 대비로도 오차를 60% 이상 줄여, 신경망 기반 odometry 융합의 기여를 확인했다.
 
 | 조건 | OAFMCL | MFDKF | NLSPGO | LHOL |
 |---|---|---|---|---|

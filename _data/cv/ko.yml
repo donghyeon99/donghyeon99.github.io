@@ -121,7 +121,7 @@ research:
 
 publications:
   - id: "J1"
-    citation: '**D. H. Kim**, et al., "Finite-Memory Cooperative Localization via Multisensor Fusion using Neural Networks for Multiple Humanoid Robots," *IEEE Transactions on Industrial Electronics*, vol. 73, no. 1, pp. 1384–1393, Jan. 2026.'
+    citation: '**D. H. Kim**, J. M. Pak, P. Shi, and C. K. Ahn, "Finite-Memory CL Based on Multisensor Information Fusion Using Neural Networks for Multiple Humanoid Robots," *IEEE Transactions on Industrial Electronics*, vol. 73, no. 1, pp. 1384–1393, Jan. 2026. [DOI: 10.1109/TIE.2025.3600539](https://doi.org/10.1109/TIE.2025.3600539)'
   - id: "J2"
     citation: 'J. Y. Ko, J. M. Pak, **D. H. Kim**, and C. K. Ahn, "Secure Event-Triggered Distributed Finite-Memory Localization for Multiple Mobile Robots Under Cyberattacks," *IEEE Transactions on Industrial Electronics*, vol. 71, no. 10, pp. 12931–12941, Oct. 2024.'
   - id: "C1"

@@ -29,12 +29,26 @@ layout: page
 - 그래프 기반 상호위상 모델(Graph Model)과 Virtual Leader 구조를 활용해 중앙 통신 없는 분산 협력 제어 실현
 - MATLAB 시뮬레이션으로 알고리즘을 선행 검증한 뒤, Pixhawk 하드웨어(1 Leader + 4 Followers) 실험으로 확장
 
+![장애물 회피 시뮬레이션 (UAV 3대)](/assets/img/projects/multi-uav-obstacle-avoidance.jpg)
+_장애물 회피 시뮬레이션 (UAV 3대)_
+
+![포메이션 유지 비행 (Leader + Follower 4대)](/assets/img/projects/multi-uav-formation-flight.jpg)
+_포메이션 유지 비행 (Leader + Follower 4대)_
+
 ![Pixhawk 기반 UAV 포메이션 비행 실험](/assets/img/projects/multi-uav-formation-control-1.jpg)
 _Pixhawk 기반 UAV 포메이션 비행 실험_
 
 ## 결과 / 수치
 
 Pixhawk 기반 1 Leader + 4 Followers 편대 비행 실험에서 포메이션 오차 **±0.2m 이내**를 검증했다.
+
+S자형 경로 추종 실험(시나리오 #1)에서는 기존 알고리즘 대비 위치 오차, 목적지 수렴 시간, 알고리즘 연산 시간 모두 개선된 결과를 확인했다.
+
+| 지표 | 기존 알고리즘 | 제안 알고리즘 |
+|---|---|---|
+| 위치 오차 (MSE) | 0.8974 | 0.3524 |
+| 목적지 수렴 시간 (s) | 11 | 8 |
+| 알고리즘 평균 연산 시간 (s) | 0.044 | 0.031 |
 
 ## 기술 스택
 

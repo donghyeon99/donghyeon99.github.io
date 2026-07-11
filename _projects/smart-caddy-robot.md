@@ -44,9 +44,12 @@ _로봇 하드웨어 플랫폼_
 ![ODE-based Simulation](/assets/projects/caddy_ODE_sim_result.png)
 _ODE 기반 시뮬레이션 결과_
 
-![KWIX 최우수상 상장](/assets/img/awards/kwix2021-best-award.jpg)
-_제17회 광운 ICT 작품 전시회(KWIX) 최우수상 — 작품명 "비대면 캐디 서비스 로봇"_
-
 ## 기술 스택
 
 ROS · GPS · IMU · 2D LiDAR · Potential Field · ODE Simulation
+
+## 수상
+
+<div class="project-certs">
+  <figure><img src="/assets/img/awards/kwix2021-best-award.jpg" alt="제17회 광운 ICT 작품 전시회(KWIX) 최우수상 상장"><figcaption>제17회 광운 ICT 작품 전시회(KWIX) 최우수상 (총장상) — 작품명 "비대면 캐디 서비스 로봇"</figcaption></figure>
+</div>
