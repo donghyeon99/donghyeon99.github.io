@@ -14,7 +14,7 @@ Research, Industry, Team 경험을 아우르는 로보틱스 프로젝트 모음
         <span class="project-badge project-badge--{{ project.category_label | downcase }}">{{ project.category_label }}</span>
         <span class="project-card__period">{{ project.period }}</span>
       </div>
-      <h3 class="project-card__title">{{ project.title }}</h3>
+      <h2 class="project-card__title">{{ project.title }}</h2>
       <p class="project-card__desc">{{ project.description }}</p>
       {% if project.tech %}
         <div class="project-tags">

@@ -3,12 +3,53 @@
 // Self-contained partial: no @use dependency on the theme's abstracts,
 // only Chirpy's runtime CSS custom properties are used for color, so this
 // file is safe regardless of whether it is pulled in via @import or @use.
-// Colors are taken exclusively from Chirpy's existing theme variables
-// (see gem `_sass/themes/_light.scss` / `_dark.scss`), so both color
-// schemes are supported automatically — nothing is hardcoded here.
+// Colors come from Chirpy's existing theme variables (see gem
+// `_sass/themes/_light.scss` / `_dark.scss`) — except the category badge
+// palette below, which is defined here because the theme's prompt icon
+// colors fail WCAG AA (4.5:1) when reused as badge text.
 
 $project-radius: 10px;
 $project-gap: 1.25rem;
+
+// ---------------------------------------------------------------------
+// Category badge palette — own colors, WCAG AA verified (>= 4.5:1)
+//
+// Light: research 5.76:1, industry 5.35:1, team 5.55:1
+// Dark:  research 6.41:1, industry 6.82:1, team 7.56:1
+//
+// Mode handling follows Chirpy 7.x: the theme toggle stamps
+// `data-bs-theme` on <html>, and without it the OS preference decides
+// via prefers-color-scheme (cf. gem `_sass/themes/`).
+// ---------------------------------------------------------------------
+
+@mixin project-badge-palette-dark {
+  --project-badge-research-bg: #0b3a63;
+  --project-badge-research-fg: #8fc6f2;
+  --project-badge-industry-bg: #4a3a08;
+  --project-badge-industry-fg: #f2c569;
+  --project-badge-team-bg: #14391f;
+  --project-badge-team-fg: #86d992;
+}
+
+:root {
+  // Light defaults — overridden by the dark blocks below.
+  --project-badge-research-bg: #dcedfb;
+  --project-badge-research-fg: #005ba6;
+  --project-badge-industry-bg: #fff3cd;
+  --project-badge-industry-fg: #8a5a00;
+  --project-badge-team-bg: #dcf5e0;
+  --project-badge-team-fg: #116e1e;
+}
+
+:root[data-bs-theme='dark'] {
+  @include project-badge-palette-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-bs-theme]) {
+    @include project-badge-palette-dark;
+  }
+}
 
 // ---------------------------------------------------------------------
 // List page — /projects/
@@ -90,18 +131,18 @@ $project-gap: 1.25rem;
   text-transform: uppercase;
 
   &--research {
-    background-color: var(--prompt-info-bg);
-    color: var(--prompt-info-icon-color);
+    background-color: var(--project-badge-research-bg);
+    color: var(--project-badge-research-fg);
   }
 
   &--industry {
-    background-color: var(--prompt-warning-bg);
-    color: var(--prompt-warning-icon-color);
+    background-color: var(--project-badge-industry-bg);
+    color: var(--project-badge-industry-fg);
   }
 
   &--team {
-    background-color: var(--prompt-tip-bg);
-    color: var(--prompt-tip-icon-color);
+    background-color: var(--project-badge-team-bg);
+    color: var(--project-badge-team-fg);
   }
 }
 
