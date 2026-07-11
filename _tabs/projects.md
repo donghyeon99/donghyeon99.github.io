@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
 icon: fas fa-diagram-project
-order: 6
+order: 2
 ---
 
 Research, Industry, Team 경험을 아우르는 로보틱스 프로젝트 모음입니다.

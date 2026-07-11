@@ -38,7 +38,7 @@ $project-gap: 1.25rem;
     color: var(--text-color);
     text-decoration: none;
     transform: translateY(-3px);
-    background-color: var(--card-hovor-bg);
+    background-color: var(--card-hover-bg);
 
     .project-tag {
       background-color: var(--tag-hover);
@@ -175,5 +175,173 @@ $project-gap: 1.25rem;
     font-size: 0.72rem;
     line-height: 1.35;
     color: var(--text-muted-color);
+  }
+}
+
+// ---------------------------------------------------------------------
+// Landing page — / (index.html)
+// Colors come exclusively from Chirpy theme variables (dark mode safe).
+// ---------------------------------------------------------------------
+
+// The `page` layout prepends an <h1 class="dynamic-title"> ("Home") before
+// the content; the landing brings its own hero heading instead, so hide it.
+// Browsers without :has() simply show the extra "Home" heading — harmless.
+article:has(.landing) > h1.dynamic-title {
+  display: none;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-top: 0.75rem;
+
+  // ----- (a) hero -----
+
+  .landing-hero__headline {
+    margin: 0 0 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--link-color);
+  }
+
+  .landing-hero__name {
+    margin: 0 0 0.9rem;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--heading-color);
+  }
+
+  .landing-hero__name-en {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-muted-color);
+    white-space: nowrap;
+  }
+
+  .landing-hero__identity {
+    max-width: 38rem;
+    margin: 0 0 1.4rem;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--text-color);
+  }
+
+  .landing-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .landing-btn {
+    display: inline-block;
+    padding: 0.45rem 1.15rem;
+    border: 1px solid var(--btn-border-color);
+    border-radius: 999px;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background-color: var(--card-hover-bg);
+      color: var(--heading-color);
+    }
+
+    &--primary {
+      border-color: var(--link-color);
+      color: var(--link-color);
+
+      &:hover,
+      &:focus {
+        color: var(--link-color);
+      }
+    }
+  }
+
+  // ----- (b) Modeling → Estimation → Simulation → Control -----
+
+  .landing-arc__steps {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--heading-color);
+
+      &::before {
+        content: '\2192'; // →
+        font-weight: 400;
+        color: var(--text-muted-color);
+      }
+
+      &:first-child::before {
+        content: none;
+      }
+    }
+  }
+
+  // ----- (c) highlights -----
+
+  .landing-highlights__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--tag-border);
+      border-radius: $project-radius;
+      background-color: var(--card-bg);
+      box-shadow: var(--card-shadow);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--heading-color);
+    }
+  }
+
+  // ----- (d) featured projects -----
+
+  .landing-section__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .landing-section__title {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--heading-color);
+  }
+
+  .landing-section__more {
+    font-size: 0.88rem;
+  }
+
+  .project-grid {
+    margin-top: 1rem;
   }
 }

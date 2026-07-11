@@ -1,4 +1,70 @@
 ---
-layout: home
-# Index page
+layout: page
+title: Home
+# 포트폴리오 랜딩 페이지.
+# - `page` 레이아웃이 찍는 <h1 class="dynamic-title">("Home")은
+#   _sass/custom/_projects.scss의 랜딩 블록에서 숨기고, 히어로가 자체 h1을 가진다.
+# - 대표 프로젝트 카드는 site.projects에서 직접 읽어와 원문(front matter)과 어긋나지 않게 한다.
 ---
+
+<div class="landing">
+  <!-- (a) 히어로 — 이름 · 헤드라인 · 정체성 한 줄 + (e) CV·About 진입 -->
+  <section class="landing-hero">
+    <p class="landing-hero__headline">Control &amp; Robotics Engineer</p>
+    <h1 class="landing-hero__name">
+      김동현 <span class="landing-hero__name-en">Dong Hyeon Kim</span>
+    </h1>
+    <p class="landing-hero__identity">
+      도메인이 바뀌어도, 공학 문제를 수학 모델로 만들고 알고리즘과 코드로 구현해 실제 시스템에서 검증합니다.
+    </p>
+    <div class="landing-hero__actions">
+      <a href="{{ '/cv/' | relative_url }}" class="landing-btn landing-btn--primary">CV 보기</a>
+      <a href="{{ '/about/' | relative_url }}" class="landing-btn">About 보기</a>
+    </div>
+  </section>
+
+  <!-- (b) 문제를 풀어온 방식 -->
+  <section class="landing-arc" aria-label="문제 해결 접근">
+    <ol class="landing-arc__steps">
+      <li>Modeling</li>
+      <li>Estimation</li>
+      <li>Simulation</li>
+      <li>Control</li>
+    </ol>
+  </section>
+
+  <!-- (c) 대표 성과 하이라이트 -->
+  <section class="landing-highlights" aria-label="대표 성과">
+    <ul class="landing-highlights__list">
+      <li>IEEE TIE 논문 게재</li>
+      <li>IRC 2020 대상(대통령상)</li>
+      <li>RoboCup Korea Open 2회 우승</li>
+    </ul>
+  </section>
+
+  <!-- (d) 대표 프로젝트 3선 -->
+  <section class="landing-projects">
+    <div class="landing-section__head">
+      <h2 class="landing-section__title">대표 프로젝트</h2>
+      <a href="{{ '/projects/' | relative_url }}" class="landing-section__more">모든 프로젝트 &rarr;</a>
+    </div>
+
+    {% assign featured_slugs = 'oafmcl-humanoid-localization|golf-cart-autonomous-driving|robit-humanoid' | split: '|' %}
+    <div class="project-grid">
+      {% for slug in featured_slugs %}
+        {% assign featured_url = '/projects/' | append: slug | append: '/' %}
+        {% assign project = site.projects | where: 'url', featured_url | first %}
+        {% if project %}
+          <a href="{{ project.url | relative_url }}" class="project-card">
+            <div class="project-card__head">
+              <span class="project-badge project-badge--{{ project.category_label | downcase }}">{{ project.category_label }}</span>
+              <span class="project-card__period">{{ project.period }}</span>
+            </div>
+            <h3 class="project-card__title">{{ project.title }}</h3>
+            <p class="project-card__desc">{{ project.description }}</p>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+</div>
