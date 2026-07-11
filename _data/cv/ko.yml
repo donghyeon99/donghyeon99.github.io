@@ -182,3 +182,5 @@ skills:
     items: ["PID", "SMC", "MPC", "Pure Pursuit", "A*", "Dijkstra", "RRT", "Potential Field"]
   - category: "Estimation & Filter"
     items: ["Kalman Filter (KF/EKF)", "Particle Filter", "Finite-Memory Filter (FIR)", "Sensor Fusion"]
+  - category: "Language Proficiency"
+    items: ["TOEIC Speaking 140 — Intermediate High (2024)"]
