@@ -4,8 +4,9 @@
 
 profile:
   name: "Dong Hyeon Kim"
-  title: "Robotics Engineer @ LUXROBO"
+  title: "Control & Robotics Engineer @ LUXROBO"
   period: "2024.05 ~ Present"
+  tagline: "Across changing domains, I turn engineering problems into mathematical models, implement them in algorithms and code, and validate them on real systems."
   interests:
     - "Robotics (Autonomous Driving, Humanoid)"
     - "Control Theory (PID, SMC, MPC)"
@@ -39,11 +40,11 @@ work:
     projects:
       - name: "Circuit Modeling & Simulation"
         period: "2026.03 ~ Present"
-        role: "Circuit Modeling & Simulation Engineer (AI Team)"
+        role: "Board-level thermal simulation engine development (AI Team · new business initiative)"
         bullets:
           - "Developing a PCB physics simulation backend platform — a board-level thermal analysis engine driven by ECAD geometry and netlist data"
           - "Steady-state thermal analysis based on a 3D finite-volume method (FVM), modeling circuit physics such as component power estimation, current distribution, and IR drop"
-          - "Building the Python/Rust engine and FastAPI backend API, validated against a commercial thermal solver (ANSYS Icepak)"
+          - "Building the Python/Rust engine and FastAPI backend API, validating against a commercial thermal solver (ANSYS Icepak)"
         tech: ["Python", "Rust", "FastAPI", "FVM", "Thermal Analysis"]
       - name: "Autonomous Driving Module for Golf Carts"
         period: "2025.06 ~ 2026.02"
@@ -81,7 +82,7 @@ research:
     bullets:
       - "Designed a Finite-Memory (FIR)-based cooperative localization algorithm, resolving the error-accumulation problem of recursive (IIR) estimation"
       - "Fused an external-sensor-based FMCL with an internal-sensor-based Odometry-NN via a neural network, achieving robustness to walking vibration in humanoid robots (using joint-motion data as input)"
-      - "Reduced error by about 80% compared to existing algorithms (MFDKF, NLSPGO, etc.) in Robot Kidnapping scenarios, with an average error of 0.07 m"
+      - "Reduced error by up to about 80% (vs. LHOL) compared to existing algorithms in Robot Kidnapping scenarios, with an average error of 0.07 m"
       - "Verified through demonstration experiments in a multi-humanoid-robot environment (RTLS Leader + LiDAR Followers)"
       - "Experimental results (RTAMSE, meter): Normal condition — OAFMCL 0.0474 vs MFDKF 0.1527 / NLSPGO 0.1012 / LHOL 0.0857; Robot Kidnapping — OAFMCL 0.0687 vs MFDKF 0.1103 / NLSPGO 0.0881 / LHOL 0.3791"
       - "Structure: the Leader carries an RTLS tag (absolute position from fixed anchors), Followers use low-cost LiDAR (relative distance/direction); FMCL + Odometry-NN → Fusion NN → final position estimate"
@@ -91,7 +92,7 @@ research:
     bullets:
       - "Developed a Finite-Memory distributed controller and collision-avoidance algorithm for Multi-UAV Formation Control"
       - "Realized decentralized cooperative control without central communication using a graph-based interaction topology model and a Virtual Leader structure"
-      - "Validated via MATLAB simulation and Pixhawk hardware experiments (1 Leader + 4 Followers), with formation error within ±0.2 m"
+      - "Validated via MATLAB simulation and Pixhawk hardware experiments (Virtual Leader + 4 Followers), with formation error within ±0.2 m"
     keywords: ["Pixhawk", "DistributedControl", "FormationControl", "MultiUAV", "VirtualLeader", "GraphModel", "ROS"]
   - org: "Korea Institute of Science and Technology (KIST), Robot Vision Lab"
     role: "Intern"
@@ -173,15 +174,15 @@ award_certs:
     caption: "Champion, RoboCup 2019 Korea Open Humanoid S (2019)"
 
 skills:
-  - category: "Languages"
-    items: ["C++", "Python", "MATLAB", "Go (Golang)", "C"]
-  - category: "Frameworks & Tools"
-    items: ["ROS/ROS2", "OpenCV", "CUDA", "Docker", "Git", "Redis", "MySQL", "gRPC"]
-  - category: "Hardware & Sensors"
-    items: ["Pixhawk", "STM32", "RTK-GPS/GNSS", "LiDAR", "Camera", "IMU", "UWB"]
-  - category: "Control & Planning"
-    items: ["PID", "SMC", "MPC", "Pure Pursuit", "A*", "Dijkstra", "RRT", "Potential Field"]
-  - category: "Estimation & Filter"
-    items: ["Kalman Filter (KF/EKF)", "Particle Filter", "Finite-Memory Filter (FIR)", "Sensor Fusion"]
+  - category: "Control & Estimation"
+    items: ["PID", "SMC", "MPC", "Pure Pursuit", "A*", "Dijkstra", "RRT", "Potential Field", "Kalman Filter (KF/EKF)", "Particle Filter", "Finite-Memory Filter (FIR)", "Sensor Fusion"]
+  - category: "Modeling & Simulation"
+    items: ["MATLAB", "FVM", "Thermal Analysis", "Rust"]
+  - category: "Computer Vision"
+    items: ["OpenCV", "YOLOv7", "CUDA", "RTSP", "Camera"]
+  - category: "Embedded Systems"
+    items: ["C", "STM32", "Pixhawk", "ROS/ROS2", "RTK-GPS/GNSS", "LiDAR", "IMU", "UWB"]
+  - category: "Backend & Infrastructure"
+    items: ["C++", "Python", "Go (Golang)", "FastAPI", "Redis", "MySQL", "gRPC", "Docker", "Git"]
   - category: "Language Proficiency"
     items: ["TOEIC Speaking 140 — Intermediate High (2024)"]

@@ -3,8 +3,9 @@
 
 profile:
   name: "김동현 (Dong Hyeon Kim)"
-  title: "Robotics Engineer @ LUXROBO"
+  title: "Control & Robotics Engineer @ LUXROBO"
   period: "2024.05 ~ 현재"
+  tagline: "도메인이 바뀌어도, 공학 문제를 수학 모델로 만들고 알고리즘과 코드로 구현해 실제 시스템에서 검증합니다."
   interests:
     - "Robotics (Autonomous Driving, Humanoid)"
     - "Control Theory (PID, SMC, MPC)"
@@ -38,11 +39,11 @@ work:
     projects:
       - name: "회로 모델링 & 시뮬레이션 개발"
         period: "2026.03 ~ 현재"
-        role: "Circuit Modeling & Simulation Engineer (AI팀)"
+        role: "보드 레벨 열해석 시뮬레이션 엔진 개발 (AI팀 · 회사 신규 사업)"
         bullets:
-          - "PCB 물리 시뮬레이션 백엔드 플랫폼 개발 — ECAD 기하·네트리스트 기반 보드 레벨 열해석 엔진"
+          - "PCB 물리 시뮬레이션 백엔드 플랫폼 개발 중 — ECAD 기하·네트리스트 기반 보드 레벨 열해석 엔진"
           - "3D 유한체적법(FVM) 기반 정상상태 열해석과 부품 발열원 추정·전류 분포·IR drop 등 회로 물리 모델링"
-          - "Python·Rust 엔진 및 FastAPI 백엔드 API 개발, 상용 열해석 도구(ANSYS Icepak) 대비 검증"
+          - "Python·Rust 엔진 및 FastAPI 백엔드 API 개발 중, 상용 열해석 도구(ANSYS Icepak) 대비 검증 중"
         tech: ["Python", "Rust", "FastAPI", "FVM", "Thermal Analysis"]
       - name: "골프카트 자율주행 모듈 개발"
         period: "2025.06 ~ 2026.02"
@@ -80,7 +81,7 @@ research:
     bullets:
       - "유한 메모리(FIR) 기반 협력 위치 추정 알고리즘 설계로 재귀 추정(IIR)의 오차 누적 문제 해결"
       - "외부 센서 기반 FMCL과 내부 센서 기반 Odometry-NN을 신경망으로 융합, 로봇 보행 진동에 강인성 확보 (관절 움직임 데이터를 입력으로 사용)"
-      - "Robot Kidnapping 상황에서 기존 알고리즘(MFDKF, NLSPGO 등) 대비 약 80% 오차 감소, 평균 오차 0.07m"
+      - "Robot Kidnapping 상황에서 기존 알고리즘 대비 최대 약 80%(LHOL 대비) 오차 감소, 평균 오차 0.07m"
       - "다중 휴머노이드 로봇 환경(RTLS Leader + LiDAR Followers)에서 실증 실험"
       - "실험 수치 (RTAMSE, meter): Normal condition — OAFMCL 0.0474 vs MFDKF 0.1527 / NLSPGO 0.1012 / LHOL 0.0857; Robot Kidnapping — OAFMCL 0.0687 vs MFDKF 0.1103 / NLSPGO 0.0881 / LHOL 0.3791"
       - "구조: Leader는 RTLS 태그(고정 앵커 절대 위치), Follower는 저가형 LiDAR(상대 거리·방향); FMCL + Odometry-NN → Fusion NN → 최종 위치 추정"
@@ -90,7 +91,7 @@ research:
     bullets:
       - "Multi-UAV Formation Control을 위한 Finite-Memory 분산 제어기 및 충돌 회피 알고리즘 개발"
       - "그래프 기반 상호위상 모델과 Virtual Leader 구조로 중앙 통신 없는 분산 협력 제어 실현"
-      - "MATLAB 시뮬레이션 및 Pixhawk 하드웨어(1 Leader + 4 Followers) 실험, 포메이션 오차 ±0.2m 이내 검증"
+      - "MATLAB 시뮬레이션 및 Pixhawk 하드웨어(Virtual Leader + 팔로워 4대) 실험, 포메이션 오차 ±0.2m 이내 검증"
     keywords: ["Pixhawk", "DistributedControl", "FormationControl", "MultiUAV", "VirtualLeader", "GraphModel", "ROS"]
   - org: "한국과학기술연구원(KIST) Robot Vision Lab"
     role: "인턴"
@@ -172,15 +173,15 @@ award_certs:
     caption: "RoboCup 2019 Korea Open Humanoid S 우승 (2019)"
 
 skills:
-  - category: "Languages"
-    items: ["C++", "Python", "MATLAB", "Go (Golang)", "C"]
-  - category: "Frameworks & Tools"
-    items: ["ROS/ROS2", "OpenCV", "CUDA", "Docker", "Git", "Redis", "MySQL", "gRPC"]
-  - category: "Hardware & Sensors"
-    items: ["Pixhawk", "STM32", "RTK-GPS/GNSS", "LiDAR", "Camera", "IMU", "UWB"]
-  - category: "Control & Planning"
-    items: ["PID", "SMC", "MPC", "Pure Pursuit", "A*", "Dijkstra", "RRT", "Potential Field"]
-  - category: "Estimation & Filter"
-    items: ["Kalman Filter (KF/EKF)", "Particle Filter", "Finite-Memory Filter (FIR)", "Sensor Fusion"]
+  - category: "Control & Estimation"
+    items: ["PID", "SMC", "MPC", "Pure Pursuit", "A*", "Dijkstra", "RRT", "Potential Field", "Kalman Filter (KF/EKF)", "Particle Filter", "Finite-Memory Filter (FIR)", "Sensor Fusion"]
+  - category: "Modeling & Simulation"
+    items: ["MATLAB", "FVM", "Thermal Analysis", "Rust"]
+  - category: "Computer Vision"
+    items: ["OpenCV", "YOLOv7", "CUDA", "RTSP", "Camera"]
+  - category: "Embedded Systems"
+    items: ["C", "STM32", "Pixhawk", "ROS/ROS2", "RTK-GPS/GNSS", "LiDAR", "IMU", "UWB"]
+  - category: "Backend & Infrastructure"
+    items: ["C++", "Python", "Go (Golang)", "FastAPI", "Redis", "MySQL", "gRPC", "Docker", "Git"]
   - category: "Language Proficiency"
     items: ["TOEIC Speaking 140 — Intermediate High (2024)"]

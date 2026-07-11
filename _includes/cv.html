@@ -12,6 +12,7 @@
       <header class="cv-profile">
         <h2 class="cv-name">{{ cv.profile.name }}</h2>
         <p class="cv-role">{{ cv.profile.title }} <span class="cv-period">({{ cv.profile.period }})</span></p>
+        {% if cv.profile.tagline %}<p class="cv-tagline">{{ cv.profile.tagline }}</p>{% endif %}
         <ul class="cv-interests">
           {% for interest in cv.profile.interests %}
             <li>{{ interest }}</li>
@@ -26,22 +27,6 @@
           <li><i class="fas fa-location-dot fa-fw"></i> {{ cv.profile.contact.location }}</li>
         </ul>
       </header>
-
-      <section class="cv-section">
-        <h3 class="cv-section-title">Education</h3>
-        {% for edu in cv.education %}
-        <div class="cv-entry">
-          <div class="cv-entry-head">
-            <span class="cv-entry-title">{{ edu.school }}</span>
-            <span class="cv-entry-period">{{ edu.period }}</span>
-          </div>
-          <p class="cv-entry-sub">{{ edu.degree }}</p>
-          {% if edu.lab %}<p class="cv-entry-sub">{{ edu.lab }}</p>{% endif %}
-          {% if edu.thesis %}<p class="cv-entry-sub cv-thesis">{{ edu.thesis }}</p>{% endif %}
-          {% if edu.note %}<p class="cv-entry-sub">{{ edu.note }}</p>{% endif %}
-        </div>
-        {% endfor %}
-      </section>
 
       <section class="cv-section">
         <h3 class="cv-section-title">Work Experience</h3>
@@ -109,6 +94,22 @@
           <li id="{{ pub.id }}-{{ lang_code }}">{{ pub.citation | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
           {% endfor %}
         </ol>
+      </section>
+
+      <section class="cv-section">
+        <h3 class="cv-section-title">Education</h3>
+        {% for edu in cv.education %}
+        <div class="cv-entry">
+          <div class="cv-entry-head">
+            <span class="cv-entry-title">{{ edu.school }}</span>
+            <span class="cv-entry-period">{{ edu.period }}</span>
+          </div>
+          <p class="cv-entry-sub">{{ edu.degree }}</p>
+          {% if edu.lab %}<p class="cv-entry-sub">{{ edu.lab }}</p>{% endif %}
+          {% if edu.thesis %}<p class="cv-entry-sub cv-thesis">{{ edu.thesis }}</p>{% endif %}
+          {% if edu.note %}<p class="cv-entry-sub">{{ edu.note }}</p>{% endif %}
+        </div>
+        {% endfor %}
       </section>
 
       <section class="cv-section">
