@@ -180,6 +180,22 @@
 .cv-thesis,
 .cv-topic {
   font-style: italic;
+  font-weight: 500;
+  color: var(--heading-color);
+}
+
+/* Research Experience — soft card per entry so items stand apart */
+.cv-section--research .cv-entry {
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--btn-border-color);
+  border-left: 3px solid var(--link-color);
+  border-radius: 6px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .cv-bullets {
