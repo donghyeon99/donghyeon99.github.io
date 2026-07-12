@@ -1,20 +1,30 @@
-/* CV language toggle: switches between the ko/en blocks rendered by
- * _includes/cv.html and remembers the choice in localStorage.
+/* Language toggle: switches between the ko/en .lang-block elements inside
+ * every .lang-page wrapper on the page and remembers the choice in
+ * localStorage ('cv-lang' — shared by CV, About and project pages).
  * No translation dictionary here — both languages are pre-rendered
- * server-side from _data/cv/{ko,en}.yml; this file only flips visibility.
+ * server-side; this file only flips visibility (see _sass/custom/_lang.scss).
+ * Loaded by _includes/lang-toggle.html; the guard below makes a duplicate
+ * <script> tag harmless.
  */
 (() => {
-  const STORAGE_KEY = 'cv-lang';
-  const root = document.getElementById('cv-page');
+  if (window.__cvLangInit) {
+    return;
+  }
+  window.__cvLangInit = true;
 
-  if (!root) {
+  const STORAGE_KEY = 'cv-lang';
+  const roots = document.querySelectorAll('.lang-page');
+
+  if (!roots.length) {
     return;
   }
 
-  const buttons = root.querySelectorAll('[data-cv-set-lang]');
+  const buttons = document.querySelectorAll('.lang-page [data-cv-set-lang]');
 
   function applyLang(lang) {
-    root.setAttribute('data-cv-lang', lang);
+    roots.forEach((root) => {
+      root.setAttribute('data-cv-lang', lang);
+    });
     buttons.forEach((btn) => {
       btn.setAttribute('aria-pressed', String(btn.dataset.cvSetLang === lang));
     });

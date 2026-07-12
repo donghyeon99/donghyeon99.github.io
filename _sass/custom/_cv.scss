@@ -1,51 +1,6 @@
-/* CV tab (_tabs/cv.md, _includes/cv.html) */
-
-.cv-page {
-  position: relative;
-}
-
-.cv-lang-toggle {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  display: flex;
-  gap: 0.4rem;
-}
-
-.cv-lang-btn {
-  padding: 0.25rem 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  color: var(--text-muted-color);
-  background: var(--button-bg);
-  border: 1px solid var(--btn-border-color);
-  border-radius: 999px;
-  cursor: pointer;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
-    border-color 0.2s ease-in-out;
-
-  &:hover {
-    color: var(--link-color);
-  }
-
-  &[aria-pressed='true'] {
-    color: var(--main-bg);
-    background: var(--link-color);
-    border-color: var(--link-color);
-  }
-}
-
-#cv-page {
-  &[data-cv-lang='ko'] .cv-lang-block[data-lang='en'] {
-    display: none;
-  }
-
-  &[data-cv-lang='en'] .cv-lang-block[data-lang='ko'] {
-    display: none;
-  }
-}
+/* CV tab (_tabs/cv.md, _includes/cv.html)
+ * Language toggle + ko/en block visibility live in _lang.scss (shared):
+ * the CV root carries `lang-page` and each cv-lang-block carries `lang-block`. */
 
 .cv-profile {
   margin-top: 2.5rem;

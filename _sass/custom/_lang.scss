@@ -1,0 +1,65 @@
+/* Shared ko/en language toggle — used by CV, About and project pages.
+ *
+ * Markup contract (see _includes/lang-toggle.html):
+ *   <div class="lang-page" data-cv-lang="en">
+ *     {% include lang-toggle.html %}
+ *     <div class="lang-block" data-lang="ko" lang="ko" markdown="1">…</div>
+ *     <div class="lang-block" data-lang="en" lang="en" markdown="1">…</div>
+ *   </div>
+ * Behavior: assets/js/cv-lang.js (localStorage key 'cv-lang').
+ */
+
+.lang-page {
+  position: relative; /* anchor for the absolutely-positioned toggle */
+
+  &[data-cv-lang='ko'] .lang-block[data-lang='en'] {
+    display: none;
+  }
+
+  &[data-cv-lang='en'] .lang-block[data-lang='ko'] {
+    display: none;
+  }
+}
+
+.cv-lang-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.cv-lang-btn {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text-muted-color);
+  background: var(--button-bg);
+  border: 1px solid var(--btn-border-color);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--link-color);
+  }
+
+  &[aria-pressed='true'] {
+    color: var(--main-bg);
+    background: var(--link-color);
+    border-color: var(--link-color);
+  }
+}
+
+/* Pages whose lang blocks carry their own bilingual <h1>: add
+ * `lang-page--own-title` to the wrapper to hide the theme's default page
+ * title. Selector verified against the built `page` layout:
+ * <article class="px-1"> > <h1 class="dynamic-title"> (same pattern as
+ * `article:has(.landing)` in _projects.scss). Browsers without :has()
+ * simply show a duplicate title — harmless. */
+article:has(.lang-page--own-title) > h1.dynamic-title {
+  display: none;
+}
