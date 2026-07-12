@@ -28,6 +28,7 @@ education:
     degree: "M.S. in Electrical Engineering"
     lab: "Advanced Control System Lab (Advisor: Prof. Choon Ki Ahn)"
     thesis: "Fusion of Neural Networks and Finite-Memory Estimation for Distributed Localization of Multiple Humanoid Robots"
+    note: "Teaching Assistant — Engineering Mathematics (2022.03 ~ 2022.08), Control Engineering (2022.09 ~ 2023.02)"
   - school: "Kwangwoon University"
     period: "2018.03 ~ 2022.02"
     degree: "B.S. in Robotics (Intelligent Systems Major)"
@@ -123,9 +124,9 @@ research:
 
 publications:
   - id: "J1"
-    citation: '**D. H. Kim**, J. M. Pak, P. Shi, and C. K. Ahn, "Finite-Memory CL Based on Multisensor Information Fusion Using Neural Networks for Multiple Humanoid Robots," *IEEE Transactions on Industrial Electronics*, vol. 73, no. 1, pp. 1384–1393, Jan. 2026. [DOI: 10.1109/TIE.2025.3600539](https://doi.org/10.1109/TIE.2025.3600539)'
+    citation: '**D. H. Kim**, J. M. Pak, P. Shi, and C. K. Ahn, "Finite-Memory CL Based on Multisensor Information Fusion Using Neural Networks for Multiple Humanoid Robots," *IEEE Transactions on Industrial Electronics*, vol. 73, no. 1, pp. 1384–1393, Jan. 2026. [DOI: 10.1109/TIE.2025.3600539](https://doi.org/10.1109/TIE.2025.3600539) — IF 7.4, JCR Q1'
   - id: "J2"
-    citation: 'J. Y. Ko, J. M. Pak, **D. H. Kim**, and C. K. Ahn, "Secure Event-Triggered Distributed Finite-Memory Localization for Multiple Mobile Robots Under Cyberattacks," *IEEE Transactions on Industrial Electronics*, vol. 71, no. 10, pp. 12931–12941, Oct. 2024.'
+    citation: 'J. Y. Ko, J. M. Pak, **D. H. Kim**, and C. K. Ahn, "Secure Event-Triggered Distributed Finite-Memory Localization for Multiple Mobile Robots Under Cyberattacks," *IEEE Transactions on Industrial Electronics*, vol. 71, no. 10, pp. 12931–12941, Oct. 2024. — IF 7.4, JCR Q1'
   - id: "C1"
     citation: '**D. H. Kim**, H. H. Kang, K. S. Kim, and C. K. Ahn, "3D Localization and Cyber-Attack Estimation of a Drone using RBFNN-based Finite Memory State Estimator," *Proceedings of the ICROS (Institute of Control, Robotics and Systems) Domestic Conference*, pp. 294–295, 2023.'
 

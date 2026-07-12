@@ -332,24 +332,50 @@
 }
 
 .cv-skills {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 1.25rem;
+  row-gap: 0.45rem;
+  align-items: baseline;
 }
 
 .cv-skill-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem 0.75rem;
+  display: contents; /* category/items participate directly in the parent grid so label columns align across rows */
 }
 
 .cv-skill-category {
-  flex-shrink: 0;
-  width: 9rem;
+  font-size: 0.85rem;
   font-weight: 600;
+  line-height: 1.6;
   color: var(--heading-color);
 }
 
 .cv-skill-items {
+  font-size: 0.85rem;
+  line-height: 1.6;
   color: var(--text-muted-color);
+}
+
+.cv-skill-item {
+  white-space: nowrap; /* wrap between items, never inside one */
+}
+
+.cv-skill-sep {
+  margin: 0 0.45em;
+  opacity: 0.55;
+}
+
+@media (max-width: 576px) {
+  .cv-skills {
+    grid-template-columns: 1fr; /* stack: category above, items below */
+    row-gap: 0.15rem;
+  }
+
+  .cv-skill-row .cv-skill-items {
+    margin-bottom: 0.5rem;
+  }
+
+  .cv-skill-item {
+    white-space: normal; /* avoid horizontal overflow of long single items on narrow screens */
+  }
 }

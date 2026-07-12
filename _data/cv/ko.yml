@@ -5,7 +5,7 @@ profile:
   name: "김동현 (Dong Hyeon Kim)"
   title: "Control & Robotics Engineer @ LUXROBO"
   period: "2024.05 ~ 현재"
-  tagline: "도메인이 바뀌어도, 공학 문제를 수학 모델로 만들고 알고리즘과 코드로 구현해 실제 시스템에서 검증합니다."
+  tagline: "도메인이 바뀌어도, 공학 문제를 수학 모델로 만들고 알고리즘과 코드로 구현해 실제 시스템에서 검증."
   interests:
     - "Robotics (Autonomous Driving, Humanoid)"
     - "Control Theory (PID, SMC, MPC)"
@@ -27,6 +27,7 @@ education:
     degree: "전기전자공학부 석사 (M.S. in Electrical Engineering)"
     lab: "Advanced Control System Lab (지도교수: Choon Ki Ahn)"
     thesis: "다수 휴머노이드 로봇의 분산 위치 추정을 위한 신경망과 유한 기억 추정의 융합"
+    note: "교육조교(TA) — 공학수학 (2022.03 ~ 2022.08), 제어공학 (2022.09 ~ 2023.02)"
   - school: "광운대학교 (Kwangwoon University)"
     period: "2018.03 ~ 2022.02"
     degree: "로봇학부 지능시스템전공 학사 (B.S. in Robotics)"
@@ -122,9 +123,9 @@ research:
 
 publications:
   - id: "J1"
-    citation: '**D. H. Kim**, J. M. Pak, P. Shi, and C. K. Ahn, "Finite-Memory CL Based on Multisensor Information Fusion Using Neural Networks for Multiple Humanoid Robots," *IEEE Transactions on Industrial Electronics*, vol. 73, no. 1, pp. 1384–1393, Jan. 2026. [DOI: 10.1109/TIE.2025.3600539](https://doi.org/10.1109/TIE.2025.3600539)'
+    citation: '**D. H. Kim**, J. M. Pak, P. Shi, and C. K. Ahn, "Finite-Memory CL Based on Multisensor Information Fusion Using Neural Networks for Multiple Humanoid Robots," *IEEE Transactions on Industrial Electronics*, vol. 73, no. 1, pp. 1384–1393, Jan. 2026. [DOI: 10.1109/TIE.2025.3600539](https://doi.org/10.1109/TIE.2025.3600539) — IF 7.4, JCR Q1'
   - id: "J2"
-    citation: 'J. Y. Ko, J. M. Pak, **D. H. Kim**, and C. K. Ahn, "Secure Event-Triggered Distributed Finite-Memory Localization for Multiple Mobile Robots Under Cyberattacks," *IEEE Transactions on Industrial Electronics*, vol. 71, no. 10, pp. 12931–12941, Oct. 2024.'
+    citation: 'J. Y. Ko, J. M. Pak, **D. H. Kim**, and C. K. Ahn, "Secure Event-Triggered Distributed Finite-Memory Localization for Multiple Mobile Robots Under Cyberattacks," *IEEE Transactions on Industrial Electronics*, vol. 71, no. 10, pp. 12931–12941, Oct. 2024. — IF 7.4, JCR Q1'
   - id: "C1"
     citation: '**D. H. Kim**, H. H. Kang, K. S. Kim, and C. K. Ahn, "3D Localization and Cyber-Attack Estimation of a Drone using RBFNN-based Finite Memory State Estimator," *제어로봇시스템학회 국내학술대회 논문집*, pp. 294–295, 2023.'
 

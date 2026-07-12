@@ -144,7 +144,7 @@
           {% for s in cv.skills %}
           <div class="cv-skill-row">
             <span class="cv-skill-category">{{ s.category }}</span>
-            <span class="cv-skill-items">{{ s.items | join: ", " }}</span>
+            <span class="cv-skill-items">{% for item in s.items %}<span class="cv-skill-item">{{ item }}</span>{% unless forloop.last %}<span class="cv-skill-sep" aria-hidden="true">·</span>{% endunless %}{% endfor %}</span>
           </div>
           {% endfor %}
         </div>
