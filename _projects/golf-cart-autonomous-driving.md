@@ -1,6 +1,8 @@
 ---
 title: "골프카트 자율주행 위치추정·제어 모듈"
+title_en: "Golf-Cart Autonomous Driving — Localization & Control Module"
 description: "GPS·IMU·조향각·차속을 융합한 EKF 기반 실시간 위치 추정과 Pure Pursuit 조향 제어로 골프카트 자율주행 모듈을 개발한 LUXROBO 프로젝트."
+description_en: "LUXROBO project developing an autonomous driving module for golf carts — EKF-based real-time localization fusing GPS, IMU, steering angle, and vehicle speed, with Pure Pursuit steering control."
 date: 2026-02-28
 period: "2025.06 ~ 2026.02"
 category_label: Industry
@@ -9,6 +11,20 @@ layout: page
 mermaid: true
 ---
 
+<div class="lang-page lang-page--own-title" data-cv-lang="en">
+{% include lang-toggle.html %}
+
+<div class="lang-block" data-lang="ko" lang="ko" markdown="1">
+
+# 골프카트 자율주행 위치추정·제어 모듈
+
+</div>
+<div class="lang-block" data-lang="en" lang="en" markdown="1">
+
+# Golf-Cart Autonomous Driving — Localization & Control Module
+
+</div>
+
 <div class="project-header">
   <span class="project-badge project-badge--{{ page.category_label | downcase }}">{{ page.category_label }}</span>
   <span class="project-header__period">{{ page.period }}</span>
@@ -16,6 +32,8 @@ mermaid: true
     {% for t in page.tech %}<span class="project-tag">{{ t }}</span>{% endfor %}
   </span>
 </div>
+
+<div class="lang-block" data-lang="ko" lang="ko" markdown="1">
 
 ## 문제
 
@@ -33,29 +51,56 @@ LUXROBO의 골프카트 자율주행 모듈 개발 프로젝트에서 차량 위
 - 상태 벡터를 속도(v)·슬립각(Slip Angle)·요레이트(Yaw Rate)·요각(Yaw)·위치(x, y)로 정의하고, EKF 예측·보정 구조를 단계적으로 검증.
 - GPS 측정값의 유효성을 Chi-square Gate로 판별하고, GPS 품질에 따라 측정 잡음 공분산(R 행렬)을 동적으로 조정하며 INS(관성항법)/GPS 모드를 전환하는 로직을 설계해 수신 품질 변동에 강인한 추정 구조 구축.
 
+</div>
+<div class="lang-block" data-lang="en" lang="en" markdown="1">
+
+## Problem
+
+An autonomous golf cart must know its own position and attitude accurately throughout driving, but GPS reception quality is never guaranteed in outdoor environments. Even with RTK-GPS (cm-level precision positioning), trusting measurements from quality-degraded segments as-is destabilizes the position estimate, and that error propagates directly into steering control. The core challenge of this project: fusing GPS of fluctuating quality with other sensors to estimate position and attitude reliably in every segment.
+
+## Role
+
+Responsible for developing the vehicle localization and driving control modules in LUXROBO's autonomous-driving module project for golf carts. Designed and validated the localization architecture in advance through MATLAB simulation based on real-vehicle driving logs, and built a validation environment comparable against the firmware. Then mounted the module on a real vehicle and conducted testing in an actual golf-course environment.
+
+## Key Contributions
+
+### Localization & Sensor Fusion
+
+- Designed and implemented a real-time position/attitude estimation module fusing GPS, IMU, steering angle (SAS), and vehicle speed, applying a Bicycle Model-based EKF (Extended Kalman Filter) with a Chi-square Gate (statistical outlier rejection).
+- Defined the state vector as velocity (v), Slip Angle, Yaw Rate, Yaw, and position (x, y), and progressively validated the EKF prediction/correction structure.
+- Designed logic that determines GPS measurement validity with a Chi-square Gate, dynamically adjusts the measurement noise covariance (R matrix) based on GPS quality, and switches between INS (inertial navigation)/GPS modes — building an estimation structure robust to fluctuating reception quality.
+
+</div>
+
+<div markdown="1">
+
 ```mermaid
 flowchart LR
-  subgraph IN["센서 입력"]
-    S1["IMU · 조향각(SAS) · 차속"]
+  subgraph IN["Sensor Inputs"]
+    S1["IMU · Steering Angle (SAS) · Vehicle Speed"]
     S2["RTK-GPS"]
   end
-  P["예측 (Prediction)<br>Bicycle Model 기반<br>상태 천이 행렬 F, B"]
-  G{"Chi-square Gate<br>GPS 유효성 판별"}
-  R["R 행렬 동적 조정<br>(GPS 품질 기반)"]
-  U["보정 (Update)<br>GPS Residual · Kalman Gain"]
-  I["INS 모드<br>(예측만 사용)"]
-  X["추정 상태<br>v · Slip Angle · Yaw Rate · Yaw · x · y"]
+  P["Prediction<br>Bicycle Model-based<br>state transition matrices F, B"]
+  G{"Chi-square Gate<br>GPS validity check"}
+  R["Dynamic R matrix adjustment<br>(based on GPS quality)"]
+  U["Update<br>GPS Residual · Kalman Gain"]
+  I["INS mode<br>(prediction only)"]
+  X["Estimated state<br>v · Slip Angle · Yaw Rate · Yaw · x · y"]
   S1 --> P
   S2 --> G
   S2 --> R
-  G -->|유효| U
-  G -->|기각| I
+  G -->|valid| U
+  G -->|rejected| I
   R --> U
   P --> U
   U --> X
   I --> X
   X --> P
 ```
+
+</div>
+
+<div class="lang-block" data-lang="ko" lang="ko" markdown="1">
 
 _실시간 EKF 아키텍처 — 다이어그램은 non-production data 기반 재구성_
 
@@ -79,3 +124,32 @@ _MATLAB 기반 센서 데이터 시뮬레이션 예시 — 추정 궤적·속도
 ---
 
 [← 모든 프로젝트 보기](/projects/){: .project-nav-link } · [CV 보기](/cv/){: .project-nav-link }
+
+</div>
+<div class="lang-block" data-lang="en" lang="en" markdown="1">
+
+_Real-time EKF architecture — diagram reconstructed from non-production data_
+
+### Steering Control & Path Planning
+
+- Developed Pure Pursuit-based steering control and driving path planning algorithms, taking the RTK-GPS-based high-precision localization output as input.
+
+### Validation & Bottleneck Analysis
+
+- Built an offline MATLAB simulation environment replaying real-vehicle driving logs (.bin) ahead of real-vehicle testing, enabling repeated validation of the estimation algorithm before deployment.
+- Built a real-time driving-log replay environment comparing localization results between simulation and firmware, laying the groundwork for verifying implementation consistency.
+- Analyzed firmware TASK priorities and execution performance to diagnose system bottlenecks.
+
+![Example of MATLAB-based sensor data simulation (simulation data)](/assets/img/projects/golf-cart-matlab-sim.png)
+_Example of MATLAB-based sensor data simulation — estimated trajectory, velocity, Yaw, GPS quality (HDOP/Age), gyro, covariance convergence (simulation data)_
+
+## Results
+
+Progressively validated the Bicycle Model-based EKF prediction/correction structure in MATLAB simulation, and built a real-time driving-log replay environment comparing localization results between simulation and firmware. Then mounted the module on a real vehicle and conducted testing in an actual golf-course environment.
+
+---
+
+[← All Projects](/projects/){: .project-nav-link } · [View CV](/cv/){: .project-nav-link }
+
+</div>
+</div>

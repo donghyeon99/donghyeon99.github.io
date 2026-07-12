@@ -1,12 +1,29 @@
 ---
 title: "OAFMCL: 다수 휴머노이드 로봇 협력 위치 추정"
+title_en: "OAFMCL: Cooperative Localization for Multiple Humanoid Robots"
 description: "다수 휴머노이드 로봇의 협력 위치 추정을 위해 유한 메모리 필터와 신경망을 융합한 OAFMCL 연구 — IEEE Trans. Industrial Electronics 게재, Robot Kidnapping 상황 평균 오차 0.07m."
+description_en: "OAFMCL research fusing a finite-memory filter and neural networks for cooperative localization of multiple humanoid robots — published in IEEE Trans. Industrial Electronics, with an average error of 0.07 m under Robot Kidnapping."
 date: 2024-02-29
 period: "2022.03 ~ 2024.02"
 category_label: Research
 tech: [Finite-Memory Filter (FIR), Neural Network, Multisensor Fusion, RTLS, LiDAR, Odometry]
 layout: page
 ---
+
+<div class="lang-page lang-page--own-title" data-cv-lang="en">
+{% include lang-toggle.html %}
+
+<div class="lang-block" data-lang="ko" lang="ko" markdown="1">
+
+# OAFMCL: 다수 휴머노이드 로봇 협력 위치 추정
+
+</div>
+
+<div class="lang-block" data-lang="en" lang="en" markdown="1">
+
+# OAFMCL: Cooperative Localization for Multiple Humanoid Robots
+
+</div>
 
 <div class="project-header">
   <span class="project-badge project-badge--{{ page.category_label | downcase }}">{{ page.category_label }}</span>
@@ -15,6 +32,8 @@ layout: page
     {% for t in page.tech %}<span class="project-tag">{{ t }}</span>{% endfor %}
   </span>
 </div>
+
+<div class="lang-block" data-lang="ko" lang="ko" markdown="1">
 
 ## 문제
 
@@ -52,8 +71,64 @@ _FMCL 단독 수치는 Robot Kidnapping 조건에서만 보고됨(로봇 3대 �
 
 **시연 영상** — 다중 휴머노이드 로봇 실증 실험:
 
+</div>
+
+<div class="lang-block" data-lang="en" lang="en" markdown="1">
+
+## Problem
+
+Cooperative Localization compensates for the limitations of single-robot localization by sharing relative observations between robots, but most prior research targets mobile robots. Humanoid robots exhibit sharply increased sensor noise from periodic body vibration while walking, so applying existing methods directly causes a steep drop in the accuracy of LiDAR-based cooperative localization. Moreover, recursive (IIR) estimators reuse all past data recursively, so this error accumulates over time. Applying cooperative localization to humanoids therefore requires both an auxiliary signal that reduces dependence on vibration-vulnerable LiDAR and a new estimator that structurally blocks error accumulation.
+
+## Role
+
+M.S. thesis research conducted at the Advanced Control System Lab, Korea University (Advisor: Prof. Choon Ki Ahn). Designed the cooperative localization algorithm **OAFMCL (Odometry Aided Finite-Memory Cooperative Localization)** to solve this problem, carried out demonstration experiments with multiple humanoid robots, and published the work as a first-author paper.
+
+## Key Contributions
+
+- Designed FMCL, a finite-memory (FIR filter)-based cooperative localization estimator that batch-processes only the most recent N measurements in a sliding window (N=7) to suppress the error-accumulation problem of recursive estimation — discarding old measurements blocks the accumulation of past errors at the source and keeps the error bounded
+- Developed Odometry-NN as an auxiliary signal to reduce dependence on vibration-vulnerable LiDAR — a neural network that takes joint-motion data (gait parameters and IMU pitch/roll) as input and learns the odometry noise pattern induced by walking vibration
+- Proposed the OAFMCL architecture, which integrates the estimates of the external-sensor-based FMCL and the internal-sensor-based Odometry-NN through a fusion neural network (Fusion NN) to produce the final position
+- Built a multi-robot cooperative structure with one Leader carrying an RTLS (Real-Time Location System) tag that estimates absolute position from fixed anchor signals, and two Followers measuring relative distance/direction to nearby robots with low-cost LiDAR
+- Conducted demonstration experiments with three humanoid robots in an indoor environment with four fixed anchors placed at 4.5 m intervals, validating performance under two conditions: normal walking and Robot Kidnapping (a robot suddenly moved to a different location)
+
+![Multi-humanoid-robot demonstration experiment environment](/assets/img/projects/oafmcl-humanoid-localization-1.jpg)
+_Demonstration experiment environment — four fixed anchors at 4.5 m intervals, three humanoid robots (1 Leader + 2 Followers)_
+
+## Results
+
+Compared against three existing cooperative localization algorithms (estimation-based MFDKF, optimization-based NLSPGO, and odometry-based LHOL) using RTAMSE (Root Time-Averaged Mean Square Error). Under Robot Kidnapping, OAFMCL recorded the best accuracy among the compared algorithms with an average error of 0.07 m, reducing error by up to about 80% (vs. LHOL) compared to existing algorithms. The finite-memory structure — using only the most recent N measurements to block the accumulation of past errors at the source — translated into robustness in situations where the position changes abruptly. Under the same condition, OAFMCL also cut error by more than 60% versus FMCL alone without odometry aid (0.174 m averaged over three robots), isolating the contribution of the neural-network-based odometry fusion.
+
+| Condition (RTAMSE, m) | OAFMCL | FMCL alone | MFDKF | NLSPGO | LHOL |
+|---|---|---|---|---|---|
+| Normal condition | **0.0474** | – | 0.1527 | 0.1012 | 0.0857 |
+| Robot Kidnapping | **0.0687** | 0.1743 | 0.1103 | 0.0881 | 0.3791 |
+
+_FMCL-alone figures are reported only for the Robot Kidnapping condition (averaged over three robots)._
+
+This work was published in IEEE Transactions on Industrial Electronics.
+
+> [J1] D. H. Kim, J. M. Pak, P. Shi, and C. K. Ahn, "Finite-Memory CL Based on Multisensor Information Fusion Using Neural Networks for Multiple Humanoid Robots," *IEEE Transactions on Industrial Electronics*, vol. 73, no. 1, pp. 1384–1393, Jan. 2026. [DOI: 10.1109/TIE.2025.3600539](https://doi.org/10.1109/TIE.2025.3600539)
+
+**Demo video** — multi-humanoid-robot demonstration experiment:
+
+</div>
+
 {% include embed/youtube.html id='ueaxI5FNc_w' %}
+
+<div class="lang-block" data-lang="ko" lang="ko" markdown="1">
 
 ---
 
 [← 모든 프로젝트 보기](/projects/){: .project-nav-link } · [CV 보기](/cv/){: .project-nav-link }
+
+</div>
+
+<div class="lang-block" data-lang="en" lang="en" markdown="1">
+
+---
+
+[← All Projects](/projects/){: .project-nav-link } · [View CV](/cv/){: .project-nav-link }
+
+</div>
+
+</div>
