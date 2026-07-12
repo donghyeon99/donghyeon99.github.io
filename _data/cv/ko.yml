@@ -123,9 +123,9 @@ research:
 
 publications:
   - id: "J1"
-    citation: '**D. H. Kim**, J. M. Pak, P. Shi, and C. K. Ahn, "Finite-Memory CL Based on Multisensor Information Fusion Using Neural Networks for Multiple Humanoid Robots," *IEEE Transactions on Industrial Electronics*, vol. 73, no. 1, pp. 1384–1393, Jan. 2026. [DOI: 10.1109/TIE.2025.3600539](https://doi.org/10.1109/TIE.2025.3600539) — IF 7.4, JCR Q1'
+    citation: '**D. H. Kim**, J. M. Pak, P. Shi, and C. K. Ahn, "Finite-Memory CL Based on Multisensor Information Fusion Using Neural Networks for Multiple Humanoid Robots," *IEEE Transactions on Industrial Electronics*, vol. 73, no. 1, pp. 1384–1393, Jan. 2026. [DOI: 10.1109/TIE.2025.3600539](https://doi.org/10.1109/TIE.2025.3600539) — IF 7.4 (2025 JCR), Q1'
   - id: "J2"
-    citation: 'J. Y. Ko, J. M. Pak, **D. H. Kim**, and C. K. Ahn, "Secure Event-Triggered Distributed Finite-Memory Localization for Multiple Mobile Robots Under Cyberattacks," *IEEE Transactions on Industrial Electronics*, vol. 71, no. 10, pp. 12931–12941, Oct. 2024. — IF 7.4, JCR Q1'
+    citation: 'J. Y. Ko, J. M. Pak, **D. H. Kim**, and C. K. Ahn, "Secure Event-Triggered Distributed Finite-Memory Localization for Multiple Mobile Robots Under Cyberattacks," *IEEE Transactions on Industrial Electronics*, vol. 71, no. 10, pp. 12931–12941, Oct. 2024. — IF 7.2 (2024 JCR), Q1'
   - id: "C1"
     citation: '**D. H. Kim**, H. H. Kang, K. S. Kim, and C. K. Ahn, "3D Localization and Cyber-Attack Estimation of a Drone using RBFNN-based Finite Memory State Estimator," *제어로봇시스템학회 국내학술대회 논문집*, pp. 294–295, 2023.'
 
