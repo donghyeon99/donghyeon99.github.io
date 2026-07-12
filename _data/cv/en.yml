@@ -61,7 +61,7 @@ work:
           - "Dynamically adjusted the R matrix based on GPS quality, with INS/GPS mode-switching logic"
           - "Compared localization results between simulation and firmware, with a real-time driving-log replay environment"
           - "Analyzed bottlenecks based on firmware TASK priority and execution performance"
-        tech: ["GNSS", "RTK-GPS", "LiDAR", "C", "MATLAB"]
+        tech: ["GNSS", "RTK-GPS", "C", "MATLAB"]
         keywords: ["AutonomousDriving", "Localization", "SensorFusion", "EKF", "BicycleModel", "KalmanFilter", "VehicleDynamics", "EmbeddedC"]
       - name: "Smart Parking System"
         period: "2024.05 ~ 2025.05 (Delivered)"
@@ -100,8 +100,8 @@ research:
     bullets:
       - "Researched ROS-based image processing algorithms and tested their application to mobile robot navigation"
   - org: "ROBIT (Robot Game Team, Kwangwoon Univ.)"
-    role: "Humanoid Team Leader"
-    period: "2019.01 ~ 2022.02 (Club activity: 2018.07 ~ 2021.12)"
+    role: "Member · Humanoid Team Leader (2020)"
+    period: "2019.01 ~ 2022.02"
     bullets:
       - "Led development of the full robot system (circuits, firmware, vision, control) for the RoboCup Humanoid League"
       - "Developed competition vision processing based on OpenCV (color-based techniques robust to lighting changes), improving indoor/outdoor recognition stability"
@@ -175,14 +175,14 @@ award_certs:
 
 skills:
   - category: "Control & Estimation"
-    items: ["PID", "SMC", "MPC", "Pure Pursuit", "A*", "Dijkstra", "RRT", "Potential Field", "Kalman Filter (KF/EKF)", "Particle Filter", "Finite-Memory Filter (FIR)", "Sensor Fusion"]
+    items: ["Kalman Filter (KF/EKF)", "Finite-Memory Filter (FIR)", "Particle Filter", "Sensor Fusion", "PID", "Pure Pursuit", "Potential Field"]
   - category: "Modeling & Simulation"
-    items: ["MATLAB", "FVM", "Thermal Analysis", "Rust"]
+    items: ["MATLAB", "FVM", "Thermal Analysis"]
   - category: "Computer Vision"
     items: ["OpenCV", "YOLOv7", "CUDA", "RTSP", "Camera"]
   - category: "Embedded Systems"
     items: ["C", "STM32", "Pixhawk", "ROS/ROS2", "RTK-GPS/GNSS", "LiDAR", "IMU", "UWB"]
   - category: "Backend & Infrastructure"
-    items: ["C++", "Python", "Go (Golang)", "FastAPI", "Redis", "MySQL", "gRPC", "Docker", "Git"]
+    items: ["C++", "Python", "Go (Golang)", "Redis", "gRPC", "Docker", "Git"]
   - category: "Language Proficiency"
     items: ["TOEIC Speaking 140 — Intermediate High (2024)"]

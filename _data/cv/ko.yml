@@ -60,7 +60,7 @@ work:
           - "GPS 품질에 따른 R 행렬 동적 조정 및 INS/GPS 모드 전환 로직"
           - "시뮬레이션-펌웨어 간 위치 추정 결과 비교 및 실시간 주행 로그 재생 환경"
           - "펌웨어 TASK 우선순위·실행 성능 기반 병목 분석"
-        tech: ["GNSS", "RTK-GPS", "LiDAR", "C", "MATLAB"]
+        tech: ["GNSS", "RTK-GPS", "C", "MATLAB"]
         keywords: ["AutonomousDriving", "Localization", "SensorFusion", "EKF", "BicycleModel", "KalmanFilter", "VehicleDynamics", "EmbeddedC"]
       - name: "스마트 주차 시스템 개발"
         period: "2024.05 ~ 2025.05 (납품 완료)"
@@ -99,8 +99,8 @@ research:
     bullets:
       - "ROS 기반 영상처리 알고리즘 연구 및 모바일 로봇 주행 적용 테스트"
   - org: "광운대학교 로봇게임단 ROBIT"
-    role: "Humanoid Team Leader"
-    period: "2019.01 ~ 2022.02 (동아리 활동 2018.07 ~ 2021.12)"
+    role: "단원 · Humanoid Team Leader (2020)"
+    period: "2019.01 ~ 2022.02"
     bullets:
       - "RoboCup 휴머노이드 리그 참가용 로봇 전체 시스템(회로, 펌웨어, 비전, 제어) 개발 주도"
       - "OpenCV 기반 대회용 영상 처리(조명 변화에 강인한 색상 기반 기법), 실내·실외 인식 안정성 향상"
@@ -174,14 +174,14 @@ award_certs:
 
 skills:
   - category: "Control & Estimation"
-    items: ["PID", "SMC", "MPC", "Pure Pursuit", "A*", "Dijkstra", "RRT", "Potential Field", "Kalman Filter (KF/EKF)", "Particle Filter", "Finite-Memory Filter (FIR)", "Sensor Fusion"]
+    items: ["Kalman Filter (KF/EKF)", "Finite-Memory Filter (FIR)", "Particle Filter", "Sensor Fusion", "PID", "Pure Pursuit", "Potential Field"]
   - category: "Modeling & Simulation"
-    items: ["MATLAB", "FVM", "Thermal Analysis", "Rust"]
+    items: ["MATLAB", "FVM", "Thermal Analysis"]
   - category: "Computer Vision"
     items: ["OpenCV", "YOLOv7", "CUDA", "RTSP", "Camera"]
   - category: "Embedded Systems"
     items: ["C", "STM32", "Pixhawk", "ROS/ROS2", "RTK-GPS/GNSS", "LiDAR", "IMU", "UWB"]
   - category: "Backend & Infrastructure"
-    items: ["C++", "Python", "Go (Golang)", "FastAPI", "Redis", "MySQL", "gRPC", "Docker", "Git"]
+    items: ["C++", "Python", "Go (Golang)", "Redis", "gRPC", "Docker", "Git"]
   - category: "Language Proficiency"
     items: ["TOEIC Speaking 140 — Intermediate High (2024)"]

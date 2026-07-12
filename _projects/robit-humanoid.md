@@ -1,8 +1,8 @@
 ---
 title: "ROBIT 휴머노이드 로봇 (RoboCup · IRC)"
 description: "회로·펌웨어·비전·제어 전체 시스템을 개발해 RoboCup Korea Open 우승 2회(2019·2020), RoboCup 2019 Sydney 국제대회 입상, IRC 2020 대상(대통령상)을 거둔 광운대 로봇게임단 ROBIT 활동."
-date: 2021-12-31
-period: "2018.07 ~ 2021.12"
+date: 2022-02-28
+period: "2019.01 ~ 2022.02"
 category_label: Team
 tech: [OpenCV, Particle Filter, STM32, Embedded System]
 layout: page
@@ -22,7 +22,7 @@ layout: page
 
 ## 역할
 
-광운대학교 로봇게임단 ROBIT에서 Humanoid Team Leader로 활동하며, RoboCup·국제로봇콘테스트(IRC) 휴머노이드 리그 참가용 로봇의 전체 시스템(회로, 펌웨어, 비전, 제어) 개발을 주도했다. 이 기간 RoboCup Korea Open 우승 2회(2019·2020)와 RoboCup 2019 Sydney 국제대회 입상에 이어, IRC 2020에서 대상(대통령상)을 수상했다.
+광운대학교 로봇게임단 ROBIT에서 활동하며 RoboCup·국제로봇콘테스트(IRC) 휴머노이드 리그 참가용 로봇의 전체 시스템(회로, 펌웨어, 비전, 제어) 개발을 주도했고, 2020년에는 휴머노이드 팀 리더를 맡았다. 이 기간 RoboCup Korea Open 우승 2회(2019·2020)와 RoboCup 2019 Sydney 국제대회 입상에 이어, IRC 2020에서 대상(대통령상)을 수상했다.
 
 ## 핵심 기여
 
