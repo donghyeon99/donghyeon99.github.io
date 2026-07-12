@@ -1,15 +1,15 @@
-<div id="cv-page" class="cv-page" data-cv-lang="{{ site.lang | default: 'ko' }}">
+<div id="cv-page" class="cv-page" data-cv-lang="en">
   <script>
     /* Pre-paint restore of the saved CV language (same key as assets/js/cv-lang.js)
-       so returning EN visitors don't see a Korean flash before the deferred JS runs. */
+       so returning visitors don't see a flash of the default (EN) before the deferred JS runs. */
     try {
       const saved = localStorage.getItem('cv-lang');
       if (saved === 'ko' || saved === 'en') { document.getElementById('cv-page').setAttribute('data-cv-lang', saved); }
     } catch (err) { /* localStorage unavailable — keep the server-rendered default */ }
   </script>
   <div class="cv-lang-toggle" role="group" aria-label="CV language toggle">
-    <button type="button" class="cv-lang-btn" data-cv-set-lang="ko" aria-pressed="{% if site.lang == 'en' %}false{% else %}true{% endif %}">KOR</button>
-    <button type="button" class="cv-lang-btn" data-cv-set-lang="en" aria-pressed="{% if site.lang == 'en' %}true{% else %}false{% endif %}">ENG</button>
+    <button type="button" class="cv-lang-btn" data-cv-set-lang="en" aria-pressed="true">ENG</button>
+    <button type="button" class="cv-lang-btn" data-cv-set-lang="ko" aria-pressed="false">KOR</button>
   </div>
 
   {% for entry in site.data.cv %}
