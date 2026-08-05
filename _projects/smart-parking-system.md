@@ -28,19 +28,19 @@ mermaid: true
 
 ## 개요
 
-영상 인지(Optical Flow·YOLO) 결과를 서버 이벤트로 변환해, Redis·gRPC 기반 실시간 조명 제어까지 연계한 스마트 주차 통합 시스템. 카메라가 상황을 인지하면 그 결과가 이벤트로 흘러 조명 제어로 이어지는 인지→이벤트→제어 흐름을 갖추고 있으며, 이 중 두 축인 영상 처리 서버와 조명 제어 서버 개발 담당.
+약 30대의 CCTV 스트림을 서버 한 대에서 받아 분석하고, 인지 결과를 이벤트로 바꿔 조명까지 실시간으로 제어하는 스마트 주차 통합 시스템이다. 2025년 5월에 납품을 마쳤다. 이 중 두 축인 영상 처리 서버(C++)와 조명 제어 서버(Go)를 개발했다.
 
 ## 문제
 
-주차장 전역에 설치된 약 30대의 CCTV가 보내오는 RTSP 영상 스트림을 단일 서버에서 동시에 수신·분석 필요. 카메라 수가 늘수록 디코딩과 분석 부하가 함께 늘어나는 데다, 어안(Fisheye) 카메라와 단방향(One-way) 카메라는 요구되는 분석이 서로 달라 하나의 파이프라인으로 묶기 어려움. 여기에 영상 인지 결과뿐 아니라 BLE(저전력 블루투스) 장치·비상벨 등 서로 다른 소스의 이벤트를 통합해, 상황 인지 기반의 조명 제어까지 끊김 없이 연결 필요.
+주차장 전역에 설치된 약 30대의 CCTV가 보내는 RTSP 스트림을 서버 한 대에서 동시에 받아 분석해야 한다. 카메라가 늘수록 디코딩·분석 부하가 같이 늘고, 어안(Fisheye) 카메라와 단방향(One-way) 카메라는 요구되는 분석이 달라 하나의 파이프라인으로 묶기 어렵다. 여기에 영상 인지 결과만이 아니라 BLE(저전력 블루투스) 장치·비상벨 같은 서로 다른 소스의 이벤트까지 통합해, 상황 인지 기반 조명 제어로 이어야 했다.
 
 ## 역할
 
-LUXROBO에서 시스템의 두 축인 영상 처리 서버(C++)와 조명 제어 서버(Go) 개발 담당. 영상 인지에서 이벤트 생성까지, 그리고 이벤트 수신에서 조명 장치 제어까지의 서버 파이프라인이 담당 범위.
+LUXROBO에서 시스템의 두 축인 영상 처리 서버(C++)와 조명 제어 서버(Go)를 개발했다. 영상 인지에서 이벤트 생성까지, 그리고 이벤트 수신에서 조명 장치 제어까지가 담당 범위였다.
 
 ## 시스템 구성
 
-아래는 시스템의 이벤트 흐름을 도식화한 구성도.
+아래는 시스템의 이벤트 흐름이다.
 
 </div>
 
@@ -50,19 +50,19 @@ LUXROBO에서 시스템의 두 축인 영상 처리 서버(C++)와 조명 제어
 
 ## Overview
 
-An integrated smart parking system that converts video perception results (Optical Flow, YOLO) into server events and links them to real-time lighting control over Redis and gRPC. When a camera perceives a situation, the result flows as an event and drives the lighting — a perception → event → control pipeline. Developed the system's two core servers: the video processing server and the lighting control server.
+An integrated smart parking system that analyzes about 30 CCTV streams on a single server and turns perception results (Optical Flow, YOLO) into events that drive real-time lighting control over Redis and gRPC. The system was delivered in May 2025. I developed its two core servers: the video processing server (C++) and the lighting control server (Go).
 
 ## Problem
 
-RTSP video streams from about 30 CCTV cameras installed across the parking facility had to be received and analyzed simultaneously on a single server. Decoding and analysis load grows with every added camera, and fisheye and one-way cameras require different kinds of analysis, making a single unified pipeline impractical. On top of that, events from heterogeneous sources — not only video perception results but also BLE (Bluetooth Low Energy) devices and emergency bells — had to be integrated and connected seamlessly to situation-aware lighting control.
+RTSP streams from about 30 CCTV cameras across the parking facility had to be received and analyzed simultaneously on one server. Decoding and analysis load grows with every added camera, and fisheye and one-way cameras need different kinds of analysis, which makes a single unified pipeline impractical. Events from other sources — BLE (Bluetooth Low Energy) devices and emergency bells — also had to feed into the same situation-aware lighting control.
 
 ## Role
 
-Responsible at LUXROBO for developing the system's two core servers: the video processing server (C++) and the lighting control server (Go). Scope covered the server pipeline from video perception to event generation, and from event reception to lighting device control.
+At LUXROBO, I developed the system's two core servers: the video processing server (C++) and the lighting control server (Go). My scope ran from video perception to event generation, and from event reception to lighting device control.
 
 ## System Architecture
 
-The diagram below illustrates the event flow of the system.
+The diagram below shows the event flow of the system.
 
 </div>
 
@@ -94,7 +94,7 @@ flowchart TD
 
 ## 결과
 
-시스템은 2025년 5월 납품 완료. 단일 영상 처리 서버에서 약 30대 규모의 카메라를 동시에 제어·분석하는 구조를 구축하고, 카메라 유형별(어안/단방향) 파이프라인 분리 설계로 확장성과 안정성 확보. 영상 인지 결과가 Redis 이벤트를 거쳐 gRPC 기반 조명 제어로 이어지는 인지→이벤트→제어 전 과정을 두 서버로 구현해 스마트 주차 통합 시스템 완성.
+시스템은 2025년 5월 납품을 마쳤다. 영상 처리 서버 한 대가 약 30대 카메라를 동시에 제어·분석하고, 카메라 유형별(어안/단방향)로 파이프라인을 분리해 유형이 늘어도 대응할 수 있게 설계했다. 인지 결과가 Redis 이벤트를 거쳐 gRPC 조명 제어로 이어지는 전 과정이 두 서버 위에서 돌아간다.
 
 ---
 
@@ -120,7 +120,7 @@ flowchart TD
 
 ## Results
 
-The system was delivered in May 2025. Built a structure in which a single video processing server simultaneously controls and analyzes about 30 cameras, with the per-type (fisheye/one-way) pipeline separation securing scalability and stability. Implemented the full perception → event → control chain — video perception results flowing through Redis events into gRPC-based lighting control — across the two servers, completing the integrated smart parking system.
+The system was delivered in May 2025. A single video server controls and analyzes about 30 cameras at once, and the separate fisheye/one-way pipelines mean new camera types can be added without reworking the whole structure. The full perception → event → control chain, from video analysis through Redis events to gRPC lighting control, runs across the two servers.
 
 ---
 

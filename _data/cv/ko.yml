@@ -1,11 +1,10 @@
 # CV 데이터 (한국어)
-# 단일 진실 원천: content-brief.md — 여기 없는 사실을 지어내지 말 것.
 
 profile:
   name: "김동현 (Dong Hyeon Kim)"
   title: "Control & Robotics Engineer @ LUXROBO"
   period: "2024.05 ~ 현재"
-  tagline: "도메인이 바뀌어도, 공학 문제를 수학 모델로 만들고 알고리즘과 코드로 구현해 실제 시스템에서 검증."
+  tagline: "휴머노이드·드론·차량에서 위치추정과 제어를 해왔습니다. IEEE TIE 1저자 논문, 국제로봇콘테스트 대상(대통령상), 스마트 주차 시스템 납품."
   interests:
     - "Robotics (Autonomous Driving, Humanoid)"
     - "Control Theory (PID, SMC, MPC)"
@@ -35,7 +34,7 @@ education:
 
 work:
   - company: "LUXROBO"
-    role: "Engineer"
+    role: "Engineer · 전문연구요원"
     period: "2024.05 ~ 현재"
     projects:
       - name: "회로 모델링 & 시뮬레이션 개발"
@@ -140,7 +139,7 @@ awards:
     detail: "국제로봇콘테스트 2020 휴머노이드 로봇 스포츠 (산업통상자원부 & 서울과학기술대학교 주최)"
     date: "2020.11"
   - title: "3위"
-    detail: "국제로봇콘테스트 2020 휴머노이드 로봇 스포츠 지능형 하이테크리그"
+    detail: "국제로봇콘테스트 2020 휴머노이드 로봇 스포츠 지능형 하이테크리그 (1차대회, 본대회에서 대상 수상)"
     date: "2020.11"
   - title: "우승"
     detail: "RoboCup 2020 Korea Open Humanoid Soccer Kid"
@@ -179,7 +178,7 @@ skills:
   - category: "Modeling & Simulation"
     items: ["MATLAB", "FVM", "Thermal Analysis"]
   - category: "Computer Vision"
-    items: ["OpenCV", "YOLOv7", "CUDA", "RTSP", "Camera"]
+    items: ["OpenCV", "YOLOv7", "CUDA", "RTSP"]
   - category: "Embedded Systems"
     items: ["C", "STM32", "Pixhawk", "ROS/ROS2", "RTK-GPS/GNSS", "LiDAR", "IMU", "UWB"]
   - category: "Backend & Infrastructure"

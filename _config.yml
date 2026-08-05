@@ -14,13 +14,14 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Donghyeon Kim # the main title
+title: Dong Hyeon Kim # the main title
 
 tagline: Control & Robotics Engineer # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  김동현(Dong Hyeon Kim) — 제어(Control)를 기반으로 휴머노이드·자율주행·상태추정·수치 시뮬레이션까지
-  확장해온 엔지니어. 공학 문제를 수학 모델로 만들고 코드로 구현해 실제 시스템에서 검증.
+  김동현(Dong Hyeon Kim), Control & Robotics Engineer.
+  휴머노이드·드론·차량에서 위치추정과 제어를 해왔습니다. IEEE TIE 1저자 논문,
+  국제로봇콘테스트 대통령상, 스마트 주차 시스템 납품 이력이 있습니다.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -35,7 +36,7 @@ github:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Donghyeon
+  name: Dong Hyeon Kim
   email: ehdgus2210@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link

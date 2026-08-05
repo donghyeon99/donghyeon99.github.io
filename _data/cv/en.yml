@@ -1,12 +1,10 @@
 # CV data (English)
-# Single source of truth: content-brief.md — do not invent facts not present there.
-# Translated per brief §9: figures, proper nouns, and technical terms kept as-is.
 
 profile:
   name: "Dong Hyeon Kim"
   title: "Control & Robotics Engineer @ LUXROBO"
   period: "2024.05 ~ Present"
-  tagline: "Across changing domains, I turn engineering problems into mathematical models, implement them in algorithms and code, and validate them on real systems."
+  tagline: "Localization and control across humanoids, UAVs, and vehicles. First-author IEEE TIE paper, a Presidential Award at the International Robot Contest, and a delivered smart parking system."
   interests:
     - "Robotics (Autonomous Driving, Humanoid)"
     - "Control Theory (PID, SMC, MPC)"
@@ -32,11 +30,11 @@ education:
   - school: "Kwangwoon University"
     period: "2018.03 ~ 2022.02"
     degree: "B.S. in Robotics (Intelligent Systems Major)"
-    note: "Full-tuition scholarship for ROBIT (robot game team) activities (2019 ~ 2021)"
+    note: "Full-tuition scholarship for ROBIT (robotics competition team) activities (2019 ~ 2021)"
 
 work:
   - company: "LUXROBO"
-    role: "Engineer"
+    role: "Engineer · Technical Research Personnel (alternative military service)"
     period: "2024.05 ~ Present"
     projects:
       - name: "Circuit Modeling & Simulation"
@@ -100,7 +98,7 @@ research:
     period: "2021.01 ~ 2021.02"
     bullets:
       - "Researched ROS-based image processing algorithms and tested their application to mobile robot navigation"
-  - org: "ROBIT (Robot Game Team, Kwangwoon Univ.)"
+  - org: "ROBIT (Robotics Competition Team, Kwangwoon Univ.)"
     role: "Member · Humanoid Team Leader (2020)"
     period: "2019.01 ~ 2022.02"
     bullets:
@@ -141,7 +139,7 @@ awards:
     detail: "International Robot Contest 2020, Humanoid Robot Sports (hosted by the Ministry of Trade, Industry and Energy & Seoul National University of Science and Technology)"
     date: "2020.11"
   - title: "3rd Place"
-    detail: "International Robot Contest 2020, Humanoid Robot Sports — Intelligent High-Tech League"
+    detail: "International Robot Contest 2020, Humanoid Robot Sports — Intelligent High-Tech League (preliminary round; the team went on to win the Grand Prize at the main event)"
     date: "2020.11"
   - title: "Champion"
     detail: "RoboCup 2020 Korea Open Humanoid Soccer Kid"
@@ -180,10 +178,8 @@ skills:
   - category: "Modeling & Simulation"
     items: ["MATLAB", "FVM", "Thermal Analysis"]
   - category: "Computer Vision"
-    items: ["OpenCV", "YOLOv7", "CUDA", "RTSP", "Camera"]
+    items: ["OpenCV", "YOLOv7", "CUDA", "RTSP"]
   - category: "Embedded Systems"
     items: ["C", "STM32", "Pixhawk", "ROS/ROS2", "RTK-GPS/GNSS", "LiDAR", "IMU", "UWB"]
   - category: "Backend & Infrastructure"
     items: ["C++", "Python", "Go (Golang)", "Redis", "gRPC", "Docker", "Git"]
-  - category: "Language Proficiency"
-    items: ["TOEIC Speaking 140 — Intermediate High (2024)"]

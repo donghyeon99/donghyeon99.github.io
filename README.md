@@ -1,6 +1,6 @@
 # donghyeon99.github.io
 
-블로그 & CV — Robotics Engineer, 로보틱스·제어·자율주행 기술 블로그
+김동현(Dong Hyeon Kim)의 개인 사이트. Control & Robotics 프로젝트 포트폴리오와 CV를 담고 있습니다.
 
 🌐 [https://donghyeon99.github.io](https://donghyeon99.github.io)
 

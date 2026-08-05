@@ -36,20 +36,23 @@ layout: page
 
 ## 개요
 
-골프장에서 사람 캐디 없이 자율 라운딩을 지원하는 로봇을 개발한 캡스톤 디자인 프로젝트(공식 작품명 "비대면 캐디 서비스 로봇"). 4인 팀의 리더로서 ROS 기반 시스템 설계부터 실차 프로토타입 제작까지 이끌었고, 이 작품으로 **제17회 광운 ICT 작품 전시회(KWIX) 최우수상(총장상)** 을 수상.
+골프장에서 사람 캐디 없이 자율 라운딩을 지원하는 로봇을 만든 캡스톤 디자인 프로젝트다(공식 작품명 "비대면 캐디 서비스 로봇"). 4인 팀의 리더로 ROS 기반 시스템 설계부터 실차 프로토타입 제작까지 이끌었고, 이 작품으로 **제17회 광운 ICT 작품 전시회(KWIX) 최우수상(총장상)** 을 받았다.
 
-> 🎬 **시연 영상**: [Final Demo](https://youtu.be/uAqilEhrqzE) · [장애물 회피](https://youtu.be/JxvJmeS787U) · [ODE 시뮬레이션](https://youtu.be/_OWhjs1FOTs)
+> 🎬 **시연 영상**: [Final Demo](https://youtu.be/uAqilEhrqzE) · [장애물 회피](https://youtu.be/JxvJmeS787U) · [ODE 시뮬레이션](https://youtu.be/_OWhjs1FOTs) · 코드: [caddy_robot](https://github.com/donghyeon99/caddy_robot)
 
 ## 문제
 
-사람 캐디 없이 골프백을 옮기려면, 로봇이 실외 환경에서 사용자를 놓치지 않고 따라가면서 이동 중 마주치는 정적·동적 장애물을 동시에 회피 필요. 사용자 추종과 장애물 회피는 진행 방향이 서로 충돌할 수 있는 목표라서, 두 동작을 하나의 주행 알고리즘으로 결합하는 것이 핵심 과제. 또한 실외 주행에서는 기준이 서로 다른 GPS·IMU 좌표계를 일관되게 정렬해야 주행이 안정됨.
+사람 캐디 없이 골프백을 옮기려면 로봇이 실외에서 사용자를 놓치지 않고 따라가야 하고, 이동 중 마주치는 정적·동적 장애물도 피해야 한다. 사용자 추종과 장애물 회피는 진행 방향이 서로 부딪힐 수 있는 목표다. 이 둘을 하나의 주행 알고리즘으로 묶는 것이 핵심 과제였다. 실외 주행에서는 기준이 서로 다른 GPS·IMU 좌표계를 일관되게 정렬해야 주행이 안정된다.
 
 ## 역할
 
-팀 리더로서 ROS 기반 시스템의 설계와 구현 총괄. 자율주행·추종 알고리즘과 GPS·IMU·2D LiDAR 인지 파이프라인, 전원·제어 회로의 설계·통합을 직접 담당.
+팀 리더로서 ROS 기반 시스템의 설계와 구현을 총괄했다. 자율주행·추종 알고리즘, GPS·IMU·2D LiDAR 인지 파이프라인, 전원·제어 회로의 설계·통합을 직접 맡았다. 주요 부품은 RPLIDAR-A2 2D LiDAR, MW-AHRSv1 6DoF IMU, AKBU6 GPS, 로봇 제어용 STM32와 리모컨용 ESP32 MCU다.
 
 ![캐디 로봇 실차 프로토타입 — 골프백을 실은 로봇 사진과 하드웨어 스펙 표(무게 15kg, 바퀴 지름 30cm, 50×86×105cm)](/assets/img/projects/smart-caddy-hardware.jpg)
 _실차 프로토타입 하드웨어 — 50×86×105cm(W×H×L), 15kg, 바퀴 지름 30cm_
+
+![센서 배치가 표시된 로봇 사진, 직접 그린 제어 회로도, 프레임 CAD 모델](/assets/img/projects/smart-caddy-circuit-cad.jpg)
+_센서 배치(IMU·DC모터·GPS·LiDAR), 직접 설계한 제어 회로도, 프레임 CAD 모델_
 
 ## 핵심 기여
 
@@ -67,9 +70,22 @@ _제어 구조 — Potential Field가 출력한 속도 명령을 Mobile Kinemati
 ![GPS·블루투스 입력을 받는 Caddy serial 노드와 IMU·LiDAR 입력으로 속도 명령을 생성하는 Caddy navigation 노드의 ROS 노드 구성도](/assets/img/projects/smart-caddy-ros-nodes.jpg)
 _ROS 노드 구성 — Caddy serial 노드가 GPS·블루투스 입력을 받아 MCU와 통신하고, Caddy navigation 노드가 IMU·LiDAR 입력으로 속도 명령 생성_
 
+## 설계 판단과 시행착오
+
+GPS 센서는 필드에서 골랐다. 수신 데이터를 직접 받아보니 주택가에서는 값이 계속 흔들렸고, 트인 하천변에서는 일정 값으로 수렴했다. 골프장은 트인 환경이고 짐을 싣고 따라오는 용도라 cm급 정밀도까지는 필요 없다고 판단해, RTK 없이 일반 GPS 모듈로 확정했다. 수신값은 NMEA에서 위도·경도를 뽑아 UTM 좌표로 바꾸고 이동평균 필터로 노이즈를 줄였다.
+
+![하천변 GPS 필드 테스트 — mapviz 위성지도 위 사용자·로봇 GPS 궤적](/assets/img/projects/smart-caddy-gps-field-test.jpg)
+_하천변 GPS 필드 테스트: mapviz 위성지도에 사용자(초록)와 로봇(빨강)의 GPS 궤적을 겹쳐 확인_
+
+Repulsive force 계산에는 Min-Depth Filter라는 아이디어를 고안했다. 장애물을 하나하나 구분해 척력을 만들면 연산이 커지는데, 커널로 방향별 최소 거리만 뽑으면 장애물을 구분하지 않고도 척력이 나온다. 연산량을 낮추면서 회피 동작은 그대로 유지했다.
+
+시뮬레이션에서는 ODE의 LiDAR가 너무 이상적이라는 게 문제였다. Random·Gaussian 노이즈를 얹고, 측정 실패 시 max값이 반환되는 failure 상황까지 흉내 내서 실제 센서와 비슷한 조건을 만든 뒤에 알고리즘을 검증했다.
+
+제어 주기는 계단식으로 맞췄다. 전류 제어기 500Hz, 속도 제어기 50Hz, 내비게이션 5Hz. 상위 명령이 하위 제어기 주기의 10분의 1로만 내려가게 해서, 하위 제어기가 명령을 충분히 소화하게 했다.
+
 ## 결과
 
-ODE 시뮬레이션으로 정적·동적 장애물 회피를 선행 검증한 뒤, 50×86×105cm·15kg 실차 프로토타입을 제작해 실외 환경에서 GPS 사용자 추종·장애물 회피 주행 시연(시연 영상 3편).
+ODE 시뮬레이션으로 정적·동적 장애물 회피를 먼저 검증했다. 이후 50×86×105cm, 15kg 실차 프로토타입을 제작해 실외 환경에서 GPS 사용자 추종과 장애물 회피 주행을 시연했다(영상 3편).
 
 ![ODE 시뮬레이션에서 로봇(노란색)이 정적 장애물(회색)과 동적 장애물(초록색)을 회피하며 목표점(빨간색)까지 주행한 경로 화면](/assets/img/projects/smart-caddy-ode-sim.jpg)
 _ODE 기반 Potential Field 시뮬레이션 — 정적·동적 장애물을 회피하며 목표점에 도달하는 주행 경로_
@@ -89,20 +105,23 @@ _ODE 기반 Potential Field 시뮬레이션 — 정적·동적 장애물을 회�
 
 ## Overview
 
-Capstone design project that developed a robot supporting autonomous golf rounds without a human caddy (official entry title: "Contactless Caddy Service Robot"). Led a four-member team from ROS-based system design through building the real-vehicle prototype; the work won the **Excellence Award (University President's Award) at the 17th Kwangwoon ICT Exhibition (KWIX)**.
+This capstone design project built a robot that supports autonomous golf rounds without a human caddy (official entry title: "Contactless Caddy Service Robot"). I led a four-member team from ROS-based system design through building the real-vehicle prototype, and the work won the **Excellence Award (University President's Award) at the 17th Kwangwoon ICT Exhibition (KWIX)**.
 
-> 🎬 **Demo videos**: [Final Demo](https://youtu.be/uAqilEhrqzE) · [Obstacle Avoidance](https://youtu.be/JxvJmeS787U) · [ODE Simulation](https://youtu.be/_OWhjs1FOTs)
+> 🎬 **Demo videos**: [Final Demo](https://youtu.be/uAqilEhrqzE) · [Obstacle Avoidance](https://youtu.be/JxvJmeS787U) · [ODE Simulation](https://youtu.be/_OWhjs1FOTs) · Code: [caddy_robot](https://github.com/donghyeon99/caddy_robot)
 
 ## Problem
 
-Carrying a golf bag without a human caddy requires the robot to follow the user in an outdoor environment without losing them, while simultaneously avoiding the static and dynamic obstacles encountered along the way. User-following and obstacle avoidance can pull the heading in conflicting directions, so combining the two behaviors into a single driving algorithm was the core challenge. Outdoor driving also demands consistent alignment of the GPS and IMU coordinate frames, which use different references, for stable driving.
+Carrying a golf bag without a human caddy means the robot has to follow the user outdoors without losing them, while avoiding the static and dynamic obstacles along the way. User-following and obstacle avoidance can pull the heading in conflicting directions. Combining the two behaviors into a single driving algorithm was the core challenge. Outdoor driving also demands consistent alignment of the GPS and IMU coordinate frames, which use different references.
 
 ## Role
 
-As team leader, oversaw the design and implementation of the ROS-based system. Directly responsible for the autonomous-driving/following algorithms, the GPS/IMU/2D LiDAR perception pipeline, and the design and integration of the power/control circuits.
+As team leader, I oversaw the design and implementation of the ROS-based system. I was directly responsible for the autonomous-driving and following algorithms, the GPS/IMU/2D LiDAR perception pipeline, and the design and integration of the power and control circuits. Main components: an RPLIDAR-A2 2D LiDAR, an MW-AHRSv1 6DoF IMU, an AKBU6 GPS, an STM32 MCU for robot control, and an ESP32 MCU for the remote.
 
 ![Real-vehicle caddy robot prototype — photo of the robot carrying a golf bag with a hardware spec table (15kg, 30cm wheel diameter, 50×86×105cm)](/assets/img/projects/smart-caddy-hardware.jpg)
 _Real-vehicle prototype hardware — 50×86×105cm (W×H×L), 15kg, 30cm wheel diameter_
+
+![Robot photo with sensor placement annotations, the control circuit schematic, and the frame CAD model](/assets/img/projects/smart-caddy-circuit-cad.jpg)
+_Sensor placement (IMU, DC motors, GPS, LiDAR), the control circuit schematic I designed, and the frame CAD model_
 
 ## Key Contributions
 
@@ -120,9 +139,22 @@ _Control structure — velocity commands from the Potential Field are converted 
 ![ROS node diagram — the Caddy serial node receives GPS/Bluetooth input, and the Caddy navigation node generates velocity commands from IMU/LiDAR input](/assets/img/projects/smart-caddy-ros-nodes.jpg)
 _ROS node layout — the Caddy serial node receives GPS/Bluetooth input and communicates with the MCU, while the Caddy navigation node generates velocity commands from IMU/LiDAR input_
 
+## Design Decisions & Field Lessons
+
+The GPS sensor was chosen in the field. Watching live data, readings kept wobbling in a residential area but converged to steady values along an open stream-side path. A golf course is open terrain, and a bag-carrying follower doesn't need cm-level precision, so we settled on a plain GPS module without RTK. Latitude and longitude are parsed from NMEA, converted to UTM coordinates, and smoothed with a moving-average filter.
+
+![Stream-side GPS field test — user and robot GPS tracks on satellite imagery in mapviz](/assets/img/projects/smart-caddy-gps-field-test.jpg)
+_Stream-side GPS field test: user (green) and robot (red) GPS tracks overlaid on satellite imagery in mapviz_
+
+For the repulsive force I came up with an idea we called the Min-Depth Filter. Computing forces per obstacle gets expensive; a kernel that keeps only the minimum range per direction produces the repulsive force without segmenting obstacles at all. Computation dropped while the avoidance behavior stayed the same.
+
+In simulation, the problem was that ODE's LiDAR is too well-behaved. I added random and Gaussian noise to its ideal ranges, plus failure cases where the sensor returns its max value, and only then validated the algorithm under conditions close to the real sensor.
+
+Control rates step down in tiers: current controller at 500 Hz, velocity controller at 50 Hz, navigation at 5 Hz. Each layer sends commands at a tenth of the rate below it, so every controller can fully absorb what it receives.
+
 ## Results
 
-Validated static/dynamic obstacle avoidance in ODE simulation first, then built a 50×86×105cm, 15kg real-vehicle prototype and demonstrated GPS user-following and obstacle-avoidance driving in an outdoor environment (three demo videos).
+We validated static and dynamic obstacle avoidance in ODE simulation first. We then built a 50×86×105 cm, 15 kg real-vehicle prototype and demonstrated GPS user-following and obstacle-avoidance driving outdoors (three demo videos).
 
 ![ODE simulation screen showing the robot (yellow) driving to the target point (red) while avoiding static obstacles (gray) and dynamic obstacles (green)](/assets/img/projects/smart-caddy-ode-sim.jpg)
 _ODE-based Potential Field simulation — driving path reaching the target point while avoiding static and dynamic obstacles_
