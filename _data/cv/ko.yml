@@ -41,35 +41,39 @@ work:
         period: "2026.03 ~ 현재"
         role: "보드 레벨 열해석 시뮬레이션 엔진 개발 (AI팀 · 회사 신규 사업)"
         bullets:
-          - "PCB 물리 시뮬레이션 백엔드 플랫폼 개발 중 — ECAD 기하·네트리스트 기반 보드 레벨 열해석 엔진"
-          - "3D 유한체적법(FVM) 기반 정상상태 열해석과 부품 발열원 추정·전류 분포·IR drop 등 회로 물리 모델링"
-          - "Python·Rust 엔진 및 FastAPI 백엔드 API 개발 중, 상용 열해석 도구(ANSYS Icepak) 대비 검증 중"
+          - "ECAD 기하·네트리스트를 입력으로 받는 PCB 물리 시뮬레이션 백엔드 플랫폼 개발 중"
+          - "3D 유한체적법(FVM) 기반 정상상태 열해석 엔진 구현"
+          - "부품 발열원 추정·전류 분포·IR drop을 다루는 회로 물리 모델링"
+          - "Python·Rust 엔진과 FastAPI 백엔드 API 개발, 상용 열해석 도구(ANSYS Icepak) 대비 결과 검증 진행 중"
         tech: ["Python", "Rust", "FastAPI", "FVM", "Thermal Analysis"]
+        keywords: ["PCB", "ECAD", "Netlist", "IRDrop", "PhysicsSimulation"]
       - name: "골프카트 자율주행 모듈 개발"
         period: "2025.06 ~ 2026.02"
         role: "차량 위치 추정 및 주행 제어 모듈 개발"
         bullets:
-          - "RTK-GPS 기반 고정밀 위치 추정 알고리즘 구현 및 검증"
+          - "RTK-GPS 기반 고정밀 위치 추정 알고리즘 구현 및 실차 검증"
+          - "GPS·IMU·조향각(SAS)·속도 정보를 융합한 Bicycle Model 기반 EKF 위치·자세 추정 모듈 설계·구현"
           - "주행 경로 계획 및 조향 제어 알고리즘(Pure Pursuit 등) 개발"
-          - "MATLAB 기반 시뮬레이션 환경 구축 및 실차 테스트 수행"
+          - "실차 주행 로그 기반 MATLAB 시뮬레이션 환경 구축 후 실차 테스트로 단계적 검증"
         details:
-          - "실차 주행 로그(.bin) 기반 MATLAB 오프라인 시뮬레이션 선행 구축"
-          - "자전거 모델(Bicycle Model) 기반 EKF 예측·보정 구조 단계적 검증"
+          - "실차 주행 로그(.bin) 기반 MATLAB 오프라인 위치 추정 시뮬레이션 선행 구축"
+          - "자전거 모델(Bicycle Model) 기반 EKF 예측·보정 구조의 단계적 검증"
           - "상태 벡터 v, SlipAngle, YawRate, Yaw, x, y"
           - "Chi-square Gate 기반 GPS 측정값 유효성 판별"
           - "GPS 품질에 따른 R 행렬 동적 조정 및 INS/GPS 모드 전환 로직"
-          - "시뮬레이션-펌웨어 간 위치 추정 결과 비교 및 실시간 주행 로그 재생 환경"
+          - "시뮬레이션과 펌웨어 간 위치 추정 결과 비교, 실시간 주행 로그 재생 환경 구축"
           - "펌웨어 TASK 우선순위·실행 성능 기반 병목 분석"
         tech: ["GNSS", "RTK-GPS", "C", "MATLAB"]
         keywords: ["AutonomousDriving", "Localization", "SensorFusion", "EKF", "BicycleModel", "KalmanFilter", "VehicleDynamics", "EmbeddedC"]
       - name: "스마트 주차 시스템 개발"
-        period: "2024.05 ~ 2025.05 (납품 완료)"
-        role: "영상 처리 서버 및 조명 제어 서버 개발"
+        period: "2024.05 ~ 2025.05"
+        role: "영상 처리 서버 및 조명 제어 서버 개발 (현장 납품 완료)"
         bullets:
-          - "단일 서버에서 약 30대 CCTV 카메라 동시 제어 및 분석 (RTSP 스트림 처리), 어안(Fisheye)/단방향(One-way) 카메라 파이프라인 분리로 확장성 확보"
-          - "Optical Flow 및 YOLOv7(ONNX) 기반 객체(차량/보행자) 탐지 및 속도 분석 (CUDA 가속)"
-          - "Redis 기반 이벤트 처리 구조 설계, RSSI 신호 비교 기반 근접 카메라 자동 식별"
-          - "gRPC 통신 기반 실시간 조명 장치 동적 제어 (CCTV·BLE·비상벨 이벤트 통합 처리)"
+          - "단일 서버에서 약 30대 CCTV 카메라의 RTSP 스트림 동시 수신·제어 및 분석"
+          - "어안(Fisheye)·단방향(One-way) 카메라 파이프라인을 분리한 구조로 확장성과 안정성 개선"
+          - "Optical Flow와 YOLOv7(ONNX) 기반 차량·보행자 탐지 및 이동 방향·속도 분석 (CUDA 가속)"
+          - "Redis 기반 이벤트 처리 구조 설계, RSSI 신호 세기 비교로 호출 시점의 근접 카메라 자동 식별"
+          - "gRPC 통신으로 CCTV·BLE·비상벨 이벤트를 통합해 조명 장치를 상황에 따라 동적 제어"
         tech: ["C++", "Go", "Redis", "gRPC", "OpenCV", "YOLOv7", "RTSP"]
         keywords: ["SmartParking", "ComputerVision", "OpticalFlow", "MultiCameraProcessing"]
 
@@ -79,45 +83,54 @@ research:
     period: "2022.03 ~ 2024.02"
     topic: "OAFMCL (Odometry Aided Finite-Memory Cooperative Localization) 알고리즘 개발"
     bullets:
-      - "유한 메모리(FIR) 기반 협력 위치 추정 알고리즘 설계로 재귀 추정(IIR)의 오차 누적 문제 해결"
-      - "외부 센서 기반 FMCL과 내부 센서 기반 Odometry-NN을 신경망으로 융합, 로봇 보행 진동에 강인성 확보 (관절 움직임 데이터를 입력으로 사용)"
-      - "Robot Kidnapping 상황에서 기존 알고리즘 대비 최대 약 80%(LHOL 대비) 오차 감소, 평균 오차 0.07m"
-      - "다중 휴머노이드 로봇 환경(RTLS Leader + LiDAR Followers)에서 실증 실험"
+      - "재귀 추정(IIR)의 오차 누적 문제를 해결하는 유한 메모리(FIR) 기반 협력 위치 추정(FMCL) 알고리즘 설계"
+      - "Leader는 RTLS 태그로 고정 앵커 기준 절대 위치를, Follower는 저가형 LiDAR로 상대 거리·방향을 얻는 구성"
+      - "외부 센서 기반 FMCL과 내부 센서 기반 Odometry-NN의 신경망 융합(FMCL + Odometry-NN → Fusion NN → 최종 위치 추정), 관절 움직임 데이터를 입력으로 삼아 보행 진동에 대한 강인성 개선"
+      - "다중 휴머노이드 로봇 환경에서 정상 상황과 Robot Kidnapping 상황을 나눈 실증 실험"
+      - "Robot Kidnapping 상황 평균 오차 0.07m, 기존 알고리즘 대비 최대 약 80%(LHOL 대비) 오차 감소"
       - "실험 수치 (RTAMSE, meter): Normal condition — OAFMCL 0.0474 vs MFDKF 0.1527 / NLSPGO 0.1012 / LHOL 0.0857; Robot Kidnapping — OAFMCL 0.0687 vs MFDKF 0.1103 / NLSPGO 0.0881 / LHOL 0.3791"
-      - "구조: Leader는 RTLS 태그(고정 앵커 절대 위치), Follower는 저가형 LiDAR(상대 거리·방향); FMCL + Odometry-NN → Fusion NN → 최종 위치 추정"
+    keywords: ["OAFMCL", "FiniteMemoryFilter", "CooperativeLocalization", "NeuralNetwork", "HumanoidRobot", "RTLS", "LiDAR"]
   - org: "한국연구재단(NRF) 프로젝트"
+    role: "과제 연구"
     period: "2022.03 ~ 2024.02"
     topic: "불법드론 무력화를 위한 AI 기반 협력적 자율주행 스웜 안티드론 시스템 (Multi-UAV Formation Control)"
     bullets:
-      - "Multi-UAV Formation Control을 위한 Finite-Memory 분산 제어기 및 충돌 회피 알고리즘 개발"
-      - "그래프 기반 상호위상 모델과 Virtual Leader 구조로 중앙 통신 없는 분산 협력 제어 실현"
-      - "MATLAB 시뮬레이션 및 Pixhawk 하드웨어(Virtual Leader + 팔로워 4대) 실험, 포메이션 오차 ±0.2m 이내 검증"
+      - "가상 리더(Virtual Leader)를 기준으로 팔로워 UAV들이 상대 벡터와 거리 정보로 포메이션을 유지하는 분산 제어 기술 개발"
+      - "일정 구간(window) 내 데이터만 사용하는 Finite-Memory 분산 제어기로 오차 누적과 비선형성에 대응"
+      - "팔로워 간 연결 관계(상대 거리·각도)를 반영한 그래프 기반 상호위상 모델로 동적 포메이션 안정성 보장"
+      - "충돌 회피 알고리즘 개발, 공통의 가상 목표점 추종을 통해 중앙 통신 없는 분산 협력 제어 실현"
+      - "MATLAB 시뮬레이션과 Pixhawk 하드웨어(Virtual Leader 1대 + 팔로워 4대) 실험으로 검증, 포메이션 오차 ±0.2m 이내와 빠른 수렴 특성 확인"
     keywords: ["Pixhawk", "DistributedControl", "FormationControl", "MultiUAV", "VirtualLeader", "GraphModel", "ROS"]
   - org: "한국과학기술연구원(KIST) Robot Vision Lab"
     role: "인턴"
     period: "2021.01 ~ 2021.02"
+    topic: "ROS 기반 영상처리 알고리즘의 모바일 로봇 적용 연구"
     bullets:
-      - "ROS 기반 영상처리 알고리즘 연구 및 모바일 로봇 주행 적용 테스트"
+      - "ROS 환경에서의 영상처리 알고리즘 연구"
+      - "모바일 로봇 주행에 알고리즘을 적용한 테스트 수행"
+    keywords: ["ROS", "RobotVision", "ImageProcessing", "MobileRobot"]
   - org: "광운대학교 로봇게임단 ROBIT"
     role: "단원 · Humanoid Team Leader (2020)"
     period: "2019.01 ~ 2022.02"
+    topic: "대회용 휴머노이드 로봇의 비전·위치 추정·제어 시스템 개발"
     bullets:
-      - "RoboCup 휴머노이드 리그 참가용 로봇 전체 시스템(회로, 펌웨어, 비전, 제어) 개발 주도"
-      - "OpenCV 기반 대회용 영상 처리(조명 변화에 강인한 색상 기반 기법), 실내·실외 인식 안정성 향상"
-      - "Particle Filter 기반 영상 위치 추정(Visual Localization): 축구장 라인 추출 → Likelihood 모델 변환 → Particle Filter 가중치 활용"
-      - "휴머노이드 제어 회로 설계·제작, STM 기반 펌웨어 개발 (모터·센서 제어)"
+      - "회로, 펌웨어, 비전, 제어를 아우르는 RoboCup 휴머노이드 리그 참가용 로봇 시스템 개발 주도"
+      - "조명 변화에 강인한 색상 기반 OpenCV 영상 처리로 실내·실외 인식 안정성 개선"
+      - "영상 기반 위치 추정(Visual Localization) 구현: 축구장 라인 추출 → Likelihood 모델 변환 → Particle Filter 가중치 활용"
+      - "휴머노이드 제어 회로 설계·제작과 STM 기반 모터·센서 제어 펌웨어 개발"
       - "RoboCup 2019 Sydney 국제대회 원정 등 국내외 대회 참가 및 다수 입상"
       - "과학축제·전시 부스 운영 등 로봇 시연 대외 활동"
     keywords: ["HumanoidRobot", "ComputerVision", "VisualLocalization", "ParticleFilter", "STM32", "EmbeddedSystem"]
   - org: "Capstone Design — 비대면 캐디 서비스 로봇"
     role: "팀 리더"
     period: "2021.01 ~ 2021.12"
+    topic: "ROS 기반 실외 자율주행 캐디 로봇 프로토타입 개발 (2D LiDAR 장애물 회피 + GPS 사용자 추종)"
     bullets:
-      - "ROS 기반 자율주행 캐디 로봇: 2D LiDAR 장애물 회피 + GPS 사용자 추종, 실외 환경 프로토타입"
-      - "사용자 리모컨 GPS 위치로 목표점 생성, Potential Field 주행 알고리즘으로 동적·정적 장애물 회피 및 사용자 추종"
-      - "사용자 방향 인력 + 장애물 척력 결합 Potential Field 구조 설계"
-      - "GPS·IMU·2D LiDAR 인지 파이프라인, IMU 기반 heading 추정과 북쪽 기준 좌표계 정규화"
-      - "ODE 시뮬레이션 선행 검증 후 실차 주행 단계적 적용; 전원·제어 회로 직접 설계·통합"
+      - "사용자 리모컨의 GPS 위치로 목표점을 생성해 동적·정적 장애물 회피와 사용자 추종을 함께 수행하는 주행 로직 구현"
+      - "사용자 방향 인력과 장애물 척력을 결합한 Potential Field 구조 설계"
+      - "GPS·IMU·2D LiDAR 인지 파이프라인 구축, IMU 기반 heading 추정과 북쪽 기준 좌표계 정규화 적용"
+      - "ODE 시뮬레이션으로 알고리즘 선행 검증 후 실차 주행에 단계적 적용"
+      - "전원·제어 회로 직접 설계·통합으로 실외 주행 가능한 로봇 플랫폼 완성"
     keywords: ["AutonomousRobot", "PotentialField", "UserFollowing", "ObstacleAvoidance", "MobileRobot"]
 
 publications:
