@@ -35,7 +35,7 @@ layout: page
 
 <div class="lang-block" data-lang="ko" lang="ko" markdown="1">
 
-RoboCup과 국제로봇콘테스트(IRC)에 출전하는 휴머노이드를 회로부터 펌웨어·비전·제어까지 직접 개발. RoboCup Korea Open 우승 2회, RoboCup 2019 Sydney 입상, IRC 2020 대상(대통령상)이 이 기간의 결과.
+<p class="project-lead">RoboCup과 국제로봇콘테스트(IRC)에 출전하는 휴머노이드를 회로부터 펌웨어·비전·제어까지 개발. RoboCup Korea Open 우승 2회, RoboCup 2019 Sydney 3개 종목 순위권, IRC 2020 대상(대통령상) 수상.</p>
 
 ## 문제
 
@@ -47,13 +47,15 @@ RoboCup과 국제로봇콘테스트(IRC)에 출전하는 휴머노이드를 회�
 
 플랫폼은 20~21 DoF 휴머노이드. ROBOTIS Dynamixel 액추에이터, Logitech C920 카메라, Intel NUC(i5), 6DoF IMU(MW-AHRSv1)에 직접 설계한 STM32 제어보드를 얹은 구성이며, 개발 환경은 Linux·ROS·C/C++·Qt.
 
-## 핵심 기여
+## 시스템 개발 범위
 
 - 휴머노이드 제어 회로 직접 설계·제작, STM32 기반 펌웨어(모터·센서 제어) 개발. 하드웨어부터 알고리즘까지 전 계층 담당.
 - 조명 변화에 덜 민감한 색상 기반 기법으로 OpenCV 대회용 영상 처리를 개발, 실내·실외 인식 안정성 개선.
 - Particle Filter 기반 영상 위치 추정(Visual Localization) 구현. 축구장 라인 추출 → Likelihood 모델 변환 → Particle Filter 가중치 활용 순서.
 
-### RoboCup 2019 Korea Open · Sydney (2019.02, 2019.07) — 우승 · Sydney 입상
+## RoboCup 2019 · 골키퍼와 Goal Kick
+
+_Korea Open 2019.02 · Sydney 2019.07_
 
 휴머노이드 축구 경기용 지능형 로봇을 개발해 참가. 2019.02 Korea Open Humanoid Soccer Kid 종목 우승, 2019.07 Sydney 국제대회 TeenSize(중대형 휴머노이드 체급) 종목에서 Drop-In Challenge(서로 다른 팀의 로봇을 섞어 혼성 팀으로 치르는 경기) 2위, Technical Challenge 3위, Soccer 본선 4위 기록.
 
@@ -62,7 +64,9 @@ RoboCup과 국제로봇콘테스트(IRC)에 출전하는 휴머노이드를 회�
 ![RoboCup 2019 Sydney 경기장에 선 ROBIT 휴머노이드들](/assets/img/projects/robit-robocup2019-sydney.jpg)
 _RoboCup 2019 Sydney — 경기장에 선 ROBIT 휴머노이드들_
 
-### 국제로봇콘테스트(IRC) 2019 Robot Sports (2019.07 ~ 2019.10)
+## IRC 2019 · 낙상 복구와 작업 상태 유지
+
+_Robot Sports · 2019.07 ~ 2019.10_
 
 컬링과 하노이 탑 쌓기 종목에 지능형 휴머노이드 로봇으로 참가. 담당은 하노이 탑 쌓기 알고리즘, 색상 인식 비전 알고리즘, 로봇 제어 회로 설계.
 
@@ -74,7 +78,9 @@ _RoboCup 2019 Sydney — 경기장에 선 ROBIT 휴머노이드들_
 ![IRC 2019 휴머노이드 로봇 스포츠 경기 현장](/assets/img/projects/robit-humanoid-1.jpg)
 _IRC 2019 휴머노이드 로봇 스포츠 경기 현장_
 
-### RoboCup 2020 Korea Open (2020.08) — 우승
+## RoboCup 2020 · 라인 기반 MCL
+
+_Korea Open · 2020.08_
 
 Humanoid Soccer Kid 종목에 출전해 우승. 담당은 축구장 환경의 Localization 알고리즘 개발과 라인 인식용 영상 처리.
 
@@ -84,7 +90,9 @@ Humanoid Soccer Kid 종목에 출전해 우승. 담당은 축구장 환경의 Lo
 - **Resampling 설계 판단**: Kidnap 대응용 random sampling은 의도적으로 제외. 경기 중 로봇 위치는 연속적으로만 변하므로, 현재 particle 주변에서만 다시 뽑는 쪽이 낫다는 판단.
 - **라인 인식**: HSV 색공간 이진화 → 모폴로지 연산으로 노이즈 제거 → 컨투어로 외곽선만 검출. 라인의 모든 픽셀을 계산하는 대신 외곽선만 다뤄 연산량을 낮추고, 검출된 영상 좌표에서 로봇까지의 실제 거리 계산.
 
-### 국제로봇콘테스트(IRC) 2020 휴머노이드 로봇 스포츠 지능형 하이테크리그 (2020.08 ~ 2020.11) — 대상(대통령상)
+## IRC 2020 · Kidnap 대응 AMCL
+
+_휴머노이드 로봇 스포츠 지능형 하이테크리그 · 2020.08 ~ 2020.11_
 
 하노이 탑 쌓기와 육상 경기 종목에 출전, 1차대회 3위를 거쳐 본대회에서 대상(대통령상) 수상. 담당은 특징 기반 Localization 기술 개발.
 
@@ -92,7 +100,7 @@ Humanoid Soccer Kid 종목에 출전해 우승. 담당은 축구장 환경의 Lo
 
 같은 해 RoboCup에서는 위치가 연속적으로 변한다는 이유로 random sampling을 뺐지만, IRC는 로봇을 들어 옮기는 상황이 생겨 정반대 설계를 선택. 같은 필터라도 종목 조건에 따라 설계가 달라진다는 점을 체감한 경험.
 
-### 팀을 위한 도구들
+## 팀 개발 도구
 
 경기 알고리즘 못지않게 도구 개발에도 비중. Linux 환경에서 23 DoF 휴머노이드의 모션을 제작하고 PC에서 모터를 직접 제어하는 모션 프로그램(ROBIT Teacher, Qt) 개발, 모션 데이터를 시리얼 컨버터를 거쳐 Dynamixel 액추에이터로 보내는 485 통신부도 함께 구현(2020.07~08). 컬링 종목용으로는 HSV 임계값을 슬라이더로 튜닝하고 경기 영상을 녹화·재생하는 비전 툴을 제작. 현장 튜닝 시간 단축.
 
@@ -150,7 +158,7 @@ _2019 노원미래과학축제 ROBIT 부스_
 
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
-I built humanoids for RoboCup and the International Robot Contest (IRC), from circuits and firmware up through vision and control. The record from those years: two RoboCup Korea Open titles, awards at RoboCup 2019 Sydney, and the Grand Prize (Presidential Award) at IRC 2020.
+<p class="project-lead">I built humanoids for RoboCup and the International Robot Contest (IRC), from circuits and firmware through vision and control. The work led to two RoboCup Korea Open titles, three ranked finishes at RoboCup 2019 Sydney, and the Grand Prize (Presidential Award) at IRC 2020.</p>
 
 ## Problem
 
@@ -162,13 +170,15 @@ At ROBIT, Kwangwoon University's robotics competition team, I led development of
 
 The robots are 20–21 DoF humanoids: ROBOTIS Dynamixel actuators, a Logitech C920 camera, an Intel NUC (i5), a 6DoF IMU (MW-AHRSv1), and an STM32 control board I designed, developed on Linux, ROS, C/C++, and Qt.
 
-## Key Contributions
+## System Development Scope
 
 - Designed and built the humanoid control circuits plus the STM32 firmware for motor and sensor control — the full stack from hardware to algorithms
 - Developed the competition vision pipeline in OpenCV around color-based methods that hold up under changing light, which improved recognition stability indoors and outdoors
 - Implemented Particle Filter-based visual localization: extract soccer-field lines → convert them to a likelihood model → use them as Particle Filter weights
 
-### RoboCup 2019 Korea Open · Sydney (2019.02, 2019.07) — Champion · Awards in Sydney
+## RoboCup 2019 · Goalkeeper & Goal Kick
+
+_Korea Open 2019.02 · Sydney 2019.07_
 
 We developed and entered an intelligent robot for humanoid soccer. The team won the Humanoid Soccer Kid event at the Korea Open in 2019.02; at the Sydney international competition that July, in the TeenSize class (mid-to-large humanoids), we took 2nd place in the Drop-In Challenge (matches played by mixed teams combining robots from different teams), 3rd in the Technical Challenge, and 4th in the main Soccer tournament.
 
@@ -177,7 +187,9 @@ My part was the goalkeeper algorithm and the Goal Kick algorithm. Depending on t
 ![ROBIT humanoids on the field at RoboCup 2019 Sydney](/assets/img/projects/robit-robocup2019-sydney.jpg)
 _RoboCup 2019 Sydney — ROBIT humanoids on the field_
 
-### International Robot Contest (IRC) 2019 Robot Sports (2019.07 ~ 2019.10)
+## IRC 2019 · Fall Recovery & Task-State Retention
+
+_Robot Sports · 2019.07 ~ 2019.10_
 
 We competed with an intelligent humanoid robot in the curling and Tower of Hanoi events. My part covered the Tower of Hanoi algorithm, the color-recognition vision, and the robot control circuit.
 
@@ -189,7 +201,9 @@ We competed with an intelligent humanoid robot in the curling and Tower of Hanoi
 ![IRC 2019 Humanoid Robot Sports competition venue](/assets/img/projects/robit-humanoid-1.jpg)
 _IRC 2019 Humanoid Robot Sports competition venue_
 
-### RoboCup 2020 Korea Open (2020.08) — Champion
+## RoboCup 2020 · Line-Based MCL
+
+_Korea Open · 2020.08_
 
 We competed in the Humanoid Soccer Kid event again and won. I owned the localization algorithm for the soccer-field environment and the line-recognition vision.
 
@@ -199,7 +213,9 @@ The choice of approach came down to two facts. A humanoid sways so much while wa
 - **Resampling design call**: I deliberately left out the random sampling used for kidnap recovery. During a match the robot's position only changes continuously, so resampling around the current particles seemed the better trade.
 - **Line recognition**: Processed in sequence — a binary image via HSV color-space thresholding, noise removal with morphological operations, then contours to detect outlines only. Working on outlines instead of every line pixel cut the computation, and the detected image points gave the actual distance to the robot.
 
-### International Robot Contest (IRC) 2020 Humanoid Robot Sports, Intelligent High-Tech League (2020.08 ~ 2020.11) — Grand Prize (Presidential Award)
+## IRC 2020 · Kidnap-Resilient AMCL
+
+_Humanoid Robot Sports, Intelligent High-Tech League · 2020.08 ~ 2020.11_
 
 We competed in the Tower of Hanoi and athletics events, placed 3rd in the preliminary round, and won the Grand Prize (Presidential Award) at the main event. My part was feature-based localization.
 
@@ -207,7 +223,7 @@ I laid out a map of feature points for self-localization and, instead of standar
 
 At RoboCup earlier that year I had removed random sampling because positions only change continuously; at IRC, where a robot can be picked up and moved, I made the opposite call. Same filter, different event conditions, different design.
 
-### Tools for the Team
+## Team Development Tools
 
 I built tools alongside the match code. A motion-authoring program (ROBIT Teacher, Qt) creates motions for the 23 DoF humanoid and drives the motors straight from a PC; the same program pushes pose data over a serial converter to the Dynamixel actuators on a 485 bus (2020.07–08). For the curling event I built a vision tool that tunes HSV thresholds with sliders and records/replays match video, which cut down on-site tuning time.
 
