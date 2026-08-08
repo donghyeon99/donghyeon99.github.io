@@ -40,40 +40,54 @@ work:
       - name: "Circuit Modeling & Simulation"
         period: "2026.03 ~ Present"
         role: "Board-level thermal simulation engine development (AI Team · new business initiative)"
+        outcome: "Developing a Python/Rust engine and FastAPI backend for 3D FVM thermal analysis from ECAD data"
         bullets:
-          - "Developing a PCB physics simulation backend platform that takes ECAD geometry and netlist data as input"
-          - "Implementing a steady-state thermal analysis engine based on a 3D finite-volume method (FVM)"
-          - "Modeling circuit physics such as component power estimation, current distribution, and IR drop"
-          - "Building the Python/Rust engine and FastAPI backend API, with results under validation against a commercial thermal solver (ANSYS Icepak)"
-        tech: ["Python", "Rust", "FastAPI", "FVM", "Thermal Analysis"]
+          - "Implementing a steady-state board-level thermal solver based on a 3D finite-volume method (FVM)"
+          - "Modeling component power estimation, current distribution, and IR drop"
+          - "Comparing identical board cases against results from ANSYS Icepak"
+        details:
+          - label: "System"
+            value: "ECAD parsing → 3D analysis domain → FVM solver → FastAPI"
+          - label: "Methods"
+            value: "Steady-state temperature distribution, component power estimation, current distribution, and IR drop"
+          - label: "Validation"
+            value: "Identical board cases compared against ANSYS Icepak results"
+        tech: ["Python", "Rust", "FastAPI", "FVM", "ECAD", "Thermal Analysis"]
         keywords: ["PCB", "ECAD", "Netlist", "IRDrop", "PhysicsSimulation"]
       - name: "Autonomous Driving Module for Golf Carts"
         period: "2025.06 ~ 2026.02"
         role: "Development of vehicle localization and driving control modules"
+        outcome: "Validated a GPS-quality-aware EKF localization architecture from log replay through real-vehicle testing"
         bullets:
-          - "Implemented a high-precision RTK-GPS localization algorithm and validated it on the real vehicle"
-          - "Designed and implemented a Bicycle Model-based EKF module for position and attitude estimation from fused GPS, IMU, steering angle (SAS), and speed data"
-          - "Developed path planning and steering control algorithms (e.g., Pure Pursuit)"
-          - "Built a MATLAB simulation environment from real driving logs, then validated stepwise through real-vehicle tests"
+          - "Designed and implemented a Bicycle Model EKF for position and attitude estimation from GPS, IMU, steering angle (SAS), and speed"
+          - "Applied a Chi-square Gate, GPS-quality-dependent R adjustment, and INS/GPS mode switching"
+          - "Developed Pure Pursuit steering control and path generation from RTK-GPS localization"
+          - "Built a MATLAB environment to compare localization results between simulation and firmware"
         details:
-          - "Built an offline MATLAB localization simulation environment ahead of real-vehicle testing, based on real driving logs (.bin)"
-          - "Progressively validated an EKF prediction/correction structure based on the Bicycle Model"
-          - "State vector: v, SlipAngle, YawRate, Yaw, x, y"
-          - "Determined GPS measurement validity using a Chi-square Gate"
-          - "Dynamically adjusted the R matrix based on GPS quality, with INS/GPS mode-switching logic"
-          - "Compared localization results between simulation and firmware, and built a real-time driving-log replay environment"
-          - "Analyzed bottlenecks based on firmware TASK priority and execution performance"
-        tech: ["GNSS", "RTK-GPS", "C", "MATLAB"]
+          - label: "State"
+            value: "v, Slip Angle, Yaw Rate, Yaw, x, y"
+          - label: "Validation"
+            value: "Offline logs → simulation/firmware comparison → real-time replay → real vehicle"
+          - label: "Diagnostics"
+            value: "Firmware task-priority and execution-performance bottleneck analysis"
+        tech: ["RTK-GPS", "EKF", "C", "MATLAB", "Pure Pursuit", "Sensor Fusion"]
         keywords: ["AutonomousDriving", "Localization", "SensorFusion", "EKF", "BicycleModel", "KalmanFilter", "VehicleDynamics", "EmbeddedC"]
       - name: "Smart Parking System"
         period: "2024.05 ~ 2025.05"
         role: "Development of video processing server and lighting control server (delivered on site)"
+        outcome: "Delivered an integrated system that links analytics from about 30 CCTV cameras and BLE/emergency events to lighting control"
         bullets:
-          - "Received, controlled, and analyzed RTSP streams from about 30 CCTV cameras on a single server"
-          - "Separated fisheye and one-way camera pipelines into a structure that improved scalability and stability"
-          - "Detected vehicles and pedestrians and analyzed motion direction and speed with Optical Flow and YOLOv7 (ONNX), CUDA-accelerated"
-          - "Designed a Redis-based event processing structure and identified the nearest camera on call via RSSI signal comparison"
-          - "Controlled lighting devices dynamically over gRPC, handling CCTV, BLE, and emergency-bell events through one integrated path"
+          - "Received, controlled, and analyzed RTSP streams from about 30 CCTV cameras on one server"
+          - "Built fisheye and one-way pipelines around Optical Flow and CUDA-accelerated YOLOv7 (ONNX)"
+          - "Used Redis events and RSSI comparison to identify the nearest camera at call time"
+          - "Controlled lighting over gRPC from CCTV, BLE, and emergency-bell events"
+        details:
+          - label: "Video"
+            value: "RTSP ingest, fisheye/one-way pipelines, CUDA object detection, and motion analysis"
+          - label: "Events"
+            value: "Redis real-time state, RSSI nearest-camera identification, and admin monitoring integration"
+          - label: "Control"
+            value: "gRPC control signals from integrated CCTV, BLE, and emergency-bell events"
         tech: ["C++", "Go", "Redis", "gRPC", "OpenCV", "YOLOv7", "RTSP"]
         keywords: ["SmartParking", "ComputerVision", "OpticalFlow", "MultiCameraProcessing"]
 

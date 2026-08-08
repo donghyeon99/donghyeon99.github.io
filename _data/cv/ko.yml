@@ -40,40 +40,54 @@ work:
       - name: "회로 모델링 & 시뮬레이션 개발"
         period: "2026.03 ~ 현재"
         role: "보드 레벨 열해석 시뮬레이션 엔진 개발 (AI팀 · 회사 신규 사업)"
+        outcome: "ECAD 데이터를 입력으로 3D FVM 열해석을 수행하는 Python·Rust 엔진과 FastAPI 백엔드 개발"
         bullets:
-          - "ECAD 기하·네트리스트를 입력으로 받는 PCB 물리 시뮬레이션 백엔드 플랫폼 개발 중"
           - "3D 유한체적법(FVM) 기반 정상상태 열해석 엔진 구현"
           - "부품 발열원 추정·전류 분포·IR drop을 다루는 회로 물리 모델링"
-          - "Python·Rust 엔진과 FastAPI 백엔드 API 개발, 상용 열해석 도구(ANSYS Icepak) 대비 결과 검증 진행 중"
-        tech: ["Python", "Rust", "FastAPI", "FVM", "Thermal Analysis"]
+          - "동일 보드 케이스를 상용 열해석 도구(ANSYS Icepak) 결과와 비교 검증 중"
+        details:
+          - label: "시스템 구성"
+            value: "ECAD 파싱 → 3D 해석 도메인 → FVM 해석 엔진 → FastAPI"
+          - label: "해석 범위"
+            value: "정상상태 온도 분포, 부품 발열원 추정, 전류 분포, IR drop"
+          - label: "검증"
+            value: "동일 보드 케이스를 ANSYS Icepak 해석 결과와 비교"
+        tech: ["Python", "Rust", "FastAPI", "FVM", "ECAD", "Thermal Analysis"]
         keywords: ["PCB", "ECAD", "Netlist", "IRDrop", "PhysicsSimulation"]
       - name: "골프카트 자율주행 모듈 개발"
         period: "2025.06 ~ 2026.02"
         role: "차량 위치 추정 및 주행 제어 모듈 개발"
+        outcome: "GPS 품질 변화에 대응하는 EKF 위치 추정 구조를 로그 재생 환경과 실차에서 단계적으로 검증"
         bullets:
-          - "RTK-GPS 기반 고정밀 위치 추정 알고리즘 구현 및 실차 검증"
           - "GPS·IMU·조향각(SAS)·속도 정보를 융합한 Bicycle Model 기반 EKF 위치·자세 추정 모듈 설계·구현"
-          - "주행 경로 계획 및 조향 제어 알고리즘(Pure Pursuit 등) 개발"
-          - "실차 주행 로그 기반 MATLAB 시뮬레이션 환경 구축 후 실차 테스트로 단계적 검증"
+          - "Chi-square Gate, GPS 품질별 R 행렬 조정, INS/GPS 모드 전환 로직 적용"
+          - "RTK-GPS 위치 추정값을 입력으로 한 Pure Pursuit 조향 제어와 경로 생성"
+          - "실차 주행 로그 기반 MATLAB 시뮬레이션과 펌웨어 결과 비교 환경 개발"
         details:
-          - "실차 주행 로그(.bin) 기반 MATLAB 오프라인 위치 추정 시뮬레이션 선행 구축"
-          - "자전거 모델(Bicycle Model) 기반 EKF 예측·보정 구조의 단계적 검증"
-          - "상태 벡터 v, SlipAngle, YawRate, Yaw, x, y"
-          - "Chi-square Gate 기반 GPS 측정값 유효성 판별"
-          - "GPS 품질에 따른 R 행렬 동적 조정 및 INS/GPS 모드 전환 로직"
-          - "시뮬레이션과 펌웨어 간 위치 추정 결과 비교, 실시간 주행 로그 재생 환경 구축"
-          - "펌웨어 TASK 우선순위·실행 성능 기반 병목 분석"
-        tech: ["GNSS", "RTK-GPS", "C", "MATLAB"]
+          - label: "상태 정의"
+            value: "v, Slip Angle, Yaw Rate, Yaw, x, y"
+          - label: "검증 흐름"
+            value: "오프라인 로그 → 시뮬레이션·펌웨어 비교 → 실시간 재생 → 실차 테스트"
+          - label: "시스템 진단"
+            value: "펌웨어 TASK 우선순위와 실행 성능을 기반으로 병목 분석"
+        tech: ["RTK-GPS", "EKF", "C", "MATLAB", "Pure Pursuit", "Sensor Fusion"]
         keywords: ["AutonomousDriving", "Localization", "SensorFusion", "EKF", "BicycleModel", "KalmanFilter", "VehicleDynamics", "EmbeddedC"]
       - name: "스마트 주차 시스템 개발"
         period: "2024.05 ~ 2025.05"
         role: "영상 처리 서버 및 조명 제어 서버 개발 (현장 납품 완료)"
+        outcome: "약 30대 CCTV 분석 결과와 BLE·비상벨 이벤트를 조명 제어로 연결한 통합 시스템 현장 납품"
         bullets:
           - "단일 서버에서 약 30대 CCTV 카메라의 RTSP 스트림 동시 수신·제어 및 분석"
-          - "어안(Fisheye)·단방향(One-way) 카메라 파이프라인을 분리한 구조로 확장성과 안정성 개선"
-          - "Optical Flow와 YOLOv7(ONNX) 기반 차량·보행자 탐지 및 이동 방향·속도 분석 (CUDA 가속)"
-          - "Redis 기반 이벤트 처리 구조 설계, RSSI 신호 세기 비교로 호출 시점의 근접 카메라 자동 식별"
-          - "gRPC 통신으로 CCTV·BLE·비상벨 이벤트를 통합해 조명 장치를 상황에 따라 동적 제어"
+          - "어안·단방향 카메라별 Optical Flow·YOLOv7(ONNX) 분석 파이프라인 구성"
+          - "Redis 이벤트와 RSSI 신호 비교를 이용한 호출 시점의 근접 카메라 식별"
+          - "gRPC를 통한 CCTV·BLE·비상벨 이벤트 기반 조명 장치 제어"
+        details:
+          - label: "영상 처리"
+            value: "RTSP 수신, 어안·단방향 파이프라인, CUDA 기반 객체 탐지와 움직임 분석"
+          - label: "이벤트 처리"
+            value: "Redis 실시간 상태, RSSI 기반 근접 카메라 식별, 관리자 모니터링 연동"
+          - label: "조명 제어"
+            value: "gRPC 제어 신호와 CCTV·BLE·비상벨 이벤트 통합"
         tech: ["C++", "Go", "Redis", "gRPC", "OpenCV", "YOLOv7", "RTSP"]
         keywords: ["SmartParking", "ComputerVision", "OpticalFlow", "MultiCameraProcessing"]
 
