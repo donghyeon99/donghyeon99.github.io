@@ -40,21 +40,21 @@
               <span class="cv-entry-period">{{ proj.period }}</span>
             </div>
             {% if proj.role %}<p class="cv-entry-sub">{{ proj.role }}</p>{% endif %}
+            {% if proj.outcome %}<p class="cv-outcome">{{ proj.outcome }}</p>{% endif %}
             <ul class="cv-bullets">
               {% for b in proj.bullets %}<li>{{ b }}</li>{% endfor %}
             </ul>
             {% if proj.details %}
             <details class="cv-details">
-              <summary>Details</summary>
-              <ul class="cv-bullets cv-bullets-muted">
-                {% for d in proj.details %}<li>{{ d }}</li>{% endfor %}
-              </ul>
+              <summary>{% if lang_code == 'ko' %}상세 기술{% else %}Technical details{% endif %}</summary>
+              <dl class="cv-detail-grid">
+                {% for d in proj.details %}<dt>{{ d.label }}</dt><dd>{{ d.value }}</dd>{% endfor %}
+              </dl>
             </details>
             {% endif %}
-            {% if proj.tech or proj.keywords %}
+            {% if proj.tech %}
             <p class="cv-tags">
               {% for t in proj.tech %}<span class="cv-tag">{{ t }}</span>{% endfor %}
-              {% for k in proj.keywords %}<span class="cv-tag">{{ k }}</span>{% endfor %}
             </p>
             {% endif %}
           </div>

@@ -2,6 +2,13 @@
  * Language toggle + ko/en block visibility live in _lang.scss (shared):
  * the CV root carries `lang-page` and each cv-lang-block carries `lang-block`. */
 
+.cv-page,
+.cv-lang-block,
+.cv-entry,
+.cv-subentry {
+  min-width: 0;
+}
+
 .cv-profile {
   margin-top: 2.5rem;
   padding-bottom: 1.5rem;
@@ -139,6 +146,17 @@
   color: var(--text-muted-color);
 }
 
+.cv-outcome {
+  margin: 0.55rem 0 0.7rem;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--heading-color);
+  background: var(--card-bg);
+  border-left: 3px solid var(--link-color);
+  border-radius: 0 5px 5px 0;
+}
+
 .cv-thesis,
 .cv-topic {
   font-style: italic;
@@ -176,12 +194,37 @@
 }
 
 .cv-details {
-  margin: 0.4rem 0;
+  margin: 0.65rem 0;
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--btn-border-color);
+  border-radius: 6px;
 
   summary {
+    padding: 0.45rem 0.7rem;
     font-size: 0.85rem;
+    font-weight: 600;
     color: var(--link-color);
     cursor: pointer;
+  }
+}
+
+.cv-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(6rem, 0.26fr) 1fr;
+  gap: 0.45rem 0.9rem;
+  margin: 0;
+  padding: 0.3rem 0.9rem 0.9rem;
+  font-size: 0.88rem;
+
+  dt {
+    font-weight: 650;
+    color: var(--heading-color);
+  }
+
+  dd {
+    margin: 0;
+    color: var(--text-muted-color);
   }
 }
 
@@ -321,6 +364,47 @@
 }
 
 @media (max-width: 576px) {
+  .cv-profile,
+  .cv-role,
+  .cv-tagline,
+  .cv-entry-title,
+  .cv-subentry-title,
+  .cv-entry-sub,
+  .cv-outcome,
+  .cv-bullets,
+  .cv-contact a {
+    overflow-wrap: anywhere;
+  }
+
+  .cv-role .cv-period {
+    display: block;
+    margin-top: 0.15rem;
+  }
+
+  .cv-interests li {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .cv-entry-head {
+    display: block;
+  }
+
+  .cv-entry-period {
+    display: block;
+    margin-top: 0.1rem;
+    white-space: normal;
+  }
+
+  .cv-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+
+    dd {
+      margin-bottom: 0.55rem;
+    }
+  }
+
   .cv-skills {
     grid-template-columns: 1fr; /* stack: category above, items below */
     row-gap: 0.15rem;
