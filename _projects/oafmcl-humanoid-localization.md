@@ -35,7 +35,7 @@ layout: page
 
 <div class="lang-block" data-lang="ko" lang="ko" markdown="1">
 
-휴머노이드는 걷기만 해도 몸이 흔들리고, 센서도 같이 흔들림. 이동 로봇용 협력 위치 추정을 그대로 옮기면 여기서 무너짐. 유한 메모리 필터와 신경망을 융합한 OAFMCL로 이 문제를 풀어 Robot Kidnapping 상황 평균 오차 0.07m, 기존 알고리즘 대비 최대 80% 오차 감소를 달성. IEEE Transactions on Industrial Electronics에 1저자 논문으로 게재.
+<p class="project-lead">보행 진동과 재귀 추정의 오차 누적에 대응하기 위해 유한 메모리 필터와 신경망을 융합한 OAFMCL 제안. Robot Kidnapping 상황 평균 오차 0.07m와 기존 알고리즘 대비 최대 80% 감소를 기록했으며 IEEE Transactions on Industrial Electronics에 1저자 논문으로 게재.</p>
 
 ## 문제
 
@@ -47,25 +47,40 @@ layout: page
 
 고려대학교 Advanced Control System Lab 석사 과정(지도교수 Choon Ki Ahn)에서 수행한 학위 연구. 협력 위치 추정 알고리즘 **OAFMCL(Odometry-Aided Finite-Memory Cooperative Localization)** 을 설계하고, 휴머노이드 3대 실증 실험까지 진행한 뒤 제1저자 논문으로 정리.
 
-## 핵심 기여
+## FMCL 추정기
 
 - 최근 N개의 측정값만 슬라이딩 윈도(N=7)로 배치 처리하는 유한 메모리(finite-memory, FIR 필터) 기반 협력 위치 추정기 FMCL 설계. 목표는 재귀 추정의 오차 누적 억제. 오래된 측정을 아예 쓰지 않으므로 과거 오차가 쌓일 통로가 없고, 에러가 일정 범위 안에 머무는 구조
+
+## Odometry-NN
+
 - 진동에 취약한 LiDAR 의존도를 낮추기 위한 보조 신호로 Odometry-NN 개발. 보행 파라미터와 IMU의 피치·롤 같은 관절 움직임 데이터를 입력받아 보행 진동에 따른 오도메트리 노이즈 패턴을 학습하는 신경망
 - 외부 센서 기반 FMCL과 내부 센서 기반 Odometry-NN의 추정치를 융합 신경망(Fusion NN)으로 통합해 최종 위치를 산출하는 OAFMCL 구조 제안
+
+## 센서 구성과 협력 구조
+
 - 고정 앵커 신호로 절대 위치를 추정하는 RTLS(Real-Time Location System) 태그 장착 Leader 1대, 저가형 LiDAR로 주변 로봇과의 상대 거리·방향을 재는 Follower 2대로 다중 로봇 협력 구조 구성
-- 4.5m 간격의 고정 앵커 4개를 설치한 실내 환경에서 휴머노이드 로봇 3대로 실증 실험 수행. 정상 보행(Case 1)과 Robot Kidnapping(Case 2, 로봇이 갑자기 다른 위치로 옮겨지는 상황) 두 조건에서 성능 검증
 
 ![Leader·Follower 휴머노이드와 탑재 센서 구성](/assets/img/projects/oafmcl-humanoid-localization-1.jpg)
 _로봇 구성: Leader는 RTLS Tag로 절대 위치를, Follower는 저가형 LiDAR로 상대 거리·방향을 측정. 모든 로봇이 Mini PC와 IMU를 싣고 보행_
 
+## 실험 환경
+
+4.5m 간격의 고정 앵커 4개를 설치한 실내 환경에서 휴머노이드 로봇 3대로 실증 실험 수행. 정상 보행(Case 1)과 Robot Kidnapping(Case 2, 로봇이 갑자기 다른 위치로 옮겨지는 상황) 두 조건에서 성능 검증.
+
 ![실증 실험 환경 전경](/assets/img/projects/oafmcl-experiment-environment.jpg)
 _실증 실험 환경: 4.5m 간격 고정 앵커 4개 안에서 휴머노이드 3대(Leader 1 + Follower 2)가 보행하며 위치 추정_
 
-## 결과
+## 비교 결과
 
 기존 협력 위치 추정 알고리즘 3종(추정 기반 MFDKF, 최적화 기반 NLSPGO, 오도메트리 기반 LHOL)과 RTAMSE(Root Time-Averaged Mean Square Error) 기준으로 비교. Robot Kidnapping 상황에서 OAFMCL이 평균 오차 0.07m로 가장 정확했고, LHOL 대비 최대 약 80% 오차 감소. 위치가 갑자기 바뀌는 상황에서는 오래된 측정을 버리는 유한 메모리 구조가 그대로 빠른 회복으로 이어진 결과.
 
 같은 조건에서 odometry 보조가 없는 FMCL 단독(로봇 3대 평균 0.174m)과 비교해도 오차가 60% 이상 감소. 신경망 기반 오도메트리 융합의 기여를 따로 떼어 확인한 지점.
+
+<div class="project-metrics">
+  <div class="project-metric"><strong>0.0474m</strong><span>Normal condition RTAMSE</span></div>
+  <div class="project-metric"><strong>0.0687m</strong><span>Robot Kidnapping RTAMSE</span></div>
+  <div class="project-metric"><strong>약 80%</strong><span>LHOL 대비 최대 오차 감소</span></div>
+</div>
 
 | 조건 (RTAMSE, m) | OAFMCL | FMCL 단독 | MFDKF | NLSPGO | LHOL |
 |---|---|---|---|---|---|
@@ -84,7 +99,7 @@ _FMCL 단독 수치는 Robot Kidnapping 조건에서만 보고됨(로봇 3대 �
 
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
-A humanoid shakes its own sensors just by walking, and cooperative localization built for wheeled robots falls apart there. OAFMCL fuses a finite-memory filter with neural networks, and it cut average error under Robot Kidnapping to 0.07 m — up to 80% below existing algorithms. The work was published as a first-author paper in IEEE Transactions on Industrial Electronics.
+<p class="project-lead">OAFMCL combines a finite-memory filter with neural networks to address walking vibration and recursive error accumulation. It achieved 0.07 m average error under Robot Kidnapping, up to 80% below existing algorithms, and was published as a first-author IEEE Transactions on Industrial Electronics paper.</p>
 
 ## Problem
 
@@ -96,25 +111,40 @@ Recursive (IIR) estimators make it worse: they reuse all past data, so the error
 
 This was my M.S. thesis research at the Advanced Control System Lab, Korea University (Advisor: Prof. Choon Ki Ahn). I designed the cooperative localization algorithm **OAFMCL (Odometry Aided Finite-Memory Cooperative Localization)**, carried out demonstration experiments with three humanoid robots, and published the work as a first-author paper.
 
-## Key Contributions
+## FMCL Estimator
 
 - Designed FMCL, a finite-memory (FIR filter)-based cooperative localization estimator that batch-processes only the most recent N measurements in a sliding window (N=7) to suppress the error-accumulation problem of recursive estimation — discarding old measurements blocks the accumulation of past errors at the source and keeps the error bounded
+
+## Odometry-NN
+
 - Developed Odometry-NN as an auxiliary signal to reduce dependence on vibration-vulnerable LiDAR — a neural network that takes joint-motion data (gait parameters and IMU pitch/roll) as input and learns the odometry noise pattern induced by walking vibration
 - Proposed the OAFMCL architecture, which integrates the estimates of the external-sensor-based FMCL and the internal-sensor-based Odometry-NN through a fusion neural network (Fusion NN) to produce the final position
+
+## Sensor Setup & Cooperative Structure
+
 - Built a multi-robot cooperative structure with one Leader carrying an RTLS (Real-Time Location System) tag that estimates absolute position from fixed anchor signals, and two Followers that measure relative distance and direction to nearby robots with low-cost LiDAR
-- Conducted demonstration experiments with three humanoid robots in an indoor environment with four fixed anchors placed at 4.5 m intervals, and validated performance under two cases: normal walking (Case 1) and Robot Kidnapping (Case 2, a robot suddenly moved to a different location)
 
 ![Leader and Follower humanoids with onboard sensors](/assets/img/projects/oafmcl-humanoid-localization-1.jpg)
 _Robot setup: the Leader carries an RTLS tag for absolute position, Followers measure relative range and bearing with low-cost LiDAR, and every robot walks with a Mini PC and IMU onboard_
 
+## Experimental Setup
+
+I conducted demonstration experiments with three humanoid robots inside four fixed anchors placed at 4.5 m intervals. The two cases were normal walking (Case 1) and Robot Kidnapping (Case 2, a robot suddenly moved to a different location).
+
 ![Demonstration experiment environment](/assets/img/projects/oafmcl-experiment-environment.jpg)
 _Experiment environment: three humanoids (1 Leader + 2 Followers) walking inside four fixed anchors placed at 4.5 m intervals_
 
-## Results
+## Comparison Results
 
 I compared OAFMCL against three existing cooperative localization algorithms (estimation-based MFDKF, optimization-based NLSPGO, and odometry-based LHOL) using RTAMSE (Root Time-Averaged Mean Square Error). Under Robot Kidnapping, OAFMCL was the most accurate at 0.07 m average error, up to about 80% below LHOL. When the position changes abruptly, discarding old measurements is exactly what lets the estimator recover quickly.
 
 Under the same condition, OAFMCL also cut error by more than 60% versus FMCL alone without odometry aid (0.174 m averaged over three robots), which isolates the contribution of the neural-network-based odometry fusion.
+
+<div class="project-metrics">
+  <div class="project-metric"><strong>0.0474 m</strong><span>Normal-condition RTAMSE</span></div>
+  <div class="project-metric"><strong>0.0687 m</strong><span>Robot-Kidnapping RTAMSE</span></div>
+  <div class="project-metric"><strong>~80%</strong><span>Maximum error reduction vs. LHOL</span></div>
+</div>
 
 | Condition (RTAMSE, m) | OAFMCL | FMCL alone | MFDKF | NLSPGO | LHOL |
 |---|---|---|---|---|---|

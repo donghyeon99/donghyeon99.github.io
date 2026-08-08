@@ -13,6 +13,18 @@ layout: page
 <div class="lang-page lang-page--own-title" data-cv-lang="en">
 {% include lang-toggle.html %}
 
+<div class="lang-block" data-lang="ko" lang="ko" markdown="1">
+
+# 멀티 UAV 편대 제어 (NRF 안티드론 스웜)
+
+</div>
+
+<div class="lang-block" data-lang="en" lang="en" markdown="1">
+
+# Multi-UAV Formation Control (NRF Anti-Drone Swarm)
+
+</div>
+
 <div class="project-header">
   <span class="project-badge project-badge--{{ page.category_label | downcase }}">{{ page.category_label }}</span>
   <span class="project-header__period">{{ page.period }}</span>
@@ -23,9 +35,7 @@ layout: page
 
 <div class="lang-block" data-lang="ko" lang="ko" markdown="1">
 
-# 멀티 UAV 편대 제어 (NRF 안티드론 스웜)
-
-한국연구재단(NRF)의 "불법드론 무력화를 위한 인공지능 기반의 협력적 자율주행 스웜 안티드론 시스템 개발" 과제에서 수행한 멀티 UAV 편대 제어(Multi-UAV Formation Control) 연구. 다수의 무인항공기(UAV)가 중앙 통신 없이 스스로 포메이션을 유지하는 분산 제어기를 개발해, 1대의 Virtual Leader(실기체가 아닌 가상 기준점)와 4대의 팔로워 구성에서 **포메이션 오차 ±0.2m 이하** 확인. S자형 경로 추종 실험에서는 기존 알고리즘 대비 **위치 오차(MSE) 약 61% 감소**.
+<p class="project-lead">중앙 통신 없이 Virtual Leader를 추종하는 Multi-UAV 분산 포메이션 제어 연구. 팔로워 4대 편대 비행에서 포메이션 오차 ±0.2m 이하를 확인하고, S자형 경로 추종에서 기존 알고리즘 대비 위치 오차(MSE) 약 61% 감소.</p>
 
 ## 문제
 
@@ -35,15 +45,25 @@ layout: page
 
 고려대학교 Advanced Control System Lab 석사과정에서 참여한 과제. Multi-UAV 협력 제어·충돌 회피 알고리즘 개발과 검증용 하드웨어 제작을 담당.
 
-## 핵심 기여
+## 분산 포메이션 제어
 
 - 최근 일정 구간(window)의 데이터만 사용하는 Finite-Memory(유한 메모리) 방식의 분산 제어기 설계. 오차 누적과 비선형성으로 인한 제어 성능 저하를 억제.
-- 팔로워 간의 연결 관계(상대 거리·각도)를 그래프 기반 상호위상 모델(Graph Model)로 표현하고 협력 항법에 반영, 동적 포메이션의 안정성 보장.
-- 팔로워들이 실기체 리더가 아닌 공통의 가상 목표점(Virtual Leader)을 추종하는 구조. 중앙 통신 없는 분산 협력 제어 실현.
-- 포메이션 비행 중 장애물을 피하는 충돌 회피 알고리즘 개발, MATLAB 시뮬레이션으로 검증.
-- 기체 간 상대 거리를 측정하는 UWB와 IMU를 탑재한 Pixhawk(오픈소스 비행 컨트롤러) 기반 헥사콥터 제작. ROS 환경에서 알고리즘을 실기체로 검증.
 
-## 결과
+## Virtual Leader 구조
+
+- 팔로워들이 실기체 리더가 아닌 공통의 가상 목표점(Virtual Leader)을 추종하는 구조. 중앙 통신 없는 분산 협력 제어 실현.
+
+## 그래프 기반 협력 항법
+
+- 팔로워 간의 연결 관계(상대 거리·각도)를 그래프 기반 상호위상 모델(Graph Model)로 표현하고 협력 항법에 반영, 동적 포메이션의 안정성 보장.
+
+## 충돌 회피
+
+- 포메이션 비행 중 장애물을 피하는 충돌 회피 알고리즘 개발, MATLAB 시뮬레이션으로 검증.
+
+## 시뮬레이션과 실기체 실험
+
+- 기체 간 상대 거리를 측정하는 UWB와 IMU를 탑재한 Pixhawk(오픈소스 비행 컨트롤러) 기반 헥사콥터 제작. ROS 환경에서 알고리즘을 실기체로 검증.
 
 알고리즘 검증은 MATLAB 시뮬레이션에서 출발. 장애물 회피와 Virtual Leader 추종 포메이션 유지가 의도대로 동작하는 것을 확인한 뒤 실기체 실험으로 이행.
 
@@ -60,6 +80,12 @@ _실험에 사용한 Pixhawk 기반 UAV 기체 구성 (TAG·Mini PC·IMU·GPS �
 
 S자형 경로 추종 실험(시나리오 #1)에서는 기존 알고리즘 대비 위치 오차, 목적지 수렴 시간, 알고리즘 연산 시간이 모두 개선.
 
+<div class="project-metrics">
+  <div class="project-metric"><strong>약 61%</strong><span>위치 오차(MSE) 감소</span></div>
+  <div class="project-metric"><strong>약 27%</strong><span>목적지 수렴 시간 단축</span></div>
+  <div class="project-metric"><strong>약 30%</strong><span>평균 연산 시간 단축</span></div>
+</div>
+
 | 지표 | 기존 알고리즘 | 제안 알고리즘 | 개선 |
 |---|---|---|---|
 | 위치 오차 (MSE) | 0.8974 | 0.3524 | 약 61% 감소 |
@@ -72,9 +98,7 @@ S자형 경로 추종 실험(시나리오 #1)에서는 기존 알고리즘 대�
 
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
-# Multi-UAV Formation Control (NRF Anti-Drone Swarm)
-
-I researched Multi-UAV Formation Control under the National Research Foundation of Korea (NRF) project "AI-based Cooperative Autonomous Swarm Anti-Drone System for Neutralizing Illegal Drones." I developed a distributed controller that lets multiple unmanned aerial vehicles (UAVs) maintain formation on their own without central communication. In a configuration of one Virtual Leader (a virtual reference point, not a physical vehicle) and four Followers, formation error stayed **within ±0.2 m**, and an S-curve path-following experiment showed about a **61% reduction in position error (MSE)** over the existing algorithm.
+<p class="project-lead">I developed distributed Multi-UAV formation control around a Virtual Leader without central communication. Four Followers held formation within ±0.2 m, and the S-curve path-following experiment reduced position error (MSE) by about 61% against the existing algorithm.</p>
 
 ## Problem
 
@@ -84,15 +108,25 @@ An anti-drone swarm is a system in which multiple UAVs team up to respond cooper
 
 I joined the project as an M.S. student at the Advanced Control System Lab, Korea University. My part was the Multi-UAV cooperative control and collision-avoidance algorithms, plus the hardware they were validated on.
 
-## Key Contributions
+## Distributed Formation Control
 
 - Designed a distributed controller on a Finite-Memory scheme that uses only data from a recent window. The structure limits how much accumulated error and nonlinearity can degrade control.
-- Modeled the inter-follower connectivity (relative distance and angle) as a graph-based interaction topology (Graph Model) and fed it into cooperative navigation to keep dynamic formations stable.
-- Structured the swarm so Followers track a common virtual target point (Virtual Leader) rather than a physical leader vehicle, which removes the need for central communication.
-- Developed a collision-avoidance algorithm for obstacles during formation flight and verified it in MATLAB simulation.
-- Built hexacopters around Pixhawk (an open-source flight controller), with UWB for inter-vehicle distance measurement and an IMU onboard. Validated the algorithms on real vehicles in a ROS environment.
 
-## Results
+## Virtual Leader Structure
+
+- Structured the swarm so Followers track a common virtual target point (Virtual Leader) rather than a physical leader vehicle, which removes the need for central communication.
+
+## Graph-Based Cooperative Navigation
+
+- Modeled the inter-follower connectivity (relative distance and angle) as a graph-based interaction topology (Graph Model) and fed it into cooperative navigation to keep dynamic formations stable.
+
+## Collision Avoidance
+
+- Developed a collision-avoidance algorithm for obstacles during formation flight and verified it in MATLAB simulation.
+
+## Simulation & Real-Vehicle Experiments
+
+- Built hexacopters around Pixhawk (an open-source flight controller), with UWB for inter-vehicle distance measurement and an IMU onboard. Validated the algorithms on real vehicles in a ROS environment.
 
 I verified the algorithms in MATLAB simulation first. Once obstacle avoidance and Virtual Leader-tracking formation keeping behaved as intended, I moved to real-vehicle experiments.
 
@@ -108,6 +142,12 @@ I ran real-vehicle validation with Pixhawk-based hexacopters carrying UWB, IMU, 
 _Pixhawk-based UAV configuration used in the experiments (TAG, Mini PC, IMU, and GPS onboard)_
 
 In the S-curve path-following experiment (Scenario #1), position error, destination convergence time, and algorithm computation time all improved over the existing algorithm.
+
+<div class="project-metrics">
+  <div class="project-metric"><strong>~61%</strong><span>Position-error (MSE) reduction</span></div>
+  <div class="project-metric"><strong>~27%</strong><span>Shorter destination convergence</span></div>
+  <div class="project-metric"><strong>~30%</strong><span>Lower average computation time</span></div>
+</div>
 
 | Metric | Existing algorithm | Proposed algorithm | Improvement |
 |---|---|---|---|
