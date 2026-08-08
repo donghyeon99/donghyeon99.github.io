@@ -35,50 +35,48 @@ mermaid: true
 
 <div class="lang-block" data-lang="ko" lang="ko" markdown="1">
 
-GPS 품질이 흔들려도 위치 추정이 버티게 만드는 작업. 자전거 모델 기반 EKF에 Chi-square Gate와 측정 잡음 동적 조정을 더한 추정 모듈을 설계한 뒤, 실차 주행 로그를 재생하는 MATLAB 환경에서 검증하고 실차에 실어 골프장에서 테스트.
+<p class="project-lead">GPS 품질 저하 구간에서도 위치 추정을 유지하기 위해 자전거 모델 기반 EKF에 측정 유효성 판단과 잡음 동적 조정을 결합. 실차 로그 재생 환경에서 설계와 펌웨어 구현을 대조한 뒤 실제 골프장에서 테스트.</p>
 
 ## 문제
 
-자율주행 골프카트가 주행 내내 알아야 하는 값은 자기 위치와 자세. 그런데 실외에서 GPS 수신 품질은 보장되지 않는 변수. RTK-GPS(cm급 정밀 측위)를 쓰더라도 품질이 무너진 구간의 측정값을 그대로 믿으면 위치 추정이 흔들리고, 그 오차가 조향 제어까지 번지는 구조.
-
-따라서 품질이 변하는 GPS를 다른 센서와 융합해 어떤 구간에서도 추정이 버티게 만드는 것이 핵심 과제.
+자율주행 골프카트의 위치와 자세를 안정적으로 유지하려면 GPS 품질 저하 구간에 대한 대응이 필요. RTK-GPS(cm급 정밀 측위)를 사용하더라도 품질이 무너진 구간의 측정값을 그대로 반영하면 위치 오차가 커지고 조향 제어까지 영향을 받는 문제.
 
 ## 역할
 
 LUXROBO의 골프카트 자율주행 모듈 프로젝트에서 차량 위치 추정과 주행 제어 모듈 담당. 실차 주행 로그를 재생하는 MATLAB 시뮬레이션으로 추정 구조를 먼저 설계·검증한 뒤, 펌웨어 구현 결과와 맞대볼 수 있는 검증 환경까지 구성.
 
-## 핵심 기여
-
-### 위치 추정·센서 융합
+## 위치 추정 구조
 
 - 자전거 모델(Bicycle Model) 기반 EKF(확장 칼만 필터)를 뼈대로, GPS·IMU·조향각(SAS)·차속 정보를 융합한 실시간 위치·자세 추정 모듈 설계·구현.
 - 상태 벡터는 속도(v)·슬립각(Slip Angle)·요레이트(Yaw Rate)·요각(Yaw)·위치(x, y)로 정의. 예측·보정 구조는 단계적으로 검증.
-- Chi-square Gate(통계적 이상치 판별)로 GPS 측정값의 유효성을 걸러내는 로직 구현.
-- GPS 품질에 따라 측정 잡음 공분산(R 행렬)을 동적으로 조정하고, 수신이 나빠지면 INS(관성항법)로, 회복되면 다시 GPS로 넘기는 모드 전환 로직 설계.
+
+## GPS 품질 대응
+
+- Chi-square Gate(통계적 이상치 판별)를 이용한 GPS 측정값 유효성 판별.
+- 수신 품질에 따른 측정 잡음 공분산(R 행렬) 조정과 INS/GPS 모드 전환 로직 설계.
 
 </div>
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
-The goal was localization that stays steady when GPS quality wobbles. I designed an estimation module around a Bicycle Model EKF with a Chi-square gate and dynamic measurement-noise adjustment, validated it in a MATLAB environment that replays real driving logs, then tested it on a real cart on a golf course.
+<p class="project-lead">To keep localization stable through GPS-quality degradation, I combined a Bicycle Model EKF with measurement-validity screening and dynamic noise adjustment. I compared the design against firmware in a real-log replay environment before testing the module on a golf course.</p>
 
 ## Problem
 
-An autonomous golf cart has to know its position and attitude at every moment, but outdoor GPS reception never comes with a guarantee. Even with RTK-GPS (cm-level positioning), trusting measurements from a degraded stretch destabilizes the estimate, and that error feeds straight into steering.
-
-The core challenge was therefore to fuse fluctuating-quality GPS with other sensors so the estimate holds up in every stretch.
+An autonomous golf cart needs a stable position and attitude estimate throughout a drive. Even with RTK-GPS (cm-level positioning), degraded measurements can increase localization error and feed that error directly into steering control.
 
 ## Role
 
 I owned the vehicle localization and driving-control modules in LUXROBO's golf-cart autonomous-driving project. I designed and validated the localization architecture up front in MATLAB simulation based on real driving logs, and built a validation environment where the simulation can be compared against the firmware.
 
-## Key Contributions
-
-### Localization & Sensor Fusion
+## Localization Architecture
 
 - Designed and implemented a real-time position/attitude estimation module built on a Bicycle Model EKF (Extended Kalman Filter) that fuses GPS, IMU, steering angle (SAS), and vehicle speed.
 - Defined the state vector as velocity (v), Slip Angle, Yaw Rate, Yaw, and position (x, y), then validated the prediction/correction structure step by step.
-- Implemented the validity check that screens GPS measurements with a Chi-square Gate (statistical outlier rejection).
-- Designed the mode-switching logic: the measurement noise covariance (R matrix) tracks current GPS quality, and the filter falls back to INS (inertial navigation) when reception degrades, then returns to GPS once it recovers.
+
+## GPS Quality Handling
+
+- Screened GPS measurements with a Chi-square Gate for statistical outlier rejection.
+- Adjusted the measurement noise covariance (R matrix) with GPS quality and switched between INS and GPS modes as reception changed.
 
 </div>
 
@@ -114,12 +112,12 @@ flowchart LR
 
 _실시간 EKF 아키텍처 (다이어그램은 non-production data 기반 재구성)_
 
-### 조향 제어·경로 계획
+## 조향 제어와 경로 생성
 
 - RTK-GPS 기반 고정밀 위치 추정 결과를 입력으로 받는 Pure Pursuit 조향 제어 알고리즘 개발.
 - 동일한 추정 결과 위에서 동작하는 주행 경로 계획 알고리즘 개발.
 
-### 검증·병목 분석
+## 시뮬레이션·펌웨어 검증
 
 - 실차 주행 로그(.bin)를 재생하는 MATLAB 오프라인 시뮬레이션 환경 선행 구축. 실차 투입 전 추정 알고리즘 반복 검증.
 - 같은 주행 로그를 시뮬레이션과 펌웨어에 나란히 재생해 위치 추정 결과를 비교하는 환경 마련.
@@ -128,9 +126,9 @@ _실시간 EKF 아키텍처 (다이어그램은 non-production data 기반 재�
 ![MATLAB 기반 센서 데이터 시뮬레이션 예시 (시뮬레이션 데이터)](/assets/img/projects/golf-cart-matlab-sim.png)
 _MATLAB 기반 센서 데이터 시뮬레이션 예시: 추정 궤적·속도·Yaw·GPS 품질(HDOP/Age)·자이로·공분산 수렴 (시뮬레이션 데이터)_
 
-## 결과
-
 자전거 모델 기반 EKF 예측·보정 구조는 MATLAB 시뮬레이션에서 단계적으로 검증. 같은 주행 로그를 시뮬레이션과 펌웨어에 나란히 재생하는 방식으로, 구현이 설계와 일치하는지 상시 대조 가능.
+
+## 실차 테스트
 
 이후 모듈을 실차에 장착해 실제 골프장에서 테스트 진행.
 
@@ -143,12 +141,12 @@ _MATLAB 기반 센서 데이터 시뮬레이션 예시: 추정 궤적·속도·Y
 
 _Real-time EKF architecture — diagram reconstructed from non-production data_
 
-### Steering Control & Path Planning
+## Steering Control & Path Generation
 
 - Developed a Pure Pursuit steering controller that takes the RTK-GPS-based high-precision localization output as its input.
 - Developed the driving path planning algorithm that runs on the same estimation output.
 
-### Validation & Bottleneck Analysis
+## Simulation & Firmware Validation
 
 - Built an offline MATLAB simulation environment that replays real-vehicle driving logs (.bin). The estimation algorithm was validated repeatedly there before it ever touched the vehicle.
 - Built a replay environment that runs the same driving log through both the simulation and the firmware and compares their localization results.
@@ -157,9 +155,9 @@ _Real-time EKF architecture — diagram reconstructed from non-production data_
 ![Example of MATLAB-based sensor data simulation (simulation data)](/assets/img/projects/golf-cart-matlab-sim.png)
 _Example of MATLAB-based sensor data simulation — estimated trajectory, velocity, Yaw, GPS quality (HDOP/Age), gyro, covariance convergence (simulation data)_
 
-## Results
-
 I validated the Bicycle Model EKF prediction/correction structure step by step in MATLAB simulation. The replay environment runs the same driving log through both the simulation and the firmware, which gives a concrete way to check that the implementation matches the design.
+
+## Real-Vehicle Testing
 
 The module was then mounted on a real cart and tested on an actual golf course.
 
