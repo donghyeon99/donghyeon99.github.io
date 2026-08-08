@@ -42,7 +42,7 @@ layout: page
 
 사람 캐디 없이 골프백을 옮기려면 실외에서 사용자를 놓치지 않는 추종 주행이 전제. 여기에 이동 중 마주치는 정적·동적 장애물 회피까지 동시에 필요.
 
-문제는 추종과 회피가 진행 방향을 서로 다른 쪽으로 끌 수 있는 목표라는 점. 이 둘을 하나의 주행 알고리즘으로 묶는 것이 핵심 과제. 또한 실외 주행에서는 기준이 서로 다른 GPS·IMU 좌표계의 일관된 정렬이 주행 안정의 조건.
+문제는 추종과 회피가 진행 방향을 서로 다른 쪽으로 끌 수 있다는 점. 따라서 두 동작을 하나의 주행 알고리즘으로 묶고, 기준이 다른 GPS·IMU 좌표계를 일관되게 정렬할 필요가 있었음.
 
 ## 역할
 
@@ -58,7 +58,7 @@ _센서 배치(IMU·DC모터·GPS·LiDAR), 직접 설계한 제어 회로도, �
 
 - 사용자 리모컨의 GPS 위치로 목표점을 생성하고, 사용자 방향 인력(attractive force)과 장애물 척력(repulsive force)을 결합한 Potential Field 주행 알고리즘으로 사용자 추종과 동적·정적 장애물 회피를 동시에 구현
 - GPS·IMU·2D LiDAR를 하나로 묶은 인지 파이프라인 설계
-- IMU 기반 heading 추정과 북쪽 기준 좌표계 정규화로 주행 안정성 확보
+- IMU로 heading을 추정하고 GPS 좌표계를 북쪽 기준으로 정규화
 - ODE(Open Dynamics Engine) 시뮬레이션 환경에서 알고리즘을 선행 검증한 뒤 실차 주행에 적용
 - 전원·제어 회로를 직접 설계·통합해 실외 주행이 가능한 로봇 플랫폼 완성
 
@@ -88,7 +88,7 @@ _하천변 GPS 필드 테스트: mapviz 위성지도에 사용자(초록)와 로
 
 ## 제어기 구성
 
-제어 주기는 계단식 구성. 전류 제어기 500Hz, 속도 제어기 50Hz, 내비게이션 5Hz. 상위 명령이 하위 제어기 주기의 10분의 1로만 내려가는 배치로, 하위 제어기가 명령을 충분히 소화하는 구조.
+제어 주기는 전류 500Hz, 속도 50Hz, 내비게이션 5Hz로 배치. 각 상위 계층의 명령 주기를 바로 아래 제어기의 10분의 1로 두어, 하위 제어기가 명령을 충분히 처리하도록 구성.
 
 ## 실차 시연
 
@@ -134,7 +134,7 @@ _Sensor placement (IMU, DC motors, GPS, LiDAR), the control circuit schematic I 
 
 - Generated target points from the user's remote-control GPS position and implemented simultaneous user-following and dynamic/static obstacle avoidance with a Potential Field driving algorithm combining an attractive force toward the user and a repulsive force from obstacles
 - Built an integrated GPS/IMU/2D LiDAR perception pipeline
-- Secured driving stability with IMU-based heading estimation and north-referenced coordinate normalization
+- Estimated heading from the IMU and normalized the GPS frame to a north-referenced coordinate system
 - Validated the algorithm in an ODE (Open Dynamics Engine) simulation environment before applying it to real-vehicle driving
 - Designed and integrated the power/control circuits to complete a robot platform capable of outdoor driving
 

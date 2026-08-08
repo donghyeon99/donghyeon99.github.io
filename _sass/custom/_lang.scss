@@ -11,6 +11,8 @@
 
 .lang-page {
   position: relative; /* anchor for the absolutely-positioned toggle */
+  min-width: 0;
+  max-width: 100%;
 
   &[data-cv-lang='ko'] .lang-block[data-lang='en'] {
     display: none;
@@ -19,6 +21,18 @@
   &[data-cv-lang='en'] .lang-block[data-lang='ko'] {
     display: none;
   }
+}
+
+.lang-block {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* Project pages render a bilingual title inside the language block. Keep the
+ * switch on its own row so long technical titles never compete for space. */
+.lang-page--own-title {
+  padding-top: 2.5rem;
 }
 
 .cv-lang-toggle {
