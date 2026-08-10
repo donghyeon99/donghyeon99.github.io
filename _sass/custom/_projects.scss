@@ -187,6 +187,18 @@ $project-gap: 1.25rem;
   flex-basis: 100%;
 }
 
+.project-tag--more {
+  color: var(--text-muted-color);
+  background: transparent;
+}
+
+.project-card__desc {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 // ---------------------------------------------------------------------
 // Detail-page content hierarchy
 // ---------------------------------------------------------------------
@@ -201,6 +213,25 @@ $project-gap: 1.25rem;
   background: var(--card-bg);
   border-left: 3px solid var(--link-color);
   border-radius: 0 7px 7px 0;
+}
+
+.project-deep-dive {
+  margin: 1rem 0 1.5rem;
+  border: 1px solid var(--btn-border-color);
+  border-radius: 8px;
+  background: var(--card-bg);
+
+  > summary {
+    padding: 0.8rem 1rem;
+    font-weight: 650;
+    color: var(--link-color);
+    cursor: pointer;
+  }
+
+  > div {
+    padding: 0 1rem 1rem;
+    border-top: 1px solid var(--main-border-color);
+  }
 }
 
 .project-facts {
@@ -455,12 +486,24 @@ article:has(.landing) > h1.dynamic-title {
     white-space: nowrap;
   }
 
-  .landing-hero__identity {
-    max-width: 38rem;
-    margin: 0 0 1.4rem;
-    font-size: 1.02rem;
-    line-height: 1.75;
-    color: var(--text-color);
+  .landing-profile-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.8rem;
+    margin: 0 0 1.2rem;
+    color: var(--text-muted-color);
+    font-size: 0.9rem;
+
+    span {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    span:not(:last-child)::after {
+      content: '·';
+      margin-left: 0.8rem;
+      color: var(--btn-border-color);
+    }
   }
 
   .landing-hero__actions {
@@ -499,36 +542,66 @@ article:has(.landing) > h1.dynamic-title {
     }
   }
 
-  // ----- (b) Modeling → Estimation → Simulation → Control -----
+  // ----- (b) evidence and domain dashboard -----
 
-  .landing-arc__steps {
+  .landing-dashboard {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .landing-stat-grid,
+  .landing-domain-grid {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .landing-stat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .landing-domain-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .landing-stat,
+  .landing-domain {
+    min-width: 0;
+    padding: 0.8rem 0.9rem;
+    overflow-wrap: anywhere;
+    background: var(--card-bg);
+    border: 1px solid var(--btn-border-color);
+    border-radius: 8px;
+  }
+
+  .landing-stat {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem 0.6rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    flex-direction: column;
+    gap: 0.2rem;
 
-    li {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.88rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
+    strong {
       color: var(--heading-color);
-
-      &::before {
-        content: '\2192'; // →
-        font-weight: 400;
-        color: var(--text-muted-color);
-      }
-
-      &:first-child::before {
-        content: none;
-      }
+      font-size: 0.95rem;
     }
+
+    span {
+      color: var(--text-muted-color);
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+  }
+
+  .landing-domain {
+    display: flex;
+    align-items: center;
+    min-height: 3.4rem;
+    color: var(--heading-color);
+    font-size: 0.83rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .landing-section__title--domains {
+    margin-top: 0.5rem;
   }
 
   // ----- (c) featured projects -----
@@ -554,5 +627,21 @@ article:has(.landing) > h1.dynamic-title {
 
   .project-grid {
     margin-top: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .landing {
+    .landing-stat-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .landing-domain-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .landing-profile-row span::after {
+      display: none;
+    }
   }
 }

@@ -36,6 +36,14 @@ layout: page
 
 <p class="project-lead">GPS 사용자 추종과 2D LiDAR 장애물 회피를 하나의 Potential Field 주행기로 결합한 15kg 실차 로봇. 4인 팀의 설계·제작을 이끌었으며 제17회 광운 ICT 작품 전시회(KWIX) 최우수상(총장상) 수상.</p>
 
+<div class="project-facts">
+  <div class="project-fact"><span>역할</span><strong>4인 팀 리더 · 시스템 통합</strong></div>
+  <div class="project-fact"><span>주행</span><strong>GPS 추종 · LiDAR 회피</strong></div>
+  <div class="project-fact"><span>검증</span><strong>ODE 시뮬레이션 · 실차</strong></div>
+</div>
+
+<details class="project-deep-dive"><summary>구현 내용과 실험 보기</summary><div markdown="1">
+
 > 🎬 **시연 영상**: [Final Demo](https://youtu.be/uAqilEhrqzE) · [장애물 회피](https://youtu.be/JxvJmeS787U) · [ODE 시뮬레이션](https://youtu.be/_OWhjs1FOTs) · 코드: [caddy_robot](https://github.com/donghyeon99/caddy_robot)
 
 ## 문제
@@ -103,6 +111,8 @@ _ODE 기반 Potential Field 시뮬레이션 — 정적·동적 장애물을 회�
   <figure><img src="/assets/img/awards/kwix2021-best-award.jpg" alt="제17회 광운 ICT 작품 전시회(KWIX) 최우수상 상장"><figcaption>제17회 광운 ICT 작품 전시회(KWIX) 최우수상 (총장상) — 작품명 "비대면 캐디 서비스 로봇"</figcaption></figure>
 </div>
 
+</div></details>
+
 ---
 
 [← 모든 프로젝트 보기](/projects/){: .project-nav-link } · [CV 보기](/cv/){: .project-nav-link }
@@ -111,6 +121,14 @@ _ODE 기반 Potential Field 시뮬레이션 — 정적·동적 장애물을 회�
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
 <p class="project-lead">A 15 kg real-vehicle robot that combines GPS user-following and 2D LiDAR obstacle avoidance in one Potential Field controller. I led the four-person team through design and fabrication; the project won the Excellence Award (University President's Award) at the 17th Kwangwoon ICT Exhibition (KWIX).</p>
+
+<div class="project-facts">
+  <div class="project-fact"><span>Role</span><strong>Four-person team lead · Integration</strong></div>
+  <div class="project-fact"><span>Navigation</span><strong>GPS following · LiDAR avoidance</strong></div>
+  <div class="project-fact"><span>Validation</span><strong>ODE simulation · Real vehicle</strong></div>
+</div>
+
+<details class="project-deep-dive"><summary>Implementation and experiments</summary><div markdown="1">
 
 > 🎬 **Demo videos**: [Final Demo](https://youtu.be/uAqilEhrqzE) · [Obstacle Avoidance](https://youtu.be/JxvJmeS787U) · [ODE Simulation](https://youtu.be/_OWhjs1FOTs) · Code: [caddy_robot](https://github.com/donghyeon99/caddy_robot)
 
@@ -178,6 +196,8 @@ _ODE-based Potential Field simulation — driving path reaching the target point
 <div class="project-certs">
   <figure><img src="/assets/img/awards/kwix2021-best-award.jpg" alt="Certificate of the Excellence Award, 17th Kwangwoon ICT Exhibition (KWIX)"><figcaption>Excellence Award (University President's Award), 17th Kwangwoon ICT Exhibition (KWIX) — entry title "Contactless Caddy Service Robot"</figcaption></figure>
 </div>
+
+</div></details>
 
 ---
 

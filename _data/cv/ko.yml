@@ -40,7 +40,7 @@ work:
       - name: "회로 모델링 & 시뮬레이션 개발"
         period: "2026.03 ~ 현재"
         role: "보드 레벨 열해석 시뮬레이션 엔진 개발 (AI팀 · 회사 신규 사업)"
-        outcome: "ECAD 데이터를 입력으로 3D FVM 열해석을 수행하는 Python·Rust 엔진과 FastAPI 백엔드 개발"
+        outcome: "ECAD 데이터를 입력으로 3D FVM 열해석을 수행하는 Python·C++ 엔진과 FastAPI 백엔드 개발"
         bullets:
           - "3D 유한체적법(FVM) 기반 정상상태 열해석 엔진 구현"
           - "부품 발열원 추정·전류 분포·IR drop을 다루는 회로 물리 모델링"
@@ -52,7 +52,7 @@ work:
             value: "정상상태 온도 분포, 부품 발열원 추정, 전류 분포, IR drop"
           - label: "검증"
             value: "동일 보드 케이스를 ANSYS Icepak 해석 결과와 비교"
-        tech: ["Python", "Rust", "FastAPI", "FVM", "ECAD", "Thermal Analysis"]
+        tech: ["Python", "C++", "FastAPI", "FVM", "ECAD", "Thermal Analysis"]
         keywords: ["PCB", "ECAD", "Netlist", "IRDrop", "PhysicsSimulation"]
       - name: "골프카트 자율주행 모듈 개발"
         period: "2025.06 ~ 2026.02"
@@ -102,7 +102,12 @@ research:
       - "외부 센서 기반 FMCL과 내부 센서 기반 Odometry-NN의 신경망 융합(FMCL + Odometry-NN → Fusion NN → 최종 위치 추정), 관절 움직임 데이터를 입력으로 삼아 보행 진동에 대한 강인성 개선"
       - "다중 휴머노이드 로봇 환경에서 정상 상황과 Robot Kidnapping 상황을 나눈 실증 실험"
       - "Robot Kidnapping 상황 평균 오차 0.07m, 기존 알고리즘 대비 최대 약 80%(LHOL 대비) 오차 감소"
-      - "실험 수치 (RTAMSE, meter): Normal condition — OAFMCL 0.0474 vs MFDKF 0.1527 / NLSPGO 0.1012 / LHOL 0.0857; Robot Kidnapping — OAFMCL 0.0687 vs MFDKF 0.1103 / NLSPGO 0.0881 / LHOL 0.3791"
+    results:
+      label: "RTAMSE (m)"
+      columns: ["조건", "OAFMCL", "MFDKF", "NLSPGO", "LHOL"]
+      rows:
+        - ["정상", "0.0474", "0.1527", "0.1012", "0.0857"]
+        - ["Robot Kidnapping", "0.0687", "0.1103", "0.0881", "0.3791"]
     keywords: ["OAFMCL", "FiniteMemoryFilter", "CooperativeLocalization", "NeuralNetwork", "HumanoidRobot", "RTLS", "LiDAR"]
   - org: "한국연구재단(NRF) 프로젝트"
     role: "과제 연구"

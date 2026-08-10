@@ -75,6 +75,17 @@
           <ul class="cv-bullets">
             {% for b in r.bullets %}<li>{{ b }}</li>{% endfor %}
           </ul>
+          {% if r.results %}
+          <div class="cv-results" role="region" aria-label="{{ r.results.label }}">
+            <span class="cv-results__label">{{ r.results.label }}</span>
+            <div class="cv-results__scroll">
+              <table>
+                <thead><tr>{% for column in r.results.columns %}<th scope="col">{{ column }}</th>{% endfor %}</tr></thead>
+                <tbody>{% for row in r.results.rows %}<tr>{% for cell in row %}<td{% if forloop.index == 2 %} class="cv-results__primary"{% endif %}>{{ cell }}</td>{% endfor %}</tr>{% endfor %}</tbody>
+              </table>
+            </div>
+          </div>
+          {% endif %}
           {% if r.keywords %}
           <p class="cv-tags">
             {% for k in r.keywords %}<span class="cv-tag">{{ k }}</span>{% endfor %}

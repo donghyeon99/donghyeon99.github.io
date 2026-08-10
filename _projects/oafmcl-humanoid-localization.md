@@ -37,6 +37,14 @@ layout: page
 
 <p class="project-lead">보행 진동과 재귀 추정의 오차 누적에 대응하기 위해 유한 메모리 필터와 신경망을 융합한 OAFMCL 제안. Robot Kidnapping 상황 평균 오차 0.07m와 기존 알고리즘 대비 최대 80% 감소를 기록했으며 IEEE Transactions on Industrial Electronics에 1저자 논문으로 게재.</p>
 
+<div class="project-metrics project-metrics--summary">
+  <div class="project-metric"><strong>0.0474m</strong><span>정상 조건 RTAMSE</span></div>
+  <div class="project-metric"><strong>0.0687m</strong><span>Robot Kidnapping RTAMSE</span></div>
+  <div class="project-metric"><strong>최대 80%</strong><span>기존 알고리즘 대비 감소</span></div>
+</div>
+
+<details class="project-deep-dive"><summary>알고리즘과 실험 보기</summary><div markdown="1">
+
 ## 문제
 
 협력 위치 추정(Cooperative Localization)은 로봇끼리 상대 관측을 공유해 단일 로봇 추정의 한계를 보완하는 기법. 문제는 기존 연구 대부분이 바퀴로 구르는 이동 로봇(mobile robot)을 대상으로 한다는 점. 휴머노이드는 보행 중 몸체가 주기적으로 진동해 센서 노이즈가 크게 늘고, 기존 방법을 그대로 적용하면 LiDAR 기반 협력 위치 추정의 정확도가 급격히 떨어짐.
@@ -100,6 +108,14 @@ _FMCL 단독 수치는 Robot Kidnapping 조건에서만 보고됨(로봇 3대 �
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
 <p class="project-lead">OAFMCL combines a finite-memory filter with neural networks to address walking vibration and recursive error accumulation. It achieved 0.07 m average error under Robot Kidnapping, up to 80% below existing algorithms, and was published as a first-author IEEE Transactions on Industrial Electronics paper.</p>
+
+<div class="project-metrics project-metrics--summary">
+  <div class="project-metric"><strong>0.0474m</strong><span>Normal-condition RTAMSE</span></div>
+  <div class="project-metric"><strong>0.0687m</strong><span>Robot Kidnapping RTAMSE</span></div>
+  <div class="project-metric"><strong>Up to 80%</strong><span>Reduction vs. prior algorithms</span></div>
+</div>
+
+<details class="project-deep-dive"><summary>Algorithm and experiments</summary><div markdown="1">
 
 ## Problem
 
@@ -167,6 +183,8 @@ This work was published in IEEE Transactions on Industrial Electronics.
 
 ---
 
+</div></details>
+
 [← 모든 프로젝트 보기](/projects/){: .project-nav-link } · [CV 보기](/cv/){: .project-nav-link }
 
 </div>
@@ -174,6 +192,8 @@ This work was published in IEEE Transactions on Industrial Electronics.
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
 ---
+
+</div></details>
 
 [← All Projects](/projects/){: .project-nav-link } · [View CV](/cv/){: .project-nav-link }
 

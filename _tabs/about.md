@@ -10,20 +10,27 @@ description: 제어·로보틱스 엔지니어 김동현. 휴머노이드·드�
 
 <div class="lang-block" data-lang="ko" lang="ko" markdown="1">
 
-> 안녕하세요, Control & Robotics Engineer **김동현**입니다.
+> Control & Robotics Engineer **김동현**
 {: .prompt-tip }
 
-학부에서는 휴머노이드를 만들었고, 석사에서는 드론 편대를 제어했고, 회사에서는 골프카트 자율주행을 실차로 검증했습니다. 플랫폼은 계속 바뀌었지만 위치추정과 제어라는 축은 그대로였습니다.
+휴머노이드·UAV·차량의 위치 추정과 제어 시스템 개발 경험. 연구 알고리즘 설계부터 시뮬레이션, 임베디드 구현, 실차 검증까지 수행. 현재 LUXROBO AI팀에서 Python/C++ 기반 PCB 열해석 엔진 개발 중.
 
-- 광운대 로봇게임단 ROBIT에서 휴머노이드의 회로·펌웨어·비전·제어를 개발했습니다. 국제로봇콘테스트 2020에서 대상(대통령상)을 받았습니다.
-- 고려대 석사에서는 다수 휴머노이드의 분산 위치 추정을 연구해 IEEE Transactions on Industrial Electronics에 1저자로 게재했고, 멀티 UAV 유한 기억(Finite-Memory) 분산 제어기를 설계해 실기체로 검증했습니다.
-- LUXROBO에서는 약 30대 CCTV를 단일 서버에서 분석하는 스마트 주차 시스템을 납품했고, RTK-GPS 골프카트 위치추정·조향 제어를 실차로 검증했습니다. 지금은 같은 회사 AI팀에서 FVM 기반 PCB 열해석 엔진을 Python과 Rust로 개발하고 있습니다.
+## 경력 흐름
 
-관심의 중심은 지금도 로보틱스, 특히 자율주행과 제어, 상태추정입니다. 지금 만드는 열해석 엔진도 뿌리는 같다고 생각합니다. 물리를 모델로 만들고 수치로 푸는 일이니까요.
+| 단계·소속 | 주요 작업 | 결과 |
+|---|---|---|
+| 학부 · 광운대학교 ROBIT | 휴머노이드 회로·펌웨어·비전·제어 | RoboCup 우승 2회 · IRC 대통령상 |
+| 석사 · 고려대학교 | 다중 휴머노이드 위치 추정 · Multi-UAV 분산 제어 | IEEE TIE 1저자 · 실기체 검증 |
+| 산업 · LUXROBO | 스마트 주차 · 골프카트 자율주행 · PCB 열해석 | 현장 납품 · 실차 테스트 · 엔진 개발 |
 
-## Research Overview
+## 관심 분야
 
-플랫폼별 프로젝트와 결과입니다.
+- 자율주행 위치 추정과 센서 융합
+- 차량·모바일 로봇 제어
+- 물리 모델 기반 시뮬레이션
+- 알고리즘과 실제 시스템 간 검증
+
+## 프로젝트 개요
 
 | 플랫폼 | 프로젝트 | 결과 |
 | --- | --- | --- |
@@ -39,20 +46,27 @@ description: 제어·로보틱스 엔지니어 김동현. 휴머노이드·드�
 
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
-> Hi, I'm **Dong Hyeon Kim**, a Control & Robotics Engineer.
+> **Dong Hyeon Kim** · Control & Robotics Engineer
 {: .prompt-tip }
 
-I built humanoids as an undergrad, controlled UAV formations during my master's, and validated golf-cart autonomous driving on real vehicles at work. The platforms kept changing; the localization-and-control core didn't.
+I develop localization and control systems for humanoids, UAVs, and vehicles. My work spans algorithm design, simulation, embedded implementation, and real-vehicle testing. I currently build a Python/C++ PCB thermal simulation engine on LUXROBO's AI team.
 
-- At ROBIT, Kwangwoon University's robotics competition team, I developed the humanoid's circuits, firmware, vision, and control. We won the Grand Prize (Presidential Award) at the International Robot Contest 2020.
-- During my M.S. at Korea University, I published first-author research on distributed localization of multiple humanoid robots in IEEE Transactions on Industrial Electronics, and validated a finite-memory distributed controller on real multi-UAV formations.
-- At LUXROBO, I shipped a smart parking system that analyzes about 30 CCTV streams on a single server, and validated RTK-GPS golf-cart localization and steering control on a real vehicle. These days I build an FVM-based PCB thermal analysis engine in Python and Rust on the company's AI team.
+## Experience
 
-My center of gravity is still robotics — autonomous driving, control, and state estimation in particular. The thermal engine I'm building now shares the same root: modeling physics and solving it numerically.
+| Stage · Organization | Work | Evidence |
+|---|---|---|
+| Undergraduate · ROBIT | Humanoid circuits, firmware, vision, and control | Two RoboCup titles · IRC Presidential Award |
+| M.S. · Korea Univ. | Multi-humanoid localization · Multi-UAV distributed control | First-author IEEE TIE paper · Hardware validation |
+| Industry · LUXROBO | Smart parking · Golf-cart autonomy · PCB thermal simulation | Site delivery · Real-vehicle tests · Engine development |
 
-## Research Overview
+## Focus Areas
 
-Projects and results by platform.
+- Autonomous-driving localization and sensor fusion
+- Vehicle and mobile-robot control
+- Physics-based simulation
+- Algorithm-to-system validation
+
+## Project Overview
 
 | Platform | Project | Result |
 | --- | --- | --- |

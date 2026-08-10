@@ -11,28 +11,34 @@ title: Home
     <h1 class="landing-hero__name">
       김동현 <span class="landing-hero__name-en">Dong Hyeon Kim</span>
     </h1>
-    <p class="landing-hero__identity lang-block" data-lang="ko" lang="ko">
-      걷는 휴머노이드, 나는 드론, 달리는 차량에서 위치추정과 제어를 해왔습니다.
-      IEEE TIE 1저자 논문, 국제로봇콘테스트 대통령상, 약 30대 CCTV 스마트 주차 시스템 납품이 그 기록입니다.
-    </p>
-    <p class="landing-hero__identity lang-block" data-lang="en" lang="en">
-      Localization and control for machines that walk, fly, and drive.
-      First-author paper in IEEE Transactions on Industrial Electronics, a Presidential Award
-      at the International Robot Contest, and a shipped 30-camera smart parking system.
-    </p>
+    <div class="landing-profile-row lang-block" data-lang="ko" lang="ko">
+      <span>LUXROBO</span><span>Engineer · 전문연구요원</span><span>2024.05 ~ Present</span>
+    </div>
+    <div class="landing-profile-row lang-block" data-lang="en" lang="en">
+      <span>LUXROBO</span><span>Engineer · Technical Research Personnel</span><span>2024.05 ~ Present</span>
+    </div>
     <div class="landing-hero__actions">
       <a href="{{ '/cv/' | relative_url }}" class="landing-btn landing-btn--primary">CV</a>
       <a href="{{ '/about/' | relative_url }}" class="landing-btn">About</a>
+      <a href="{{ '/projects/' | relative_url }}" class="landing-btn">Projects</a>
     </div>
   </section>
 
-  <section class="landing-arc" aria-label="Problem-solving approach">
-    <ol class="landing-arc__steps">
-      <li>Modeling</li>
-      <li>Estimation</li>
-      <li>Simulation</li>
-      <li>Control</li>
-    </ol>
+  <section class="landing-dashboard">
+    <h2 class="landing-section__title"><span class="lang-block" data-lang="ko" lang="ko">주요 기록</span><span class="lang-block" data-lang="en" lang="en">Selected Record</span></h2>
+    <div class="landing-stat-grid">
+      <div class="landing-stat"><strong>IEEE TIE</strong><span class="lang-block" data-lang="ko" lang="ko">1저자 논문</span><span class="lang-block" data-lang="en" lang="en">First-author paper</span></div>
+      <div class="landing-stat"><strong>IRC 2020</strong><span class="lang-block" data-lang="ko" lang="ko">대상(대통령상)</span><span class="lang-block" data-lang="en" lang="en">Grand Prize · Presidential Award</span></div>
+      <div class="landing-stat"><strong>Industry</strong><span class="lang-block" data-lang="ko" lang="ko">스마트 주차 시스템 현장 납품</span><span class="lang-block" data-lang="en" lang="en">Smart parking system delivered on site</span></div>
+    </div>
+
+    <h2 class="landing-section__title landing-section__title--domains"><span class="lang-block" data-lang="ko" lang="ko">전문 분야</span><span class="lang-block" data-lang="en" lang="en">Focus Areas</span></h2>
+    <div class="landing-domain-grid">
+      <div class="landing-domain">Localization &amp; State Estimation</div>
+      <div class="landing-domain">Control</div>
+      <div class="landing-domain">Autonomous Driving</div>
+      <div class="landing-domain">Physics Simulation</div>
+    </div>
   </section>
 
   <section class="landing-projects">
@@ -53,7 +59,14 @@ title: Home
               <span class="project-card__period">{{ project.period }}</span>
             </div>
             <h3 class="project-card__title"><span class="lang-block" data-lang="ko" lang="ko">{{ project.title }}</span><span class="lang-block" data-lang="en" lang="en">{{ project.title_en | default: project.title }}</span></h3>
-            <p class="project-card__desc"><span class="lang-block" data-lang="ko" lang="ko">{{ project.description }}</span><span class="lang-block" data-lang="en" lang="en">{{ project.description_en | default: project.description }}</span></p>
+            {% case slug %}
+              {% when 'oafmcl-humanoid-localization' %}
+                <p class="project-card__desc"><span class="lang-block" data-lang="ko" lang="ko">Robot Kidnapping RTAMSE 0.0687m · IEEE TIE 1저자</span><span class="lang-block" data-lang="en" lang="en">Robot Kidnapping RTAMSE 0.0687 m · First-author IEEE TIE paper</span></p>
+              {% when 'golf-cart-autonomous-driving' %}
+                <p class="project-card__desc"><span class="lang-block" data-lang="ko" lang="ko">EKF 위치 추정 · Pure Pursuit 조향 제어 · 실차 테스트</span><span class="lang-block" data-lang="en" lang="en">EKF localization · Pure Pursuit steering · Real-vehicle testing</span></p>
+              {% when 'robit-humanoid' %}
+                <p class="project-card__desc"><span class="lang-block" data-lang="ko" lang="ko">회로·펌웨어·비전·제어 · IRC 대상(대통령상)</span><span class="lang-block" data-lang="en" lang="en">Circuits · Firmware · Vision · Control · IRC Presidential Award</span></p>
+            {% endcase %}
           </a>
         {% endif %}
       {% endfor %}

@@ -37,6 +37,14 @@ layout: page
 
 <p class="project-lead">중앙 통신 없이 Virtual Leader를 추종하는 Multi-UAV 분산 포메이션 제어 연구. 팔로워 4대 편대 비행에서 포메이션 오차 ±0.2m 이하를 확인하고, S자형 경로 추종에서 기존 알고리즘 대비 위치 오차(MSE) 약 61% 감소.</p>
 
+<div class="project-metrics project-metrics--summary">
+  <div class="project-metric"><strong>±0.2m</strong><span>포메이션 오차</span></div>
+  <div class="project-metric"><strong>61%</strong><span>S자 경로 MSE 감소</span></div>
+  <div class="project-metric"><strong>1 + 4</strong><span>Leader · Followers</span></div>
+</div>
+
+<details class="project-deep-dive"><summary>제어 구조와 실험 보기</summary><div markdown="1">
+
 ## 문제
 
 안티드론 스웜은 여러 대의 UAV가 팀을 이뤄 불법드론에 협력적으로 대응하는 시스템. 어려운 지점은 다수의 기체가 중앙 통신 없이 이웃 기체와의 상대 벡터·거리 정보만으로 포메이션을 유지해야 한다는 것. 비행이 길어질수록 센서 오차가 누적되고, 여기에 기체 동역학의 비선형성까지 겹침. 포메이션 유지와 충돌 회피를 동시에 만족하는 제어기가 필요한 상황.
@@ -99,6 +107,14 @@ S자형 경로 추종 실험(시나리오 #1)에서는 기존 알고리즘 대�
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
 <p class="project-lead">I developed distributed Multi-UAV formation control around a Virtual Leader without central communication. Four Followers held formation within ±0.2 m, and the S-curve path-following experiment reduced position error (MSE) by about 61% against the existing algorithm.</p>
+
+<div class="project-metrics project-metrics--summary">
+  <div class="project-metric"><strong>±0.2m</strong><span>Formation error</span></div>
+  <div class="project-metric"><strong>61%</strong><span>S-curve MSE reduction</span></div>
+  <div class="project-metric"><strong>1 + 4</strong><span>Leader · Followers</span></div>
+</div>
+
+<details class="project-deep-dive"><summary>Control architecture and experiments</summary><div markdown="1">
 
 ## Problem
 
@@ -165,6 +181,8 @@ Formation flight demonstration video:
 
 ---
 
+</div></details>
+
 [← 모든 프로젝트 보기](/projects/){: .project-nav-link } · [CV 보기](/cv/){: .project-nav-link }
 
 </div>
@@ -172,6 +190,8 @@ Formation flight demonstration video:
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
 ---
+
+</div></details>
 
 [← All Projects](/projects/){: .project-nav-link } · [View CV](/cv/){: .project-nav-link }
 

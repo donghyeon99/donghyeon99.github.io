@@ -40,7 +40,7 @@ work:
       - name: "Circuit Modeling & Simulation"
         period: "2026.03 ~ Present"
         role: "Board-level thermal simulation engine development (AI Team · new business initiative)"
-        outcome: "Developing a Python/Rust engine and FastAPI backend for 3D FVM thermal analysis from ECAD data"
+        outcome: "Developing a Python/C++ engine and FastAPI backend for 3D FVM thermal analysis from ECAD data"
         bullets:
           - "Implementing a steady-state board-level thermal solver based on a 3D finite-volume method (FVM)"
           - "Modeling component power estimation, current distribution, and IR drop"
@@ -52,7 +52,7 @@ work:
             value: "Steady-state temperature distribution, component power estimation, current distribution, and IR drop"
           - label: "Validation"
             value: "Identical board cases compared against ANSYS Icepak results"
-        tech: ["Python", "Rust", "FastAPI", "FVM", "ECAD", "Thermal Analysis"]
+        tech: ["Python", "C++", "FastAPI", "FVM", "ECAD", "Thermal Analysis"]
         keywords: ["PCB", "ECAD", "Netlist", "IRDrop", "PhysicsSimulation"]
       - name: "Autonomous Driving Module for Golf Carts"
         period: "2025.06 ~ 2026.02"
@@ -102,7 +102,12 @@ research:
       - "Fused the external-sensor-based FMCL with the internal-sensor-based Odometry-NN through a neural network (FMCL + Odometry-NN → Fusion NN → final position estimate), with joint-motion data as input for robustness to walking vibration"
       - "Ran demonstration experiments on multiple humanoid robots, separated into a normal condition and a Robot Kidnapping condition"
       - "Achieved an average error of 0.07 m under Robot Kidnapping, up to about 80% lower (vs. LHOL) than existing algorithms"
-      - "Experimental results (RTAMSE, meter): Normal condition — OAFMCL 0.0474 vs MFDKF 0.1527 / NLSPGO 0.1012 / LHOL 0.0857; Robot Kidnapping — OAFMCL 0.0687 vs MFDKF 0.1103 / NLSPGO 0.0881 / LHOL 0.3791"
+    results:
+      label: "RTAMSE (m)"
+      columns: ["Condition", "OAFMCL", "MFDKF", "NLSPGO", "LHOL"]
+      rows:
+        - ["Normal", "0.0474", "0.1527", "0.1012", "0.0857"]
+        - ["Robot Kidnapping", "0.0687", "0.1103", "0.0881", "0.3791"]
     keywords: ["OAFMCL", "FiniteMemoryFilter", "CooperativeLocalization", "NeuralNetwork", "HumanoidRobot", "RTLS", "LiDAR"]
   - org: "National Research Foundation of Korea (NRF) Project"
     role: "Project Research"
