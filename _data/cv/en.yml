@@ -4,7 +4,6 @@ profile:
   name: "Dong Hyeon Kim"
   title: "Control & Robotics Engineer @ LUXROBO"
   period: "2024.05 ~ Present"
-  tagline: "Localization and control across humanoids, UAVs, and vehicles. First-author IEEE TIE paper, a Presidential Award at the International Robot Contest, and a delivered smart parking system."
   interests:
     - "Robotics (Autonomous Driving, Humanoid)"
     - "Control Theory (PID, SMC, MPC)"
@@ -39,7 +38,7 @@ work:
     projects:
       - name: "Circuit Modeling & Simulation"
         period: "2026.03 ~ Present"
-        role: "Board-level thermal simulation engine development (AI Team · new business initiative)"
+        role: "Board-level thermal simulation engine development (AI Team)"
         outcome: "Developing a Python/C++ engine and FastAPI backend for 3D FVM thermal analysis from ECAD data"
         bullets:
           - "Implementing a steady-state board-level thermal solver based on a 3D finite-volume method (FVM)"

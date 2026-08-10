@@ -4,7 +4,6 @@ profile:
   name: "김동현 (Dong Hyeon Kim)"
   title: "Control & Robotics Engineer @ LUXROBO"
   period: "2024.05 ~ 현재"
-  tagline: "휴머노이드·드론·차량에서 위치추정과 제어를 해왔습니다. IEEE TIE 1저자 논문, 국제로봇콘테스트 대상(대통령상), 스마트 주차 시스템 납품."
   interests:
     - "Robotics (Autonomous Driving, Humanoid)"
     - "Control Theory (PID, SMC, MPC)"
@@ -39,7 +38,7 @@ work:
     projects:
       - name: "회로 모델링 & 시뮬레이션 개발"
         period: "2026.03 ~ 현재"
-        role: "보드 레벨 열해석 시뮬레이션 엔진 개발 (AI팀 · 회사 신규 사업)"
+        role: "보드 레벨 열해석 시뮬레이션 엔진 개발 (AI팀)"
         outcome: "ECAD 데이터를 입력으로 3D FVM 열해석을 수행하는 Python·C++ 엔진과 FastAPI 백엔드 개발"
         bullets:
           - "3D 유한체적법(FVM) 기반 정상상태 열해석 엔진 구현"
