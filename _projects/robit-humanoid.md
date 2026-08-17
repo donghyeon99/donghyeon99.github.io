@@ -7,7 +7,7 @@ date: 2022-02-28
 period: "2019.01 ~ 2022.02"
 category_label: Team
 tech: [OpenCV, Particle Filter, STM32, Embedded System]
-layout: page
+layout: portfolio
 ---
 
 <div class="lang-page lang-page--own-title" data-cv-lang="en">

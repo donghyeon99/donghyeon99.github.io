@@ -1,8 +1,9 @@
 ---
-# the default layout is 'page'
+layout: portfolio
+title: About
 icon: fas fa-info-circle
 order: 1
-description: 제어·로보틱스 엔지니어 김동현. 휴머노이드·드론·차량에서 위치추정과 제어를 해왔고, IEEE TIE 1저자 논문과 국제로봇콘테스트 대통령상, 스마트 주차 시스템 납품 이력이 있습니다.
+description: 휴머노이드, UAV, 차량의 위치 추정과 제어 시스템을 설계하고 실제 환경에서 검증해 온 과정.
 ---
 
 <div class="lang-page" data-cv-lang="en">

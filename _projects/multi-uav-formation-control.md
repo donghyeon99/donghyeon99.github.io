@@ -7,7 +7,7 @@ date: 2024-02-29
 period: "2022.03 ~ 2024.02"
 category_label: Research
 tech: [MATLAB, Pixhawk, ROS, UWB, IMU, Distributed Control, Formation Control, Virtual Leader, Graph Model]
-layout: page
+layout: portfolio
 ---
 
 <div class="lang-page lang-page--own-title" data-cv-lang="en">
@@ -43,7 +43,7 @@ layout: page
   <div class="project-metric"><strong>1 + 4</strong><span>Leader · Followers</span></div>
 </div>
 
-<details class="project-deep-dive"><summary>제어 구조와 실험 보기</summary><div markdown="1">
+<div class="project-details" markdown="1">
 
 ## 문제
 
@@ -114,7 +114,7 @@ S자형 경로 추종 실험(시나리오 #1)에서는 기존 알고리즘 대�
   <div class="project-metric"><strong>1 + 4</strong><span>Leader · Followers</span></div>
 </div>
 
-<details class="project-deep-dive"><summary>Control architecture and experiments</summary><div markdown="1">
+<div class="project-details" markdown="1">
 
 ## Problem
 
@@ -181,7 +181,7 @@ Formation flight demonstration video:
 
 ---
 
-</div></details>
+</div>
 
 [← 모든 프로젝트 보기](/projects/){: .project-nav-link } · [CV 보기](/cv/){: .project-nav-link }
 
@@ -191,7 +191,7 @@ Formation flight demonstration video:
 
 ---
 
-</div></details>
+</div>
 
 [← All Projects](/projects/){: .project-nav-link } · [View CV](/cv/){: .project-nav-link }
 

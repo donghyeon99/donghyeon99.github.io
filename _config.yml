@@ -194,13 +194,13 @@ defaults:
       path: ""
       type: tabs # see `site.collections`
     values:
-      layout: page
+      layout: portfolio
       permalink: /:title/
   - scope:
       path: ""
       type: projects
     values:
-      layout: page
+      layout: portfolio
       permalink: /projects/:name/
 
 sass:

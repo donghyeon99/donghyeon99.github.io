@@ -7,7 +7,7 @@ date: 2026-02-28
 period: "2025.06 ~ 2026.02"
 category_label: Industry
 tech: [RTK-GPS, GNSS, IMU, Pure Pursuit, EKF, MATLAB, C]
-layout: page
+layout: portfolio
 mermaid: true
 ---
 
@@ -37,6 +37,12 @@ mermaid: true
 
 <p class="project-lead">GPS 품질 저하 구간에서도 위치 추정을 유지하기 위해 자전거 모델 기반 EKF에 측정 유효성 판단과 잡음 동적 조정을 결합. 실차 로그 재생 환경에서 설계와 펌웨어 구현을 대조한 뒤 실제 골프장에서 테스트.</p>
 
+<div class="project-facts">
+  <div class="project-fact"><span>담당</span><strong>위치 추정 · 주행 제어</strong></div>
+  <div class="project-fact"><span>구조</span><strong>Bicycle Model EKF · Pure Pursuit</strong></div>
+  <div class="project-fact"><span>검증</span><strong>로그 재생 · 펌웨어 · 실차</strong></div>
+</div>
+
 ## 문제
 
 자율주행 골프카트의 위치와 자세를 안정적으로 유지하려면 GPS 품질 저하 구간에 대한 대응이 필요. RTK-GPS(cm급 정밀 측위)를 사용하더라도 품질이 무너진 구간의 측정값을 그대로 반영하면 위치 오차가 커지고 조향 제어까지 영향을 받는 문제.
@@ -59,6 +65,12 @@ LUXROBO의 골프카트 자율주행 모듈 프로젝트에서 차량 위치 추
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
 <p class="project-lead">To keep localization stable through GPS-quality degradation, I combined a Bicycle Model EKF with measurement-validity screening and dynamic noise adjustment. I compared the design against firmware in a real-log replay environment before testing the module on a golf course.</p>
+
+<div class="project-facts">
+  <div class="project-fact"><span>Scope</span><strong>Localization · Driving Control</strong></div>
+  <div class="project-fact"><span>Architecture</span><strong>Bicycle Model EKF · Pure Pursuit</strong></div>
+  <div class="project-fact"><span>Validation</span><strong>Log Replay · Firmware · Real Vehicle</strong></div>
+</div>
 
 ## Problem
 

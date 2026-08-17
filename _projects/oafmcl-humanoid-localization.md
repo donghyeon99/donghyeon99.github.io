@@ -7,7 +7,8 @@ date: 2024-02-29
 period: "2022.03 ~ 2024.02"
 category_label: Research
 tech: [Finite-Memory Filter (FIR), Neural Network, Multisensor Fusion, RTLS, LiDAR, Odometry]
-layout: page
+layout: portfolio
+math: true
 ---
 
 <div class="lang-page lang-page--own-title" data-cv-lang="en">
@@ -43,7 +44,7 @@ layout: page
   <div class="project-metric"><strong>최대 80%</strong><span>기존 알고리즘 대비 감소</span></div>
 </div>
 
-<details class="project-deep-dive"><summary>알고리즘과 실험 보기</summary><div markdown="1">
+<div class="project-details" markdown="1">
 
 ## 문제
 
@@ -53,11 +54,42 @@ layout: page
 
 ## 역할
 
-고려대학교 Advanced Control System Lab 석사 과정(지도교수 Choon Ki Ahn)에서 수행한 학위 연구. 협력 위치 추정 알고리즘 **OAFMCL(Odometry-Aided Finite-Memory Cooperative Localization)** 을 설계하고, 휴머노이드 3대 실증 실험까지 진행한 뒤 제1저자 논문으로 정리.
+협력 위치 추정 알고리즘 **OAFMCL(Odometry-Aided Finite-Memory Cooperative Localization)** 설계, 휴머노이드 3대 실증 실험, 제1저자 논문 작성.
 
 ## FMCL 추정기
 
 - 최근 N개의 측정값만 슬라이딩 윈도(N=7)로 배치 처리하는 유한 메모리(finite-memory, FIR 필터) 기반 협력 위치 추정기 FMCL 설계. 목표는 재귀 추정의 오차 누적 억제. 오래된 측정을 아예 쓰지 않으므로 과거 오차가 쌓일 통로가 없고, 에러가 일정 범위 안에 머무는 구조
+
+<div class="equation-panel" markdown="1">
+
+**최근 측정의 증강 — Eq. (16)**
+
+$$
+Z_{m,n}=\begin{bmatrix}z_m^T & z_{m+1}^T & \cdots & z_n^T\end{bmatrix}^T,
+\qquad m=k-N,\; n=k-1
+$$
+
+**비편향 추정을 위한 제약 — Eq. (25)**
+
+$$
+L_{m,n}T_{m,n}-A^N=0
+$$
+
+**유한 메모리 필터 이득 — Eq. (33)**
+
+$$
+L_{m,n}=A^N\left(T_{m,n}^T T_{m,n}\right)^{-1}T_{m,n}^T
+$$
+
+**FMCL 상태 추정 — Eq. (34)**
+
+$$
+\hat{x}_k=A^N\left(T_{m,n}^T T_{m,n}\right)^{-1}T_{m,n}^T Z_{m,n}
+$$
+
+여기서 $N$은 메모리 크기, $T_{m,n}$은 구간 $[m,n]$의 선형화된 측정 모델을 누적한 행렬. 실험에서는 $N=7$, $T=0.1\,\mathrm{s}$로 설정.
+
+</div>
 
 ## Odometry-NN
 
@@ -115,7 +147,7 @@ _FMCL 단독 수치는 Robot Kidnapping 조건에서만 보고됨(로봇 3대 �
   <div class="project-metric"><strong>Up to 80%</strong><span>Reduction vs. prior algorithms</span></div>
 </div>
 
-<details class="project-deep-dive"><summary>Algorithm and experiments</summary><div markdown="1">
+<div class="project-details" markdown="1">
 
 ## Problem
 
@@ -125,11 +157,42 @@ Recursive (IIR) estimators make it worse: they reuse all past data, so the error
 
 ## Role
 
-This was my M.S. thesis research at the Advanced Control System Lab, Korea University (Advisor: Prof. Choon Ki Ahn). I designed the cooperative localization algorithm **OAFMCL (Odometry Aided Finite-Memory Cooperative Localization)**, carried out demonstration experiments with three humanoid robots, and published the work as a first-author paper.
+Designed **OAFMCL (Odometry Aided Finite-Memory Cooperative Localization)**, conducted experiments with three humanoid robots, and wrote the first-author paper.
 
 ## FMCL Estimator
 
 - Designed FMCL, a finite-memory (FIR filter)-based cooperative localization estimator that batch-processes only the most recent N measurements in a sliding window (N=7) to suppress the error-accumulation problem of recursive estimation — discarding old measurements blocks the accumulation of past errors at the source and keeps the error bounded
+
+<div class="equation-panel" markdown="1">
+
+**Augmented recent measurements — Eq. (16)**
+
+$$
+Z_{m,n}=\begin{bmatrix}z_m^T & z_{m+1}^T & \cdots & z_n^T\end{bmatrix}^T,
+\qquad m=k-N,\; n=k-1
+$$
+
+**Unbiased-estimation constraint — Eq. (25)**
+
+$$
+L_{m,n}T_{m,n}-A^N=0
+$$
+
+**Finite-memory filter gain — Eq. (33)**
+
+$$
+L_{m,n}=A^N\left(T_{m,n}^T T_{m,n}\right)^{-1}T_{m,n}^T
+$$
+
+**FMCL state estimate — Eq. (34)**
+
+$$
+\hat{x}_k=A^N\left(T_{m,n}^T T_{m,n}\right)^{-1}T_{m,n}^T Z_{m,n}
+$$
+
+Here, $N$ is the memory size and $T_{m,n}$ stacks the linearized measurement model over $[m,n]$. The experiments used $N=7$ and $T=0.1\,\mathrm{s}$.
+
+</div>
 
 ## Odometry-NN
 
@@ -183,7 +246,7 @@ This work was published in IEEE Transactions on Industrial Electronics.
 
 ---
 
-</div></details>
+</div>
 
 [← 모든 프로젝트 보기](/projects/){: .project-nav-link } · [CV 보기](/cv/){: .project-nav-link }
 
@@ -193,7 +256,7 @@ This work was published in IEEE Transactions on Industrial Electronics.
 
 ---
 
-</div></details>
+</div>
 
 [← All Projects](/projects/){: .project-nav-link } · [View CV](/cv/){: .project-nav-link }
 

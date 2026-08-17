@@ -1,5 +1,5 @@
 ---
-# the default layout is 'page'
+layout: portfolio
 icon: fas fa-file-lines
 order: 3
 title: CV

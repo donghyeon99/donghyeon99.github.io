@@ -7,7 +7,7 @@ date: 2021-12-31
 period: "2021.01 ~ 2021.12"
 category_label: Team
 tech: [ROS, GPS, IMU, 2D LiDAR, Potential Field, ODE Simulation]
-layout: page
+layout: portfolio
 ---
 
 <div class="lang-page lang-page--own-title" data-cv-lang="en">
@@ -42,7 +42,7 @@ layout: page
   <div class="project-fact"><span>검증</span><strong>ODE 시뮬레이션 · 실차</strong></div>
 </div>
 
-<details class="project-deep-dive"><summary>구현 내용과 실험 보기</summary><div markdown="1">
+<div class="project-details" markdown="1">
 
 > 🎬 **시연 영상**: [Final Demo](https://youtu.be/uAqilEhrqzE) · [장애물 회피](https://youtu.be/JxvJmeS787U) · [ODE 시뮬레이션](https://youtu.be/_OWhjs1FOTs) · 코드: [caddy_robot](https://github.com/donghyeon99/caddy_robot)
 
@@ -111,7 +111,7 @@ _ODE 기반 Potential Field 시뮬레이션 — 정적·동적 장애물을 회�
   <figure><img src="/assets/img/awards/kwix2021-best-award.jpg" alt="제17회 광운 ICT 작품 전시회(KWIX) 최우수상 상장"><figcaption>제17회 광운 ICT 작품 전시회(KWIX) 최우수상 (총장상) — 작품명 "비대면 캐디 서비스 로봇"</figcaption></figure>
 </div>
 
-</div></details>
+</div>
 
 ---
 
@@ -128,7 +128,7 @@ _ODE 기반 Potential Field 시뮬레이션 — 정적·동적 장애물을 회�
   <div class="project-fact"><span>Validation</span><strong>ODE simulation · Real vehicle</strong></div>
 </div>
 
-<details class="project-deep-dive"><summary>Implementation and experiments</summary><div markdown="1">
+<div class="project-details" markdown="1">
 
 > 🎬 **Demo videos**: [Final Demo](https://youtu.be/uAqilEhrqzE) · [Obstacle Avoidance](https://youtu.be/JxvJmeS787U) · [ODE Simulation](https://youtu.be/_OWhjs1FOTs) · Code: [caddy_robot](https://github.com/donghyeon99/caddy_robot)
 
@@ -197,7 +197,7 @@ _ODE-based Potential Field simulation — driving path reaching the target point
   <figure><img src="/assets/img/awards/kwix2021-best-award.jpg" alt="Certificate of the Excellence Award, 17th Kwangwoon ICT Exhibition (KWIX)"><figcaption>Excellence Award (University President's Award), 17th Kwangwoon ICT Exhibition (KWIX) — entry title "Contactless Caddy Service Robot"</figcaption></figure>
 </div>
 
-</div></details>
+</div>
 
 ---
 

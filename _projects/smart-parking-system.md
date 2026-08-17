@@ -7,7 +7,7 @@ date: 2025-05-31
 period: "2024.05 ~ 2025.05"
 category_label: Industry
 tech: [C++, Go, Redis, gRPC, OpenCV, YOLOv7, RTSP]
-layout: page
+layout: portfolio
 mermaid: true
 ---
 
@@ -38,6 +38,12 @@ mermaid: true
 
 <p class="project-lead">약 30대 CCTV 스트림을 서버 한 대에서 분석하고, 인지 결과와 BLE·비상벨 이벤트를 조명 제어로 연결한 통합 시스템. 영상 처리 서버(C++)와 조명 제어 서버(Go)를 개발해 2025년 5월 현장 납품.</p>
 
+<div class="project-facts">
+  <div class="project-fact"><span>담당</span><strong>영상 처리 서버 · 조명 제어 서버</strong></div>
+  <div class="project-fact"><span>규모</span><strong>단일 서버 · 약 30대 CCTV</strong></div>
+  <div class="project-fact"><span>결과</span><strong>2025.05 현장 납품</strong></div>
+</div>
+
 ## 문제
 
 주차장 전역에 설치된 약 30대의 CCTV가 보내는 RTSP 스트림을 서버 한 대에서 동시에 받아 분석해야 하는 조건. 카메라가 늘수록 디코딩·분석 부하가 함께 증가하고, 어안(Fisheye) 카메라와 단방향(One-way) 카메라는 요구되는 분석이 달라 하나의 파이프라인으로 묶기 어려운 구조.
@@ -55,6 +61,12 @@ LUXROBO에서 시스템의 두 축인 영상 처리 서버(C++)와 조명 제어
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
 <p class="project-lead">This integrated system analyzes about 30 CCTV streams on one server and links perception, BLE, and emergency-bell events to lighting control. I developed the video processing server (C++) and lighting control server (Go) for the May 2025 delivery.</p>
+
+<div class="project-facts">
+  <div class="project-fact"><span>Scope</span><strong>Video Processing · Lighting Control Servers</strong></div>
+  <div class="project-fact"><span>Scale</span><strong>Single Server · ~30 CCTV Cameras</strong></div>
+  <div class="project-fact"><span>Result</span><strong>Delivered on Site · 2025.05</strong></div>
+</div>
 
 ## Problem
 
