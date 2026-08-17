@@ -36,7 +36,7 @@ hide_heading: true
   <ol class="about-timeline">
     <li><span class="about-timeline__index">01</span><div class="about-timeline__work"><div class="about-timeline__meta"><small>학부 · 광운대학교 ROBIT</small><time>2018.03 — 2022.02</time></div><strong>휴머노이드 시스템 개발</strong><p>회로 · 펌웨어 · 비전 · 제어</p></div><div class="about-timeline__result"><small>Result</small><strong>RoboCup 우승 2회 · IRC 대통령상</strong></div></li>
     <li><span class="about-timeline__index">02</span><div class="about-timeline__work"><div class="about-timeline__meta"><small>석사 · 고려대학교</small><time>2022.03 — 2024.02</time></div><strong>협력 위치 추정 · 분산 제어</strong><p>다중 휴머노이드 · Multi-UAV</p></div><div class="about-timeline__result"><small>Result</small><strong>IEEE TIE 1저자 · 실기체 검증</strong></div></li>
-    <li><span class="about-timeline__index">03</span><div class="about-timeline__work"><div class="about-timeline__meta"><small>산업 · LUXROBO</small><time>2024.05 — Present</time></div><strong>자율주행 · 영상 처리 · 물리 시뮬레이션</strong><p>스마트 주차 · 골프카트 · PCB 열해석</p></div><div class="about-timeline__result"><small>Result</small><strong>현장 납품 · 실차 테스트 · 엔진 개발</strong></div></li>
+    <li><span class="about-timeline__index">03</span><div class="about-timeline__work"><div class="about-timeline__meta"><small>산업 · LUXROBO</small><time>2024.05 — Present</time></div><strong>영상 처리 · 자율주행 · 물리 시뮬레이션</strong><p>스마트 주차 · 골프카트 · PCB 열해석</p></div><div class="about-timeline__result"><small>Result</small><strong>현장 납품 · 실차 테스트 · 엔진 개발</strong></div></li>
   </ol>
 </section>
 
@@ -88,7 +88,7 @@ hide_heading: true
   <ol class="about-timeline">
     <li><span class="about-timeline__index">01</span><div class="about-timeline__work"><div class="about-timeline__meta"><small>Undergraduate · ROBIT, Kwangwoon Univ.</small><time>2018.03 — 2022.02</time></div><strong>Humanoid system development</strong><p>Circuits · firmware · vision · control</p></div><div class="about-timeline__result"><small>Result</small><strong>Two RoboCup titles · IRC Presidential Award</strong></div></li>
     <li><span class="about-timeline__index">02</span><div class="about-timeline__work"><div class="about-timeline__meta"><small>M.S. · Korea Univ.</small><time>2022.03 — 2024.02</time></div><strong>Cooperative localization · distributed control</strong><p>Multiple humanoids · Multi-UAV</p></div><div class="about-timeline__result"><small>Result</small><strong>First-author IEEE TIE paper · hardware validation</strong></div></li>
-    <li><span class="about-timeline__index">03</span><div class="about-timeline__work"><div class="about-timeline__meta"><small>Industry · LUXROBO</small><time>2024.05 — Present</time></div><strong>Autonomy · computer vision · physics simulation</strong><p>Smart parking · golf cart · PCB thermal analysis</p></div><div class="about-timeline__result"><small>Result</small><strong>Site delivery · real-vehicle tests · engine development</strong></div></li>
+    <li><span class="about-timeline__index">03</span><div class="about-timeline__work"><div class="about-timeline__meta"><small>Industry · LUXROBO</small><time>2024.05 — Present</time></div><strong>Computer vision · autonomy · physics simulation</strong><p>Smart parking · golf cart · PCB thermal analysis</p></div><div class="about-timeline__result"><small>Result</small><strong>Site delivery · real-vehicle tests · engine development</strong></div></li>
   </ol>
 </section>
 
