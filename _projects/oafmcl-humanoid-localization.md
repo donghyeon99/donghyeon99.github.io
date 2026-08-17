@@ -137,6 +137,8 @@ _FMCL 단독 수치는 Robot Kidnapping 조건에서만 보고됨(로봇 3대 �
 
 </div>
 
+</div>
+
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
 <p class="project-lead">OAFMCL combines a finite-memory filter with neural networks to address walking vibration and recursive error accumulation. It achieved 0.07 m average error under Robot Kidnapping, up to 80% below existing algorithms, and was published as a first-author IEEE Transactions on Industrial Electronics paper.</p>
@@ -240,13 +242,13 @@ This work was published in IEEE Transactions on Industrial Electronics.
 
 </div>
 
+</div>
+
 {% include embed/youtube.html id='ueaxI5FNc_w' %}
 
 <div class="lang-block" data-lang="ko" lang="ko" markdown="1">
 
 ---
-
-</div>
 
 [← 모든 프로젝트 보기](/projects/){: .project-nav-link } · [CV 보기](/cv/){: .project-nav-link }
 
@@ -255,8 +257,6 @@ This work was published in IEEE Transactions on Industrial Electronics.
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
 ---
-
-</div>
 
 [← All Projects](/projects/){: .project-nav-link } · [View CV](/cv/){: .project-nav-link }
 

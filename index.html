@@ -9,7 +9,8 @@ title: Home
   <section class="landing-hero">
     <div class="landing-hero__copy">
       <p class="landing-hero__headline">Control &amp; Robotics Engineer</p>
-      <h1 class="landing-hero__name">김동현 <span class="landing-hero__name-en">Dong Hyeon Kim</span></h1>
+      <h1 class="landing-hero__name lang-block" data-lang="ko" lang="ko">김동현</h1>
+      <h1 class="landing-hero__name lang-block" data-lang="en" lang="en">Dong Hyeon Kim</h1>
       <p class="landing-hero__intro lang-block" data-lang="ko" lang="ko">위치 추정과 제어 알고리즘을 설계하고, 시뮬레이션에서 실기체까지 검증하는 엔지니어.</p>
       <p class="landing-hero__intro lang-block" data-lang="en" lang="en">Engineer building localization and control algorithms, then validating them from simulation to physical systems.</p>
       <div class="landing-hero__actions">
@@ -18,26 +19,28 @@ title: Home
         <a href="mailto:ehdgus2210@gmail.com" class="landing-btn">Email</a>
       </div>
     </div>
-    <div class="landing-current">
-      <p class="landing-current__label"><span></span> Current</p>
+    <aside class="landing-current-strip" aria-label="Current position">
+      <div class="landing-current-strip__head">
+        <p class="landing-current__label"><span></span> Current</p>
+        <time>2024.05 — Present</time>
+      </div>
       <strong>LUXROBO</strong>
-      <div class="lang-block" data-lang="ko" lang="ko"><p>Engineer · 전문연구요원</p><p>PCB 열해석 시뮬레이션 엔진 개발</p></div>
-      <div class="lang-block" data-lang="en" lang="en"><p>Engineer · Technical Research Personnel</p><p>PCB thermal simulation engine development</p></div>
-      <time>2024.05 — Present</time>
-      <div class="landing-current__stack"><span>Python</span><span>C++</span><span>FVM</span><span>FastAPI</span></div>
-    </div>
+      <div class="landing-current-strip__work lang-block" data-lang="ko" lang="ko"><span>Engineer · 전문연구요원</span><span>PCB 열해석 시뮬레이션 엔진 개발</span></div>
+      <div class="landing-current-strip__work lang-block" data-lang="en" lang="en"><span>Engineer · Technical Research Personnel</span><span>PCB thermal simulation engine development</span></div>
+      <ul class="landing-current__stack" aria-label="Current technology stack"><li>Python</li><li>C++</li><li>FVM</li><li>FastAPI</li></ul>
+    </aside>
   </section>
 
   <section class="landing-dashboard">
     <div class="landing-section__head landing-section__head--dashboard">
-      <div><p class="eyebrow">Evidence</p><h2 class="landing-section__title"><span class="lang-block" data-lang="ko" lang="ko">검증된 결과</span><span class="lang-block" data-lang="en" lang="en">Selected evidence</span></h2></div>
-      <p class="landing-dashboard__note lang-block" data-lang="ko" lang="ko">논문, 대회, 현장 납품으로 확인된 기록.</p>
-      <p class="landing-dashboard__note lang-block" data-lang="en" lang="en">Evidence from publication, competition, and deployment.</p>
+      <div><p class="eyebrow">Record</p><h2 class="landing-section__title"><span class="lang-block" data-lang="ko" lang="ko">주요 기록</span><span class="lang-block" data-lang="en" lang="en">Selected record</span></h2></div>
+      <p class="landing-dashboard__note lang-block" data-lang="ko" lang="ko">논문 · 대회 · 현장 납품</p>
+      <p class="landing-dashboard__note lang-block" data-lang="en" lang="en">Publication · competition · site delivery</p>
     </div>
     <div class="landing-evidence-grid">
-      <a class="landing-evidence landing-evidence--paper" href="{{ '/projects/oafmcl-humanoid-localization/' | relative_url }}"><span>01 · Publication</span><strong>IEEE TIE</strong><p class="lang-block" data-lang="ko" lang="ko">OAFMCL 제1저자 논문<br>Robot Kidnapping 오차 0.0687m</p><p class="lang-block" data-lang="en" lang="en">First-author OAFMCL paper<br>0.0687 m error under Robot Kidnapping</p></a>
-      <a class="landing-evidence landing-evidence--award" href="{{ '/projects/robit-humanoid/' | relative_url }}"><span>02 · Competition</span><strong>IRC 2020</strong><p class="lang-block" data-lang="ko" lang="ko">국제로봇콘테스트 대상<br>대통령상 수상</p><p class="lang-block" data-lang="en" lang="en">International Robot Contest<br>Grand Prize · Presidential Award</p></a>
-      <a class="landing-evidence landing-evidence--delivery" href="{{ '/projects/smart-parking-system/' | relative_url }}"><span>03 · Delivery</span><strong>~30 CCTV</strong><p class="lang-block" data-lang="ko" lang="ko">단일 서버 영상 분석·조명 제어<br>2025.05 현장 납품</p><p class="lang-block" data-lang="en" lang="en">Single-server vision and lighting control<br>Delivered on site in 2025.05</p></a>
+      <a class="landing-evidence landing-evidence--paper" href="{{ '/projects/oafmcl-humanoid-localization/' | relative_url }}"><span>01 · Publication</span><strong>IEEE TIE</strong><p class="lang-block" data-lang="ko" lang="ko">OAFMCL 제1저자 · RTAMSE 0.0687m</p><p class="lang-block" data-lang="en" lang="en">First author · RTAMSE 0.0687 m</p></a>
+      <a class="landing-evidence landing-evidence--award" href="{{ '/projects/robit-humanoid/' | relative_url }}"><span>02 · Competition</span><strong>IRC 2020</strong><p class="lang-block" data-lang="ko" lang="ko">대상 · 대통령상</p><p class="lang-block" data-lang="en" lang="en">Grand Prize · Presidential Award</p></a>
+      <a class="landing-evidence landing-evidence--delivery" href="{{ '/projects/smart-parking-system/' | relative_url }}"><span>03 · Delivery</span><strong>~30 CCTV</strong><p class="lang-block" data-lang="ko" lang="ko">영상 분석·조명 제어 · 2025.05 납품</p><p class="lang-block" data-lang="en" lang="en">Vision·lighting control · delivered 2025.05</p></a>
       <div class="landing-capabilities"><span>Core capabilities</span><ul><li>Localization &amp; Sensor Fusion</li><li>Control &amp; Autonomous Driving</li><li>Physics-based Simulation</li><li>Embedded &amp; Backend Systems</li></ul></div>
     </div>
   </section>

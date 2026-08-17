@@ -31,7 +31,7 @@
     </header>
 
     <main id="main-content" class="site-main{% if page.url == '/' %} site-main--home{% endif %}">
-      {% unless page.url == '/' or page.url == '/projects/' or page.collection == 'projects' %}
+      {% unless page.url == '/' or page.url == '/projects/' or page.collection == 'projects' or page.hide_heading %}
         <header class="page-heading">
           <p class="eyebrow">{% if page.url == '/projects/' %}Selected work{% elsif page.url == '/about/' %}Profile{% elsif page.url == '/cv/' %}Curriculum vitae{% endif %}</p>
           <h1>{{ page.title }}</h1>

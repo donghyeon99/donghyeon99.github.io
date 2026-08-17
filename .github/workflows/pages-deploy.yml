@@ -50,6 +50,9 @@ jobs:
         env:
           JEKYLL_ENV: "production"
 
+      - name: Validate rendered portfolio
+        run: bundle exec ruby scripts/check-rendered-portfolio.rb "_site${{ steps.pages.outputs.base_path }}"
+
       - name: Test site
         run: |
           bundle exec htmlproofer _site \

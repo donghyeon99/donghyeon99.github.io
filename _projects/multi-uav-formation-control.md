@@ -104,6 +104,8 @@ S자형 경로 추종 실험(시나리오 #1)에서는 기존 알고리즘 대�
 
 </div>
 
+</div>
+
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
 <p class="project-lead">I developed distributed Multi-UAV formation control around a Virtual Leader without central communication. Four Followers held formation within ±0.2 m, and the S-curve path-following experiment reduced position error (MSE) by about 61% against the existing algorithm.</p>
@@ -175,13 +177,13 @@ Formation flight demonstration video:
 
 </div>
 
+</div>
+
 {% include embed/youtube.html id='K2Jqm8zCsDo' %}
 
 <div class="lang-block" data-lang="ko" lang="ko" markdown="1">
 
 ---
-
-</div>
 
 [← 모든 프로젝트 보기](/projects/){: .project-nav-link } · [CV 보기](/cv/){: .project-nav-link }
 
@@ -190,8 +192,6 @@ Formation flight demonstration video:
 <div class="lang-block" data-lang="en" lang="en" markdown="1">
 
 ---
-
-</div>
 
 [← All Projects](/projects/){: .project-nav-link } · [View CV](/cv/){: .project-nav-link }
 
