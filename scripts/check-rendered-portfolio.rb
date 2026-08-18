@@ -13,6 +13,27 @@ end
 home_path = site_root / "index.html"
 home = parse_html(home_path)
 
+failures << "Home document language must default to English" unless home.at_css("html")&.[]("lang") == "en"
+
+manifest_links = home.css("link[rel='manifest']").filter_map { |link| link["href"] }
+unless manifest_links.one? { |href| href.end_with?("/assets/img/favicons/site.webmanifest") }
+  failures << "Home must link the PWA manifest once"
+end
+
+analytics_scripts = home.css("script[src]").filter_map { |script| script["src"] }
+unless analytics_scripts.one? { |src| src.start_with?("https://www.googletagmanager.com/gtag/js?id=") }
+  failures << "Production home must load Google Analytics once"
+end
+
+language_scripts = home.css("script[src]").filter_map { |script| script["src"] }
+unless language_scripts.one? { |src| src.end_with?("/assets/js/cv-lang.js") }
+  failures << "Home must load the language toggle script once"
+end
+
+unless home.css("script").any? { |script| script.text.include?("navigator.serviceWorker.register") }
+  failures << "Home must register the PWA service worker"
+end
+
 %w[ko en].each do |lang|
   names = home.css("h1.landing-hero__name.lang-block[data-lang='#{lang}']")
   failures << "Home must render one language-specific #{lang} name" unless names.length == 1
